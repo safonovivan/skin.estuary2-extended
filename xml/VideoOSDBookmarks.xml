@@ -33,7 +33,7 @@
 				<aligny>center</aligny>
 				<font>font45_title</font>
 				<label>$LOCALIZE[31155]</label>
-				<visible>Integer.IsEqual(Container(11).NumItems,0)</visible>
+				<visible>StringCompare(Container(11).NumItems,0)</visible>
 			</control>
 			<control type="grouplist" id="9001">
 				<orientation>horizontal</orientation>
@@ -44,17 +44,17 @@
 				<height>100</height>
 				<onup>11</onup>
 				<ondown>11</ondown>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="id" value="2" />
 					<param name="label" value="$LOCALIZE[294]" />
 					<param name="width" value="350" />
 				</include>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="id" value="3" />
 					<param name="label" value="$LOCALIZE[296]" />
 					<param name="width" value="350" />
 				</include>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="id" value="4" />
 					<param name="label" value="$LOCALIZE[20406]" />
 					<param name="width" value="350" />

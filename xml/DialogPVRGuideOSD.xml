@@ -4,10 +4,10 @@
 	<controls>
 		<control type="group">
 			<depth>DepthOSD</depth>
-			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(script-script.extendedinfo-VideoList.xml)">Conditional</animation>
 			<control type="group">
 				<include>OpenClose_Left</include>
-				<include content="ContentPanel">
+				<include name="ContentPanel">
 					<param name="width" value="840" />
 				</include>
 				<control type="fixedlist" id="11">
@@ -65,7 +65,7 @@
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="group">
-							<visible>!String.IsEmpty(ListItem.Plot) + Control.HasFocus(11)</visible>
+							<visible>!IsEmpty(ListItem.Plot) + Control.HasFocus(11)</visible>
 							<animation effect="fade" start="0" end="100" time="200">Focus</animation>
 							<control type="image">
 								<left>782</left>

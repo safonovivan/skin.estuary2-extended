@@ -82,7 +82,7 @@
 						<top>480</top>
 						<height>245</height>
 						<visible>ListItem.IsCollection</visible>
-						<include content="InfoList">
+						<include name="InfoList">
 							<param name="bottom" value="0" />
 							<param name="sortby" value="year" />
 							<param name="sortorder" value="descending" />
@@ -130,7 +130,7 @@
 			<visible>Control.IsVisible(51)</visible>
 			<include>OpenClose_Left</include>
 			<include>Visible_Left</include>            
-            <include content="InfoWallMovieLayout">
+            <include name="InfoWallMovieLayout">
                 <param name="poster">$VAR[PosterVar]</param>
                 <param name="focused" value="true" />
                 <param name="width" value="524" />

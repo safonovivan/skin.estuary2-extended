@@ -4,7 +4,7 @@
 	<include>Animation_DialogPopupOpenClose</include>
 	<depth>DepthDialog+</depth>
 	<controls>
-        <include content="DialogYesNo">
+        <include name="DialogYesNo">
             <param name="dialogheaderlabel" value="$LOCALIZE[10041]" />
             <param name="dialogtext" value="$LOCALIZE[10042]" />
             <param name="dialogincludeyes" value="DialogMainMenu" />

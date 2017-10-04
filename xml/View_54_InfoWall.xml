@@ -64,7 +64,7 @@
 		<param name="single_label">$INFO[ListItem.Label]</param>
 		<param name="focused">false</param>
         <param name="userratingval">ListItem.UserRating</param>
-        <param name="istwolabel">[String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,song)]</param>
+        <param name="istwolabel">[StringCompare(ListItem.DBType,album) | StringCompare(ListItem.DBType,song)]</param>
 		<definition>
 			<control type="image">
 				<top>0</top>
@@ -143,7 +143,7 @@
 			<control type="group">
 				<left>133</left>
 				<top>2</top>
-                <include content="UserRatingCircle">
+                <include name="UserRatingCircle">
                     <param name="userratingval" value="$PARAM[userratingval]" />
                 </include>
 			</control>
@@ -157,7 +157,7 @@
 		<param name="focused">false</param>
         <param name="userratingval">ListItem.UserRating</param>
         <param name="percentplayed">ListItem.PercentPlayed</param>
-        <param name="ispercentplayed">Integer.IsEqual(ListItem.PercentPlayed,0)</param>
+        <param name="ispercentplayed">StringCompare(ListItem.PercentPlayed,0)</param>
         <param name="watchedicon">$VAR[WallWatchedIconVar]</param>
 		<definition>
 			<control type="image">
@@ -205,7 +205,7 @@
 				<width>160</width>
 				<height>70</height>
 				<texture flipx="true">overlays/overlay-bg.png</texture>
-				<visible>!ListItem.IsParentFolder + !String.IsEmpty(ListItem.Thumb)</visible>
+				<visible>!ListItem.IsParentFolder + !IsEmpty(ListItem.Thumb)</visible>
 			</control>
 			<control type="label">
 				<left>31</left>
@@ -271,7 +271,7 @@
 			<control type="group">
 				<left>134</left>
 				<top>8</top>
-                <include content="UserRatingCircle">
+                <include name="UserRatingCircle">
                     <param name="userratingval" value="$PARAM[userratingval]" />
                 </include>
 			</control>
@@ -285,11 +285,11 @@
         <param name="noposter">$INFO[ListItem.Icon]</param>
         <param name="userratingval">ListItem.UserRating</param>
         <param name="percentplayed">ListItem.PercentPlayed</param>
-        <param name="ispercentplayed">Integer.IsEqual(ListItem.PercentPlayed,0)</param>
-        <param name="istvshows">String.IsEqual(ListItem.DBtype,tvshow)</param>
+        <param name="ispercentplayed">StringCompare(ListItem.PercentPlayed,0)</param>
+        <param name="istvshows">StringCompare(ListItem.DBtype,tvshow)</param>
         <param name="totalepisodes">ListItem.Property(TotalEpisodes)</param>
         <param name="watchedepisodes">ListItem.Property(WatchedEpisodes)</param>
-        <param name="overlaybg">Listitem.IsCollection | ListItem.IsPlaying | Integer.IsGreater(ListItem.Playcount,0)</param>
+        <param name="overlaybg">Listitem.IsCollection | ListItem.IsPlaying | IntegerGreaterThan(ListItem.Playcount,0)</param>
         <param name="watchedicon">$VAR[WallWatchedIconVar]</param>
         <param name="width">298</param>
         <param name="height">408</param>    
@@ -305,7 +305,7 @@
                 <width>$PARAM[width]</width>
                 <height>$PARAM[height]</height>
                 <control type="group">
-                    <visible>String.IsEmpty($PARAM[value_poster])</visible>
+                    <visible>IsEmpty($PARAM[value_poster])</visible>
                     <control type="image">
                         <top>4</top>
                         <left>4</left>
@@ -371,7 +371,7 @@
                     </control>
                 </control>
                 <control type="group">
-                    <visible>!String.IsEmpty($PARAM[value_poster])</visible>
+                    <visible>!IsEmpty($PARAM[value_poster])</visible>
                     <control type="image">
                         <texture colordiffuse="$VAR[MainColorVar]">colors/grey.png</texture>
                         <bordertexture border="21">overlays/shadow.png</bordertexture>
@@ -411,7 +411,7 @@
                     </control>
                 </control>
                 <control type="group">
-                    <visible>$PARAM[istvshows] + !String.IsEmpty($PARAM[totalepisodes])</visible>
+                    <visible>$PARAM[istvshows] + !IsEmpty($PARAM[totalepisodes])</visible>
 					<visible>$PARAM[tvshows]</visible>
                     <control type="image">
                         <left>24</left>
@@ -419,7 +419,7 @@
                         <bottom>24</bottom>
                         <height>50</height>
                         <texture colordiffuse="CCFFFFFF">overlays/overlayfade.png</texture>
-                        <visible>!String.IsEmpty($PARAM[value_poster])</visible>
+                        <visible>!IsEmpty($PARAM[value_poster])</visible>
                     </control>
                     <control type="label">
                         <right>65</right>
@@ -463,7 +463,7 @@
                     <centerleft>50%</centerleft>
                     <width>44</width>
                     <top>4</top>
-                    <include content="UserRatingCircle">
+                    <include name="UserRatingCircle">
                         <param name="userratingval" value="$PARAM[userratingval]" />
                     </include>
                 </control>
@@ -484,8 +484,8 @@
 				<height>100%</height>
 				<onleft>9000</onleft>
 				<onright>531</onright>
-				<onup condition="Integer.IsGreater(Container.NumPages,1)">54</onup>
-				<onup condition="!Integer.IsGreater(Container.NumPages,1)">9000</onup>
+				<onup condition="IntegerGreaterThan(Container.NumPages,1)">54</onup>
+				<onup condition="!IntegerGreaterThan(Container.NumPages,1)">9000</onup>
 				<ondown>54</ondown>
 				<viewtype label="31101">icon</viewtype>
 				<preloaditems>2</preloaditems>
@@ -506,7 +506,7 @@
 						<animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="190,300">Focus</animation>
 						<animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="190,300">UnFocus</animation>
 						<top>120</top>
-						<include content="InfoWallMovieLayout">
+						<include name="InfoWallMovieLayout">
 							<param name="focused" value="true" />
 						</include>
 					</control>
@@ -515,7 +515,7 @@
 					<control type="group">
 						<left>64</left>
 						<top>110</top>
-						<include content="InfoWallEpisodeLayout">
+						<include name="InfoWallEpisodeLayout">
 							<param name="focused" value="false" />
 							<param name="thumb_label" value="$INFO[ListItem.Label2]" />
 						</include>
@@ -528,7 +528,7 @@
 						<animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="220,250">UnFocus</animation>
 						<left>64</left>
 						<top>110</top>
-						<include content="InfoWallEpisodeLayout">
+						<include name="InfoWallEpisodeLayout">
 							<param name="focused" value="true" />
 							<param name="thumb_label" value="$INFO[ListItem.Label2]" />
 						</include>
@@ -548,7 +548,7 @@
 						<animation effect="zoom" start="115" end="100" time="200" tween="sine" easing="inout" center="200,350">UnFocus</animation>
 						<top>150</top>
 						<left>40</left>
-						<include content="InfoWallMusicLayout">
+						<include name="InfoWallMusicLayout">
 							<param name="focused" value="true" />
 						</include>
 					</control>
@@ -567,7 +567,7 @@
 						<animation effect="zoom" start="115" end="100" time="200" tween="sine" easing="inout" center="200,350">UnFocus</animation>
 						<top>150</top>
 						<left>0</left>
-						<include content="PictureLayout">
+						<include name="PictureLayout">
 							<param name="focused" value="true" />
 						</include>
 					</control>

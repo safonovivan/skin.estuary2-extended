@@ -23,8 +23,10 @@
 	<include file="View_501_Banner.xml" />
 	<include file="View_502_FanArt.xml" />
 	<include file="Variables.xml" />
-	<include file="Constants_1920.xml" condition="!String.IsEqual(Skin.AspectRatio,21:9)"/>
-	<include file="Constants_2560.xml" condition="String.IsEqual(Skin.AspectRatio,21:9)"/>
+	<include file="DialogMusicInfo.xml" />
+	<include file="MyPlaylist.xml" />
+	<include file="Constants_1920.xml" condition="!StringCompare(Skin.AspectRatio,21:9)"/>
+	<include file="Constants_2560.xml" condition="StringCompare(Skin.AspectRatio,21:9)"/>
 	<constant name="DepthDialog">0.50</constant>
 	<constant name="DepthDialog+">0.52</constant>
 	<constant name="DepthDialog-">0.48</constant>
@@ -40,9 +42,6 @@
 	<constant name="dialogbuttons_itemgap">-20</constant>
 	<constant name="list_y_offset">0</constant>
 	<constant name="list_item_height">80</constant>
-	<expression name="infodialog_active">Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(script-script.extendedinfo-VideoList.xml)</expression>
-	<expression name="sidebar_visible">ControlGroup(9000).HasFocus | Control.HasFocus(6130) | Window.IsActive(MyPlaylist.xml)</expression>
-    <expression name="fanart_visible">Window.IsActive(skinsettings) | Window.IsActive(Custom_1100_AddonLauncher.xml)</expression>
 	<include name="CommonScrollbars">
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="150">WindowClose</animation>
@@ -75,7 +74,7 @@
 				<animation effect="slide" end="0,6" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(5199)">conditional</animation>
 				<animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
-				<animation effect="slide" end="0,90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
+				<animation effect="slide" end="0,90" time="300" tween="sine" easing="inout" condition="Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(script-script.extendedinfo-VideoList.xml)">conditional</animation>
 			</control>
 		</control>
 	</include>
@@ -94,7 +93,7 @@
         <param name="userratingval">ListItem.UserRating</param>
 		<definition>
 			<control type="group">
-				<visible>!String.IsEmpty($PARAM[userratingval])</visible>
+				<visible>!IsEmpty($PARAM[userratingval])</visible>
 				<animation effect="fade" time="0" condition="$PARAM[animation]">VisibleChange</animation>
 				<control type="image">
 					<left>3</left>
@@ -274,7 +273,7 @@
 	</include>
 	<include name="PicsInfoLine">
 		<control type="grouplist">
-			<visible>!String.IsEmpty($PARAM[value])</visible>
+			<visible>!IsEmpty($PARAM[value])</visible>
 			<height>45</height>
 			<orientation>horizontal</orientation>
 			<width>570</width>
@@ -384,20 +383,20 @@
 			<width>1900</width>
 			<usecontrolcoords>true</usecontrolcoords>
 			<animation effect="slide" start="0,0" end="140,0" time="0" condition="!ListItem.IsCollection">Conditional</animation>
-			<animation effect="slide" start="0,0" end="140,0" time="0" condition="String.IsEqual(ListItem.DBtype,tvshow)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="140,0" time="0" condition="StringCompare(ListItem.DBtype,tvshow)">Conditional</animation>
 			<control type="group">
 				<width>150</width>
 				<top>-5</top>
-				<visible>String.IsEqual(ListItem.DBtype,tvshow)</visible>
-				<include content="MediaFlag">
+				<visible>StringCompare(ListItem.DBtype,tvshow)</visible>
+				<include name="MediaFlag">
 					<param name="texture" value="$VAR[MediaFlagsStudioIconVar]" />
 				</include>
 			</control>
 			<control type="group">
 				<top>10</top>
 				<width>200</width>
-				<include content="InfoFlag">
-					<param name="visible" value="[String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBtype,episode)] + !String.IsEmpty(ListItem.Premiered)" />
+				<include name="InfoFlag">
+					<param name="visible" value="[StringCompare(ListItem.DBtype,tvshow) | StringCompare(ListItem.DBtype,episode)] + !IsEmpty(ListItem.Premiered)" />
 					<param name="icon" value="lists/year.png" />
 					<param name="label" value="$INFO[ListItem.Premiered]" />
 				</include>
@@ -405,15 +404,15 @@
             <control type="group">
 				<top>10</top>
 				<width>100</width>
-				<include content="InfoFlag">
-					<param name="visible" value="!String.IsEmpty(ListItem.Rating) + !ListItem.IsCollection" />
+				<include name="InfoFlag">
+					<param name="visible" value="!IsEmpty(ListItem.Rating) + !ListItem.IsCollection" />
 					<param name="icon" value="lists/rating.png" />
 					<param name="label" value="$INFO[ListItem.Rating]" />
 				</include>
             </control>
 			<control type="group">
 				<width>115</width>
-				<visible>!String.IsEmpty(ListItem.Duration) + !String.IsEqual(ListItem.DBtype,tvshow)</visible>
+				<visible>!IsEmpty(ListItem.Duration) + !StringCompare(ListItem.DBtype,tvshow)</visible>
 				<control type="label">
 					<width>115</width>
 					<height>60</height>
@@ -422,30 +421,30 @@
 					<label>$INFO[ListItem.Duration,, $LOCALIZE[31132]]</label>
 					<font>font_flag</font>
 				</control>
-				<include content="MediaFlag">
+				<include name="MediaFlag">
 					<param name="texture" value="flags/flag.png" />
 				</include>
 			</control>
-			<include content="MediaFlag">
+			<include name="MediaFlag">
 				<param name="texture" value="$INFO[ListItem.AudioChannels,flags/audiochannel/,.png]" />
-				<param name="visible" value="!String.IsEmpty(ListItem.AudioChannels)" />
+				<param name="visible" value="!IsEmpty(ListItem.AudioChannels)" />
 			</include>
-			<include content="MediaFlag">
+			<include name="MediaFlag">
 				<param name="texture" value="$INFO[ListItem.AudioCodec,flags/audiocodec/,.png]" />
-				<param name="visible" value="!String.IsEmpty(ListItem.AudioCodec)" />
+				<param name="visible" value="!IsEmpty(ListItem.AudioCodec)" />
 			</include>
-			<include content="MediaFlag">
+			<include name="MediaFlag">
 				<param name="texture" value="$VAR[ResolutionFlagVar]" />
-				<param name="visible" value="!String.IsEmpty(ListItem.VideoResolution)" />
+				<param name="visible" value="!IsEmpty(ListItem.VideoResolution)" />
 			</include>            
-			<include content="MediaFlag">
+			<include name="MediaFlag">
 				<param name="texture" value="$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]" />
 			</include>
-            <include content="MediaFlag">
+            <include name="MediaFlag">
                 <param name="texture" value="$INFO[ListItem.VideoCodec,flags/videocodec/,.png]" />
-                <param name="visible" value="!String.IsEmpty(ListItem.VideoCodec)" />
+                <param name="visible" value="!IsEmpty(ListItem.VideoCodec)" />
             </include>
-			<include content="InfoList">
+			<include name="InfoList">
                 <param name="width" value="1" />
 				<param name="item_height" value="1" />
                 <param name="list_id" value="5800" />
@@ -453,7 +452,7 @@
 			<control type="group">
 				<top>10</top>
 				<width>100</width>
-				<include content="InfoFlag">
+				<include name="InfoFlag">
 					<param name="visible" value="ListItem.IsCollection" />
 					<param name="icon" value="overlays/set.png" />
 					<param name="label" value="$INFO[Container(5800).NumItems]" />
@@ -479,7 +478,7 @@
                     <width>150</width>
                     <top>-5</top>
                     <visible>$PARAM[istvshows]</visible>
-                    <include content="MediaFlag">
+                    <include name="MediaFlag">
                         <param name="texture" value="$VAR[MediaFlagsSearchStudioIconVar]$INFO[Container($PARAM[container_id]).ListItem.Property(studio)].png" />
                     </include>
                 </control>
@@ -487,8 +486,8 @@
                     <top>10</top>
                     <width>200</width>
                     <visible>$PARAM[visible_pemiered]</visible>
-                    <include content="InfoFlag">
-                        <param name="visible" value="!String.IsEmpty(Container($PARAM[container_id]).ListItem.Property(Premiered))" />
+                    <include name="InfoFlag">
+                        <param name="visible" value="!IsEmpty(Container($PARAM[container_id]).ListItem.Property(Premiered))" />
                         <param name="icon" value="lists/year.png" />
                         <param name="label" value="$INFO[Container($PARAM[container_id]).ListItem.Property(Premiered)]" />
                     </include>
@@ -496,15 +495,15 @@
                 <control type="group">
                     <top>10</top>
                     <width>100</width>
-                    <include content="InfoFlag">
-                        <param name="visible" value="!String.IsEmpty(Container($PARAM[container_id]).ListItem.Property(Rating))" />
+                    <include name="InfoFlag">
+                        <param name="visible" value="!IsEmpty(Container($PARAM[container_id]).ListItem.Property(Rating))" />
                         <param name="icon" value="lists/rating.png" />
                         <param name="label" value="$INFO[Container($PARAM[container_id]).ListItem.Property(Rating)]" />
                     </include>
                 </control>
                 <control type="group">
                     <width>115</width>
-                    <visible>!String.IsEmpty(Container($PARAM[container_id]).ListItem.Property(Duration))</visible>
+                    <visible>!IsEmpty(Container($PARAM[container_id]).ListItem.Property(Duration))</visible>
                     <control type="label">
                         <width>115</width>
                         <height>60</height>
@@ -513,28 +512,28 @@
                         <label>$INFO[Container($PARAM[container_id]).ListItem.Property(Duration),, $LOCALIZE[31132]]</label>
                         <font>font_flag</font>
                     </control>
-                    <include content="MediaFlag">
+                    <include name="MediaFlag">
                         <param name="texture" value="flags/flag.png" />
                     </include>
                 </control>
-                <include content="MediaFlag">
+                <include name="MediaFlag">
                     <param name="texture" value="$INFO[Container($PARAM[container_id]).ListItem.Property(AudioChannels),flags/audiochannel/,.png]" />
-                    <param name="visible" value="!String.IsEmpty(Container($PARAM[container_id]).ListItem.Property(AudioChannels))" />
+                    <param name="visible" value="!IsEmpty(Container($PARAM[container_id]).ListItem.Property(AudioChannels))" />
                 </include>
-                <include content="MediaFlag">
+                <include name="MediaFlag">
                     <param name="texture" value="$INFO[Container($PARAM[container_id]).ListItem.Property(AudioCodec),flags/audiocodec/,.png]" />
-                    <param name="visible" value="!String.IsEmpty(Container($PARAM[container_id]).ListItem.Property(AudioCodec))" />
+                    <param name="visible" value="!IsEmpty(Container($PARAM[container_id]).ListItem.Property(AudioCodec))" />
                 </include>
-                <include content="MediaFlag">
+                <include name="MediaFlag">
                     <param name="texture" value="$INFO[Container($PARAM[container_id]).ListItem.Property(VideoResolution),flags/videoresolution/,.png]" />
-                    <param name="visible" value="!String.IsEmpty(Container($PARAM[container_id]).ListItem.Property(VideoResolution))" />
+                    <param name="visible" value="!IsEmpty(Container($PARAM[container_id]).ListItem.Property(VideoResolution))" />
                 </include>
-                <include content="MediaFlag">
+                <include name="MediaFlag">
                     <param name="texture" value="$INFO[Container($PARAM[container_id]).ListItem.Property(VideoAspect),flags/aspectratio/,.png]" />
                 </include>
-                <include content="MediaFlag">
+                <include name="MediaFlag">
                     <param name="texture" value="$INFO[Container($PARAM[container_id]).ListItem.Property(VideoCodec),flags/videocodec/,.png]" />
-                    <param name="visible" value="!String.IsEmpty(Container($PARAM[container_id]).ListItem.Property(VideoCodec))" />
+                    <param name="visible" value="!IsEmpty(Container($PARAM[container_id]).ListItem.Property(VideoCodec))" />
                 </include>
             </control>
         </definition>
@@ -542,7 +541,7 @@
 	<include name="WeatherIcon">
 		<control type="group">
 			<width>268</width>
-			<visible>!String.IsEmpty($PARAM[label])</visible>
+			<visible>!IsEmpty($PARAM[label])</visible>
 			<control type="image">
 				<left>50</left>
 				<width>60</width>
@@ -652,12 +651,12 @@
 		<param name="fallback_image">DefaultFolder.png</param>
 		<definition>
 			<control type="group" id="$PARAM[group_id]">
-				<include content="Visible_Right_Delayed">
+				<include name="Visible_Right_Delayed">
 					<param name="id" value="$PARAM[id]"/>
 				</include>
-				<visible>String.IsEqual(Container(9000).ListItem.Property(defaultID),$PARAM[id])</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(defaultID),$PARAM[id])</visible>
 				<control type="group">
-					<visible>Integer.IsGreater(Container($PARAM[group_id]50).NumItems,0) | Container($PARAM[group_id]50).IsUpdating</visible>
+					<visible>IntegerGreaterThan(Container($PARAM[group_id]50).NumItems,0) | Container($PARAM[group_id]50).IsUpdating</visible>
 					<control type="panel" id="$PARAM[group_id]50">
 						<left>540</left>
 						<top>0</top>
@@ -673,7 +672,7 @@
 						<itemlayout height="401" width="320">
 							<control type="group">
 								<top>150</top>
-								<include content="InfoWallMusicLayout">
+								<include name="InfoWallMusicLayout">
 									<param name="fallback_image" value="DefaultAddon.png" />
 								</include>
 							</control>
@@ -683,7 +682,7 @@
 								<top>150</top>
 								<animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="150,320">Focus</animation>
 								<animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="150,320">UnFocus</animation>
-								<include content="InfoWallMusicLayout">
+								<include name="InfoWallMusicLayout">
 									<param name="fallback_image" value="DefaultAddon.png" />
 									<param name="focused" value="true" />
 								</include>
@@ -705,13 +704,13 @@
 				</control>
 				<control type="group">
 					<left>462</left>
-					<include content="Widget-Image">
+					<include name="Widget-Image">
 						<param name="text_label" value="$LOCALIZE[31153]" />
 						<param name="button_label" value="$LOCALIZE[31144]" />
 						<param name="button_onclick" value="$PARAM[imagewidget_onclick]"/>
 						<param name="button_id" value="$PARAM[group_id]333"/>
 						<param name="visible_2" value="false"/>
-						<param name="visible" value="![Integer.IsGreater(Container($PARAM[group_id]50).NumItems,0) | Container($PARAM[group_id]50).IsUpdating]"/>
+						<param name="visible" value="![IntegerGreaterThan(Container($PARAM[group_id]50).NumItems,0) | Container($PARAM[group_id]50).IsUpdating]"/>
 						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoTVShowButton)"/>
 					</include>
 				</control>
@@ -737,7 +736,7 @@
 					<shadowcolor>text_shadow</shadowcolor>
 					<height>35</height>
 					<scroll>true</scroll>
-					<animation effect="slide" start="0,0" end="0,15" time="0" condition="String.IsEmpty(Control.GetLabel($PARAM[id]))">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,15" time="0" condition="IsEmpty(Control.GetLabel($PARAM[id]))">Conditional</animation>
 				</control>
 				<control type="label" id="$PARAM[id]">
 					<label>$PARAM[sub_label]</label>
@@ -772,7 +771,7 @@
 					<height>65</height>
 					<align>center</align>
 					<scroll>true</scroll>
-					<animation effect="slide" start="0,0" end="0,25" time="0" condition="String.IsEmpty(Control.GetLabel($PARAM[id]))">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,25" time="0" condition="IsEmpty(Control.GetLabel($PARAM[id]))">Conditional</animation>
 				</control>
 				<control type="label" id="$PARAM[id]">
 					<label>$PARAM[sub_label]</label>
@@ -958,7 +957,7 @@
 		<param name="sublabel">$INFO[Container.SortMethod,$LOCALIZE[31022]: ,  ∙  ]$INFO[Container.CurrentItem,, / ]$INFO[Container.NumItems]</param>
 		<definition>
 			<control type="group">
-				<animation effect="slide" end="0,-112" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
+				<animation effect="slide" end="0,-112" time="300" tween="sine" easing="inout" condition="Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(script-script.extendedinfo-VideoList.xml)">conditional</animation>
 				<depth>DepthBars</depth>
 				<animation effect="fade" start="0" end="100" time="300" condition="[Window.Previous(fullscreenvideo) | Window.Previous(startup)] + !Window.IsVisible(1109)">WindowOpen</animation>
 				<control type="image">
@@ -979,7 +978,7 @@
 					<usecontrolcoords>true</usecontrolcoords>
 					<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
 					<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
-					<animation effect="slide" end="0,10" time="200" reversible="true" condition="String.IsEmpty(Control.GetLabel(18900))">Conditional</animation>
+					<animation effect="slide" end="0,10" time="200" reversible="true" condition="IsEmpty(Control.GetLabel(18900))">Conditional</animation>
 					<control type="label">
 						<label>$PARAM[breadcrumbs_label]</label>
 						<include>BreadcrumbsLabel</include>
@@ -987,7 +986,7 @@
 					<control type="label">
 						<label>$INFO[Container.ShowTitle, / ]</label>
 						<include>BreadcrumbsLabel</include>
-						<visible>!String.IsEmpty(Container.ShowTitle) + !String.IsEqual(Container.ShowTitle,Container.FolderName)</visible>
+						<visible>!IsEmpty(Container.ShowTitle) + !StringCompare(Container.ShowTitle,Container.FolderName)</visible>
 					</control>
 					<control type="label">
 						<label>$INFO[Container.FolderName, / ]</label>
@@ -998,12 +997,12 @@
 					<control type="label">
 						<label>$INFO[Container.PluginCategory, / ]</label>
 						<include>BreadcrumbsLabel</include>
-						<visible>!String.IsEmpty(Container.PluginCategory)</visible>
+						<visible>!IsEmpty(Container.PluginCategory)</visible>
 					</control>
 					<control type="label">
 						<label>$INFO[Control.GetLabel(10),: ]</label>
 						<include>BreadcrumbsLabel</include>
-						<visible>!String.IsEqual(Control.GetLabel(10),$LOCALIZE[16100]) + Window.IsActive(videos)</visible>
+						<visible>!StringCompare(Control.GetLabel(10),$LOCALIZE[16100]) + Window.IsActive(videos)</visible>
 					</control>
 					<control type="label">
 						<left>10</left>
@@ -1043,7 +1042,7 @@
 					<animation effect="fade" time="150">VisibleChange</animation>
 					<control type="group">
 						<width>600</width>
-						<visible>Player.HasMedia + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
+						<visible>Player.HasMedia + IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
 						<animation effect="fade" time="200">VisibleChange</animation>
 						<control type="grouplist">
 							<left>-75</left>
@@ -1122,7 +1121,7 @@
 						<width>auto</width>
 						<aligny>center</aligny>
 						<label>$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits]</label>
-						<visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + ![String.IsEqual(Weather.FanartCode,na)]</visible>
+						<visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + ![StringCompare(Weather.FanartCode,na)]</visible>
 					</control>
 					<control type="image">
 						<top>1</top>
@@ -1131,7 +1130,7 @@
 						<fadetime>300</fadetime>
 						<aspectratio aligny="center" align="left">keep</aspectratio>
 						<texture>$INFO[Weather.FanartCode,weather/small/,.png]</texture>
-						<visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + ![String.IsEqual(Weather.FanartCode,na)]</visible>
+						<visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + ![StringCompare(Weather.FanartCode,na)]</visible>
 					</control>
 					<control type="image">
 						<top>8</top>
@@ -1155,7 +1154,7 @@
 					<visible>!System.HasModalDialog</visible>
 					<visible>Container.Scrolling</visible>
 					<visible>!Container.Content(seasons)</visible>
-					<visible>String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[563])</visible>
+					<visible>StringCompare(Container.SortMethod,$LOCALIZE[551]) | StringCompare(Container.SortMethod,$LOCALIZE[561]) | StringCompare(Container.SortMethod,$LOCALIZE[558]) | StringCompare(Container.SortMethod,$LOCALIZE[557]) | StringCompare(Container.SortMethod,$LOCALIZE[556]) | StringCompare(Container.SortMethod,$LOCALIZE[563])</visible>
 					<animation effect="fade" start="0" end="100" time="200" reversible="true">VisibleChange</animation>
 					<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 				</control>
@@ -1199,19 +1198,19 @@
 			<control type="visualisation">
 				<include>FullScreenDimensions</include>
 				<visible>!Slideshow.IsActive</visible>
-				<visible>Player.HasAudio + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia)) + Visualisation.Enabled</visible>
+				<visible>Player.HasAudio + IsEmpty(Window(Videos).Property(PlayingBackgroundMedia)) + Visualisation.Enabled</visible>
 			</control>
             <!-- Backgrounds -->
 			<control type="group">
 				<include>FullScreenDimensions</include>
-				<animation effect="zoom" center="auto" end="102,102" time="0" condition="Integer.IsGreater(System.StereoscopicMode,0)">conditional</animation>
+				<animation effect="zoom" center="auto" end="102,102" time="0" condition="IntegerGreaterThan(System.StereoscopicMode,0)">conditional</animation>
 				<control type="group">
 					<animation effect="fade" start="100" end="bg_alpha" time="0" condition="!Control.IsVisible(31111)">Conditional</animation>
 					<animation effect="fade" start="0" end="100" time="300" condition="Window.Previous(fullscreenvideo) | Window.Previous(startup)">WindowOpen</animation>
 					<include>ColoredBackgroundImages</include>
 				</control>
 				<control type="group" id="31111">
-					<visible>![Player.HasVideo | [Player.HasAudio + Visualisation.Enabled + !String.IsEmpty(Visualisation.Name)]] | !String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
+					<visible>![Player.HasVideo | [Player.HasAudio + Visualisation.Enabled + !IsEmpty(Visualisation.Name)]] | !IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
 					<depth>DepthBackground</depth>
 					<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
 					<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
@@ -1222,7 +1221,7 @@
 						<fadetime>400</fadetime>
 						<animation effect="fade" time="400">VisibleChange</animation>
 						<imagepath background="true" colordiffuse="$VAR[BackgroundOpacityValueVar]">$PARAM[overlay_background]</imagepath>
-						<visible>!Control.IsVisible(502) | $EXP[infodialog_active] | $EXP[fanart_visible]</visible>
+						<visible>!Control.IsVisible(502) | Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(script-script.extendedinfo-VideoList.xml) | Window.IsActive(skinsettings) | Window.IsActive(Custom_1100_AddonLauncher.xml)</visible>
 					</control>
 					<control type="image">
 						<left>-3</left>
@@ -1235,7 +1234,7 @@
 						<animation effect="fade" time="400">VisibleChange</animation>
 						<texture background="true" colordiffuse="$VAR[BackgroundOpacityValueVar]">$VAR[PosterVar]</texture>
 						<visible>!Control.IsVisible(32111)</visible>
-						<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+						<visible>!IsEmpty(ListItem.Art(poster))</visible>
 					</control>
 					<control type="image">
 						<left>-3</left>
@@ -1248,7 +1247,7 @@
 						<animation effect="fade" time="400">VisibleChange</animation>
 						<texture background="true" colordiffuse="$VAR[BackgroundOpacityValueVar]">$VAR[PosterVar]</texture>
 						<visible>!Control.IsVisible(32111)</visible>
-						<visible>String.IsEmpty(ListItem.Art(poster))</visible>
+						<visible>IsEmpty(ListItem.Art(poster))</visible>
 					</control>
 				</control>
 			</control>
@@ -1258,7 +1257,7 @@
 		<param name="info_visible">False</param>
 		<definition>
 			<control type="group">
-				<animation effect="slide" end="0,112" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
+				<animation effect="slide" end="0,112" time="300" tween="sine" easing="inout" condition="Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(script-script.extendedinfo-VideoList.xml)">conditional</animation>
 				<depth>DepthBars</depth>
 				<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(visualisation) | Window.Next(screencalibration)">WindowClose</animation>
 				<animation effect="fade" start="0" end="100" time="300" condition="Window.Previous(fullscreenvideo) | Window.Previous(startup) | Window.Previous(visualisation)">WindowOpen</animation>
@@ -1488,20 +1487,20 @@
 					<texture colordiffuse="grey">$VAR[VolumeIconVar]</texture>
 				</control>
 			</control>
-			<include content="IconButton">
+			<include name="IconButton">
 				<param name="control_id" value="" />
 				<param name="onclick" value="ActivateWindow(favourites)" />
 				<param name="icon" value="icons/favourites.png" />
 				<param name="label" value="$LOCALIZE[10134]" />
 			</include>
-			<include content="IconButton">
+			<include name="IconButton">
 				<param name="control_id" value="" />
 				<param name="onclick" value="SetFocus(9000)" />
 				<param name="icon" value="icons/settings.png" />
 				<param name="label" value="$LOCALIZE[10004]" />
 				<param name="visible" value="Window.IsMedia" />
 			</include>
-			<include content="IconButton">
+			<include name="IconButton">
 				<param name="control_id" value="" />
 				<param name="onclick" value="ActivateWindow(shutdownmenu)" />
 				<param name="icon" value="icons/power.png" />
@@ -1556,7 +1555,7 @@
                 <centertop>50%</centertop>
                 <centerleft>50%</centerleft>
                 <width>915</width>
-                <include content="DialogBackgroundCommons">
+                <include name="DialogBackgroundCommons">
                     <param name="width" value="915" />
                     <param name="height" value="380" />
                     <param name="header_label" value="$PARAM[dialogheaderlabel]" />
@@ -1576,13 +1575,13 @@
                     <top>280</top>
                     <width>915</width>
                     <align>center</align>
-                    <include content="DefaultDialogButton">
+                    <include name="DefaultDialogButton">
                         <param name="id" value="11" />
                         <param name="label" value="$LOCALIZE[107]" />
                         <param name="isincludeclick" value="true" />
                         <param name="onclickinclude" value="$PARAM[dialogincludeyes]" />
                     </include>
-                    <include content="DefaultDialogButton">
+                    <include name="DefaultDialogButton">
                         <param name="id" value="10" />
                         <param name="label" value="$LOCALIZE[106]" />
                         <param name="isincludeclick" value="true" />
@@ -1600,7 +1599,7 @@
                 <centerleft>50%</centerleft>
                 <height>742</height>
                 <width>1220</width>
-                <include content="DialogBackgroundCommons">
+                <include name="DialogBackgroundCommons">
                     <param name="width" value="1220" />
                     <param name="height" value="742" />
                     <param name="header_label" value="$PARAM[dialogheaderlabel]" />
@@ -1688,7 +1687,7 @@
                             <label>$INFO[ListItem.Label2]</label>
                         </control>
                     </focusedlayout>
-                    <include content="$PARAM[dialogincludeselectval]">
+                    <include name="$PARAM[dialogincludeselectval]">
                         <param name="dialogsettingval" value="$PARAM[dialogsettingval]" />
                     </include>
                 </control>
@@ -1718,7 +1717,7 @@
                     <onleft>61</onleft>
                     <itemgap>dialogbuttons_itemgap</itemgap>
                     <onright>6</onright>
-                    <include content="DefaultDialogButton">
+                    <include name="DefaultDialogButton">
                         <param name="id" value="7" />
                         <param name="label" value="$LOCALIZE[222]" />
                         <param name="onclick" value="PreviousMenu" />

@@ -53,7 +53,7 @@
 		</control>
 		<control type="group">
 			<include>OpenClose_Left</include>
-			<include content="ContentPanel">
+			<include name="ContentPanel">
 				<param name="width" value="820" />
 				<param name="left" value="-24" />
 			</include>

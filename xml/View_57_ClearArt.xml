@@ -46,7 +46,7 @@
                 <onclick>Control.Move(57,1)</onclick>
                 <visible allowhiddenfocus="true">Container(57).HasNext + [Control.HasFocus(57) | Control.HasFocus(57501)]</visible>
             </control>
-            <include content="View_ClearArts">
+            <include name="View_ClearArts">
                 <param name="id" value="57" />
                 <param name="condition" value="Container.Content(sets) | Container.Content(tvshows) | Container.Content(movies)" />
             </include>
@@ -73,8 +73,8 @@
                 <visible>$PARAM[condition]</visible>
                 <itemlayout height="230" width="378">
 					<control type="group">
-						<visible>String.IsEmpty(ListItem.Art(clearart))</visible>
-						<visible>String.IsEmpty(ListItem.Art(tvshow.clearart))</visible>
+						<visible>IsEmpty(ListItem.Art(clearart))</visible>
+						<visible>IsEmpty(ListItem.Art(tvshow.clearart))</visible>
 						<control type="image">
 							<top>18</top>
 							<left>13</left>
@@ -125,8 +125,8 @@
                 </itemlayout>
                 <focusedlayout height="230" width="378">
 					<control type="group">
-						<visible>String.IsEmpty(ListItem.Art(clearart))</visible>
-						<visible>String.IsEmpty(ListItem.Art(tvshow.clearart))</visible>
+						<visible>IsEmpty(ListItem.Art(clearart))</visible>
+						<visible>IsEmpty(ListItem.Art(tvshow.clearart))</visible>
 						<control type="image">
 							<top>18</top>
 							<left>13</left>						

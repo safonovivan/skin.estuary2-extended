@@ -7,7 +7,7 @@
 			<centerleft>50%</centerleft>
 			<width>960</width>
 			<top>330</top>
-			<include content="DialogBackgroundCommons">
+			<include name="DialogBackgroundCommons">
 				<param name="width" value="960" />
 				<param name="height" value="500" />
 				<param name="header_label" value="$LOCALIZE[21421]" />
@@ -64,11 +64,11 @@
 				<align>center</align>
 				<onup>9002</onup>
 				<ondown>15</ondown>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="id" value="18" />
 					<param name="label" value="$LOCALIZE[186]" />
 				</include>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="id" value="19" />
 					<param name="label" value="$LOCALIZE[222]" />
 				</include>

@@ -5,8 +5,8 @@
 	<coordinates>
 		<left>0</left>
 		<top>0</top>
-		<origin x="1055" y="400">Window.IsActive(Home) + String.IsEqual(Skin.AspectRatio,21:9)</origin>
-		<origin x="735" y="400">Window.IsActive(Home) + !String.IsEqual(Skin.AspectRatio,21:9)</origin>
+		<origin x="1055" y="400">Window.IsActive(Home) + StringCompare(Skin.AspectRatio,21:9)</origin>
+		<origin x="735" y="400">Window.IsActive(Home) + !StringCompare(Skin.AspectRatio,21:9)</origin>
 	</coordinates>
 	<controls>
 		<control type="image">
@@ -65,7 +65,7 @@
 			<texturefocus colordiffuse="$VAR[MainColorVar]">lists/focus.png</texturefocus>
 			<texturenofocus />
 		</control>
-		<include content="UpDownArrows">
+		<include name="UpDownArrows">
 			<param name="container_id" value="996" />
 			<param name="posx" value="201" />
 			<param name="up_posy" value="-40" />

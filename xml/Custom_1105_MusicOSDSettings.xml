@@ -8,7 +8,7 @@
 			<width>600</width>
 			<centertop>50%</centertop>
 			<height>700</height>
-			<include content="DialogBackgroundCommons">
+			<include name="DialogBackgroundCommons">
 				<param name="width" value="600" />
 				<param name="height" value="80" />
 				<param name="header_label" value="$LOCALIZE[5]" />
@@ -48,7 +48,7 @@
 					<item>
 						<label>$LOCALIZE[31083]</label>
 						<onclick>Addon.OpenSettings($INFO[Skin.String(LyricScript_Path)])</onclick>
-						<visible>!String.IsEmpty(Skin.String(LyricScript_Path))</visible>
+						<visible>!IsEmpty(Skin.String(LyricScript_Path))</visible>
 					</item>
 				</content>
 			</control>

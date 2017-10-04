@@ -8,7 +8,7 @@
 			<top>335</top>
 			<centerleft>50%</centerleft>
 			<width>1115</width>
-			<include content="DialogBackgroundCommons">
+			<include name="DialogBackgroundCommons">
 				<param name="width" value="1115" />
 				<param name="height" value="380" />
 				<param name="header_label" value="16003" />
@@ -61,7 +61,7 @@
 					<font>font14</font>
 					<shadowcolor>black</shadowcolor>
 				</control>
-				<include content="FocusableProgressBar">
+				<include name="FocusableProgressBar">
 					<param name="width" value="800"/>
 					<param name="onunfocus_id" value="201"/>
 				</include>
@@ -76,7 +76,7 @@
 				<orientation>horizontal</orientation>
 				<onup>87</onup>
 				<control type="radiobutton" id="600">
-					<include content="OSDButton">
+					<include name="OSDButton">
 						<param name="texture" value="osd/fullscreen/buttons/previous.png"/>
 					</include>
 					<onclick>PlayerControl(Previous)</onclick>
@@ -102,17 +102,17 @@
 					<visible>Player.PauseEnabled</visible>
 				</control>
 				<control type="radiobutton" id="603">
-					<include content="OSDButton">
+					<include name="OSDButton">
 						<param name="texture" value="osd/fullscreen/buttons/stop.png"/>
 					</include>
 					<onclick>PlayerControl(Stop)</onclick>
 				</control>
 				<control type="radiobutton" id="605">
-					<include content="OSDButton">
+					<include name="OSDButton">
 						<param name="texture" value="osd/fullscreen/buttons/next.png"/>
 					</include>
 					<onclick>PlayerControl(Next)</onclick>
-					<visible>!VideoPlayer.Content(livetv) + [Integer.IsGreater(Playlist.Length(video),1) | Integer.IsGreater(Playlist.Length(music),1)]</visible>
+					<visible>!VideoPlayer.Content(livetv) + [IntegerGreaterThan(Playlist.Length(video),1) | IntegerGreaterThan(Playlist.Length(music),1)]</visible>
 				</control>
 				<control type="group" id="699">
 					<width>125</width>

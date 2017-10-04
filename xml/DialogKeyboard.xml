@@ -75,85 +75,85 @@
 					<onright>95200</onright>
 					<control type="button" id="100">
 						<description>(0,0) key button</description>
-						<onup condition="!Integer.IsGreater(Container(9010).NumItems,0)">304</onup>
-						<onup condition="Integer.IsGreater(Container(9010).NumItems,0)">9010</onup>
+						<onup condition="!IntegerGreaterThan(Container(9010).NumItems,0)">304</onup>
+						<onup condition="IntegerGreaterThan(Container(9010).NumItems,0)">9010</onup>
 						<ondown>120</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="101">
 						<description>(0,1) key button</description>
-						<onup condition="!Integer.IsGreater(Container(9010).NumItems,0)">303</onup>
-						<onup condition="Integer.IsGreater(Container(9010).NumItems,0)">9010</onup>
+						<onup condition="!IntegerGreaterThan(Container(9010).NumItems,0)">303</onup>
+						<onup condition="IntegerGreaterThan(Container(9010).NumItems,0)">9010</onup>
 						<ondown>121</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="102">
 						<description>(0,2) key button</description>
-						<onup condition="!Integer.IsGreater(Container(9010).NumItems,0)">302</onup>
-						<onup condition="Integer.IsGreater(Container(9010).NumItems,0)">9010</onup>
+						<onup condition="!IntegerGreaterThan(Container(9010).NumItems,0)">302</onup>
+						<onup condition="IntegerGreaterThan(Container(9010).NumItems,0)">9010</onup>
 						<ondown>122</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="103">
 						<description>(0,3) key button</description>
-						<onup condition="!Integer.IsGreater(Container(9010).NumItems,0)">32</onup>
-						<onup condition="Integer.IsGreater(Container(9010).NumItems,0)">9010</onup>
+						<onup condition="!IntegerGreaterThan(Container(9010).NumItems,0)">32</onup>
+						<onup condition="IntegerGreaterThan(Container(9010).NumItems,0)">9010</onup>
 						<ondown>123</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="104">
 						<description>(0,4) key button</description>
-						<onup condition="!Integer.IsGreater(Container(9010).NumItems,0)">32</onup>
-						<onup condition="Integer.IsGreater(Container(9010).NumItems,0)">9010</onup>
+						<onup condition="!IntegerGreaterThan(Container(9010).NumItems,0)">32</onup>
+						<onup condition="IntegerGreaterThan(Container(9010).NumItems,0)">9010</onup>
 						<ondown>124</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="105">
 						<description>(0,5) key button</description>
-						<onup condition="!Integer.IsGreater(Container(9010).NumItems,0)">32</onup>
-						<onup condition="Integer.IsGreater(Container(9010).NumItems,0)">9010</onup>
+						<onup condition="!IntegerGreaterThan(Container(9010).NumItems,0)">32</onup>
+						<onup condition="IntegerGreaterThan(Container(9010).NumItems,0)">9010</onup>
 						<ondown>125</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="106">
 						<description>(0,6) key button</description>
-						<onup condition="!Integer.IsGreater(Container(9010).NumItems,0)">32</onup>
-						<onup condition="Integer.IsGreater(Container(9010).NumItems,0)">9010</onup>
+						<onup condition="!IntegerGreaterThan(Container(9010).NumItems,0)">32</onup>
+						<onup condition="IntegerGreaterThan(Container(9010).NumItems,0)">9010</onup>
 						<ondown>126</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="107">
 						<description>(0,7) key button</description>
-						<onup condition="!Integer.IsGreater(Container(9010).NumItems,0)">305</onup>
-						<onup condition="Integer.IsGreater(Container(9010).NumItems,0)">9010</onup>
+						<onup condition="!IntegerGreaterThan(Container(9010).NumItems,0)">305</onup>
+						<onup condition="IntegerGreaterThan(Container(9010).NumItems,0)">9010</onup>
 						<ondown>127</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="108">
 						<description>(0,8) key button</description>
-						<onup condition="!Integer.IsGreater(Container(9010).NumItems,0)">306</onup>
-						<onup condition="Integer.IsGreater(Container(9010).NumItems,0)">9010</onup>
+						<onup condition="!IntegerGreaterThan(Container(9010).NumItems,0)">306</onup>
+						<onup condition="IntegerGreaterThan(Container(9010).NumItems,0)">9010</onup>
 						<ondown>128</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="109">
 						<description>(0,9) key button</description>
-						<onup condition="!Integer.IsGreater(Container(9010).NumItems,0)">8</onup>
-						<onup condition="Integer.IsGreater(Container(9010).NumItems,0)">9010</onup>
+						<onup condition="!IntegerGreaterThan(Container(9010).NumItems,0)">8</onup>
+						<onup condition="IntegerGreaterThan(Container(9010).NumItems,0)">9010</onup>
 						<ondown>129</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="110">
 						<description>(0,10) key button</description>
-						<onup condition="!Integer.IsGreater(Container(9010).NumItems,0)">8</onup>
-						<onup condition="Integer.IsGreater(Container(9010).NumItems,0)">9010</onup>
+						<onup condition="!IntegerGreaterThan(Container(9010).NumItems,0)">8</onup>
+						<onup condition="IntegerGreaterThan(Container(9010).NumItems,0)">9010</onup>
 						<ondown>130</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="111">
 						<description>(0,11) key button</description>
-						<onup condition="!Integer.IsGreater(Container(9010).NumItems,0)">8</onup>
-						<onup condition="Integer.IsGreater(Container(9010).NumItems,0)">9010</onup>
+						<onup condition="!IntegerGreaterThan(Container(9010).NumItems,0)">8</onup>
+						<onup condition="IntegerGreaterThan(Container(9010).NumItems,0)">9010</onup>
 						<ondown>131</ondown>
 						<include>KeyboardButton</include>
 					</control>
@@ -531,22 +531,22 @@
 				<onright>140</onright>
 				<width>350</width>
 				<orientation>vertical</orientation>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="id" value="300" />
 					<param name="label" value="$LOCALIZE[12321]" />
 					<param name="width" value="350" />
 				</include>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="id" value="301" />
 					<param name="label" value="$LOCALIZE[222]" />
 					<param name="width" value="350" />
 				</include>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="id" value="309" />
 					<param name="label" value="Layout" />
 					<param name="width" value="350" />
 				</include>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="id" value="307" />
 					<param name="label" value="$LOCALIZE[1006]" />
 					<param name="width" value="350" />

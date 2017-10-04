@@ -5,7 +5,7 @@
 	<include>Animation_DialogPopupOpenClose</include>
 	<depth>DepthOSD</depth>
 	<controls>
-        <include content="DialogSelectValue">
+        <include name="DialogSelectValue">
             <param name="dialogheaderlabel" value="$LOCALIZE[33069]" />
             <param name="dialogincludeselectval" value="BackgroundsSelVal" />
             <param name="dialogsettingval" value="setbackgrounds" />

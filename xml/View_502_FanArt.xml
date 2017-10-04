@@ -6,7 +6,7 @@
 			<left>-5</left>
 			<visible>Control.IsVisible(502)</visible>
 			<include>Visible_Left</include>
-			<include content="ListContainer">
+			<include name="ListContainer">
 				<param name="list_id" value="502" />
 				<param name="viewtype_label" value="$LOCALIZE[20445]" />
 			</include>
@@ -19,7 +19,7 @@
 			<control type="group">
 				<right>-20</right>
 				<width>1235</width>
-				<include content="ContentPanel">
+				<include name="ContentPanel">
 					<param name="width" value="1235" />
 					<param name="left" value="0" />
 					<param name="top" value="-20" />
@@ -61,7 +61,7 @@
 					<left>40</left>
 					<top>770</top>
 					<visible>ListItem.IsCollection</visible>
-					<include content="InfoList">
+					<include name="InfoList">
 						<param name="bottom" value="108" />
 						<param name="width" value="1000" />
 						<param name="sortby" value="year" />

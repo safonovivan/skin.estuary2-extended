@@ -18,10 +18,10 @@
 		<control type="group">
 			<left>0</left>
 			<include>OpenClose_Left</include>
-			<include content="ContentPanel">
+			<include name="ContentPanel">
 				<param name="width" value="872" />
 			</include>
-			<include content="FileManagerPanel">
+			<include name="FileManagerPanel">
 				<param name="header_label" value="" />
 				<param name="list_id" value="20" />
 				<param name="scrollbar_id" value="60" />
@@ -45,12 +45,12 @@
 			<width>818</width>
 			<right>0</right>
 			<include>OpenClose_Right</include>
-			<include content="ContentPanel">
+			<include name="ContentPanel">
 				<param name="width" value="878" />
 				<param name="flipx" value="true" />
 				<param name="left" value="-20" />
 			</include>
-			<include content="FileManagerPanel">
+			<include name="FileManagerPanel">
 				<param name="header_id" value="102" />
 				<param name="header_label" value="" />
 				<param name="list_id" value="21" />
@@ -72,7 +72,7 @@
 				<orientation>vertical</orientation>
 			</control>
 		</control>
-		<include content="TopBar">
+		<include name="TopBar">
 			<param name="breadcrumbs_label" value="$LOCALIZE[7]" />
 		</include>
 		<include>BottomBar</include>

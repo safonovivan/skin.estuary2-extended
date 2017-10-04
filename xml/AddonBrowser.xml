@@ -10,7 +10,7 @@
         <!-- Background -->
 		<include>DefaultBackground</include>     
 		<control type="group">
-			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(script-script.extendedinfo-VideoList.xml)">Conditional</animation>
 			<include>View_50_List</include>
 			<include>View_52_IconWall</include>
 			<include>View_55_WideList</include>
@@ -22,10 +22,10 @@
 				<include>Visible_Left</include>
 				<include>ListThumbInfoPanel</include>
 			</control>
-			<include content="TopBar">
+			<include name="TopBar">
 				<param name="breadcrumbs_label" value="$LOCALIZE[24001]" />
 			</include>
-			<include content="BottomBar">
+			<include name="BottomBar">
 				<param name="info_visible" value="true" />
 			</include>
 			<include>MediaMenuMouseOverlay</include>
@@ -66,9 +66,9 @@
 			<control type="group">
 				<height>78</height>
 				<bottom>0</bottom>
-				<visible>$EXP[sidebar_visible]</visible>
+				<visible>ControlGroup(9000).HasFocus | Control.HasFocus(6130) | Window.IsActive(MyPlaylist.xml)</visible>
 				<animation effect="fade" time="300">VisibleChange</animation>
-				<include content="LeftAlignedInfo">
+				<include name="LeftAlignedInfo">
 					<param name="main_label" value="$INFO[Window(AddonBrowser).Property(Updated)]" />
 					<param name="sub_label" value="$LOCALIZE[31069]" />
 				</include>

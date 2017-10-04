@@ -8,7 +8,7 @@
 			<height>880</height>
 			<centerleft>50%</centerleft>
 			<width>1720</width>
-			<include content="DialogBackgroundCommons">
+			<include name="DialogBackgroundCommons">
 				<param name="width" value="1720" />
 				<param name="height" value="880" />
 				<param name="header_label" value="$LOCALIZE[19143]" />
@@ -97,7 +97,7 @@
 					<onright>73</onright>
 					<pagecontrol>73</pagecontrol>
 					<scrolltime>200</scrolltime>
-					<include content="DefaultSimpleListLayout">
+					<include name="DefaultSimpleListLayout">
 						<param name="width" value="320" />
 						<param name="list_id" value="13" />
 					</include>
@@ -118,7 +118,7 @@
 				<description>Channels list</description>
 				<left>700</left>
 				<top>80</top>
-				<include content="ChannelManagerList">
+				<include name="ChannelManagerList">
 					<param name="header_id" value="21" />
 					<param name="list_id" value="11" />
 					<param name="scrollbar_id" value="71" />
@@ -130,7 +130,7 @@
 				<description>Grouped Channels list</description>
 				<left>1200</left>
 				<top>80</top>
-				<include content="ChannelManagerList">
+				<include name="ChannelManagerList">
 					<param name="header_id" value="22" />
 					<param name="list_id" value="12" />
 					<param name="scrollbar_id" value="72" />

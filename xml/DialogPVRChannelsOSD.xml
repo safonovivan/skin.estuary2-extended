@@ -3,11 +3,11 @@
 	<defaultcontrol always="true">11</defaultcontrol>
 	<controls>
 		<control type="group">
-			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(script-script.extendedinfo-VideoList.xml)">Conditional</animation>
 			<control type="group">
 				<depth>DepthOSD</depth>
 				<include>OpenClose_Left</include>
-				<include content="ContentPanel">
+				<include name="ContentPanel">
 					<param name="width" value="941" />
 				</include>
 				<control type="fixedlist" id="11">
@@ -60,7 +60,7 @@
 							<height>90</height>
 							<width>600</width>
 							<aligny>top</aligny>
-							<animation effect="slide" start="0,0" end="0,18" time="0" condition="String.IsEmpty(ListItem.Title)">Conditional</animation>
+							<animation effect="slide" start="0,0" end="0,18" time="0" condition="IsEmpty(ListItem.Title)">Conditional</animation>
 							<label>$INFO[ListItem.Label]</label>
 							<font>font14</font>
 							<shadowcolor>text_shadow</shadowcolor>
@@ -119,7 +119,7 @@
 							<aligny>top</aligny>
 							<label>$INFO[ListItem.Label]</label>
 							<font>font14</font>
-							<animation effect="slide" start="0,0" end="0,18" time="0" condition="String.IsEmpty(ListItem.Title)">Conditional</animation>
+							<animation effect="slide" start="0,0" end="0,18" time="0" condition="IsEmpty(ListItem.Title)">Conditional</animation>
 							<shadowcolor>text_shadow</shadowcolor>
 						</control>
 						<control type="label">

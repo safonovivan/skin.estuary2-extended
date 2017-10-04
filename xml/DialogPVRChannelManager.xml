@@ -8,7 +8,7 @@
 			<height>830</height>
 			<centerleft>50%</centerleft>
 			<width>1820</width>
-			<include content="DialogBackgroundCommons">
+			<include name="DialogBackgroundCommons">
 				<param name="width" value="1820" />
 				<param name="height" value="830" />
 				<param name="header_label" value="$VAR[PVRChannelMgrHeaderVar]$INFO[Container(20).NumItems, (,)]" />
@@ -244,7 +244,7 @@
 						<aligny>center</aligny>
 						<label>$LOCALIZE[19024]</label>
 						<altlabel>$LOCALIZE[19023]</altlabel>
-						<usealttexture>!String.IsEmpty(Window.Property(IsRadio))</usealttexture>
+						<usealttexture>!IsEmpty(Window.Property(IsRadio))</usealttexture>
 					</control>
 				</control>
 			</control>
@@ -255,17 +255,17 @@
 				<onright>20</onright>
 				<itemgap>dialogbuttons_itemgap</itemgap>
 				<width>400</width>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="width" value="400" />
 					<param name="id" value="4" />
 					<param name="label" value="$LOCALIZE[186]" />
 				</include>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="width" value="400" />
 					<param name="id" value="5" />
 					<param name="label" value="$LOCALIZE[14070]" />
 				</include>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="width" value="400" />
 					<param name="id" value="6" />
 					<param name="label" value="$LOCALIZE[222]" />

@@ -8,11 +8,11 @@
     <views>50,52,53,54,55,58,500</views>
 	<controls>
         <!-- Background -->
-		<include content="DefaultBackground">
+		<include name="DefaultBackground">
 			<param name="overlay_background" value="$VAR[MediaFanartVar]" />
 		</include>
 		<control type="group">
-			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(script-script.extendedinfo-VideoList.xml)">Conditional</animation>
 			<include>View_50_List</include>
 			<include>View_52_IconWall</include>
 			<include>View_53_Shift</include>
@@ -27,10 +27,10 @@
 				<include>Visible_Left</include>
 				<include>ListThumbInfoPanel</include>
 			</control>
-			<include content="TopBar">
+			<include name="TopBar">
 				<param name="breadcrumbs_label" value="$LOCALIZE[2]" />
 			</include>
-			<include content="BottomBar">
+			<include name="BottomBar">
 				<param name="info_visible" value="true" />
 			</include>
 			<include>MediaMenuMouseOverlay</include>
@@ -48,7 +48,7 @@
 						<include>MediaMenuItemsCommon</include>
 						<label>$LOCALIZE[653]</label>
 						<onclick>UpdateLibrary(music)</onclick>
-						<visible>!Container.Content(addons)+ String.IsEmpty(Container.PluginName)</visible>
+						<visible>!Container.Content(addons)+ IsEmpty(Container.PluginName)</visible>
 						<altlabel>$LOCALIZE[13353]</altlabel>
 						<usealttexture>library.isscanningmusic</usealttexture>
 					</control>
@@ -60,7 +60,7 @@
 						<include>MediaMenuItemsCommon</include>
 						<label>$LOCALIZE[31056]</label>
 						<onclick>ActivateWindow(musicplaylist)</onclick>
-						<visible>Integer.IsGreater(Playlist.Length(music),0)</visible>
+						<visible>IntegerGreaterThan(Playlist.Length(music),0)</visible>
 					</control>
 					<control type="button" id="621">
 						<include>MediaMenuItemsCommon</include>
@@ -72,14 +72,13 @@
 						<include>MediaMenuItemsCommon</include>
 						<label>$LOCALIZE[10140]</label>
 						<onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
-						<visible>!String.IsEmpty(Container.PluginName)</visible>
+						<visible>!IsEmpty(Container.PluginName)</visible>
 					</control>
 					<control type="button" id="622">
 						<include>MediaMenuItemsCommon</include>
 						<label>$LOCALIZE[31117]</label>
 						<onclick condition="System.HasAddon(plugin.library.node.editor)">ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=music,return)</onclick>
-						<onclick condition="!System.HasAddon(plugin.library.node.editor)">InstallAddon(plugin.library.node.editor)</onclick>
-						<visible>String.IsEmpty(Container.FolderPath) + String.IsEmpty(Container.PluginName)</visible>
+						<visible>IsEmpty(Container.FolderPath) + IsEmpty(Container.PluginName) + System.HasAddon(plugin.library.node.editor)</visible>
 					</control>
 					<include>MediaMenuNowPlaying</include>
 				</control>

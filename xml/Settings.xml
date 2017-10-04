@@ -102,50 +102,59 @@
 			</focusedlayout>
 			<content>
 				<item>
-					<label>$LOCALIZE[14201]</label>
-					<onclick>ActivateWindow(PlayerSettings)</onclick>
-					<icon>icons/settings/player.png</icon>
+					<label>$LOCALIZE[480]</label>
+					<onclick>ActivateWindow(AppearanceSettings)</onclick>
+					<icon>icons/settings/appearance.png</icon>
 				</item>
 				<item>
-					<label>$LOCALIZE[14212]</label>
-					<onclick>ActivateWindow(MediaSettings)</onclick>
-					<icon>icons/settings/media.png</icon>
+					<label>$LOCALIZE[157]</label>
+					<onclick>ActivateWindow(VideosSettings)</onclick>
+					<icon>icons/settings/video.png</icon>
 				</item>
 				<item>
-					<label>$LOCALIZE[14205]</label>
+					<label>$LOCALIZE[19020]</label>
 					<onclick>ActivateWindow(PVRSettings)</onclick>
 					<icon>icons/settings/livetv.png</icon>
+				</item>                
+				<item>
+					<label>$LOCALIZE[2]</label>
+					<onclick>ActivateWindow(MusicSettings)</onclick>
+					<icon>icons/settings/music.png</icon>
 				</item>
 				<item>
-					<label>$LOCALIZE[14208]</label>
+					<label>$LOCALIZE[1]</label>
+					<onclick>ActivateWindow(PicturesSettings)</onclick>
+					<icon>icons/settings/pictures.png</icon>
+				</item>
+				<item>
+					<label>$LOCALIZE[8]</label>
+					<onclick>ActivateWindow(WeatherSettings)</onclick>
+					<icon>icons/settings/weather.png</icon>
+				</item>
+				<item>
+					<label>$LOCALIZE[24001]</label>
+					<onclick>ActivateWindow(addonbrowser)</onclick>
+					<icon>icons/settings/addons.png</icon>
+				</item>                 
+				<item>
+					<label>$LOCALIZE[14036]</label>
 					<onclick>ActivateWindow(ServiceSettings)</onclick>
 					<icon>icons/settings/network.png</icon>
 				</item>
 				<item>
-					<label>$LOCALIZE[14207]</label>
-					<onclick>ActivateWindow(InterfaceSettings)</onclick>
-					<icon>icons/settings/interface.png</icon>
+					<label>$LOCALIZE[13000]</label>
+					<onclick>ActivateWindow(SystemSettings)</onclick>
+					<icon>icons/settings/system.png</icon>
 				</item>
 				<item>
 					<label>$LOCALIZE[20077]</label>
 					<onclick>ActivateWindow(SkinSettings)</onclick>
 					<icon>icons/settings/skin.png</icon>
-				</item>
+				</item>                
 				<item>
-					<label>$LOCALIZE[14210]</label>
+					<label>$LOCALIZE[13200]</label>
 					<onclick>ActivateWindow(Profiles)</onclick>
 					<icon>icons/settings/profiles.png</icon>
-				</item>
-				<item>
-					<label>$LOCALIZE[14209]</label>
-					<onclick>ActivateWindow(SystemSettings)</onclick>
-					<icon>icons/settings/system.png</icon>
-				</item>
-				<item>
-					<label>LibreELEC</label>
-					<onclick>RunAddon(service.libreelec.settings)</onclick>
-					<icon>icons/settings/libreelec.png</icon>
-					<visible>System.HasAddon(service.libreelec.settings)</visible>
 				</item>
 				<item>
 					<label>$LOCALIZE[138]</label>
@@ -153,19 +162,15 @@
 					<icon>icons/settings/sysinfo.png</icon>
 				</item>
 				<item>
-					<label>$LOCALIZE[31067]</label>
-					<onclick>ActivateWindow(eventlog)</onclick>
-					<icon>icons/settings/eventlog.png</icon>
+					<label>LibreELEC</label>
+					<onclick>RunAddon(service.libreelec.settings)</onclick>
+					<icon>os/libreelec/logo_libreelec.png</icon>
+					<visible>System.HasAddon(service.libreelec.settings)</visible>
 				</item>
 				<item>
 					<label>$LOCALIZE[10003]</label>
 					<onclick>ActivateWindow(filemanager)</onclick>
 					<icon>icons/settings/filemanager.png</icon>
-				</item>
-				<item>
-					<label>$LOCALIZE[24001]</label>
-					<onclick>ActivateWindow(addonbrowser)</onclick>
-					<icon>icons/settings/addons.png</icon>
 				</item>
 			</content>
 		</control>
@@ -178,7 +183,7 @@
 			<onright>5</onright>
 			<orientation>vertical</orientation>
 		</control>
-		<include content="TopBar">
+		<include name="TopBar">
 			<param name="breadcrumbs_label" value="$LOCALIZE[13000]" />
 		</include>
 		<include>BottomBar</include>

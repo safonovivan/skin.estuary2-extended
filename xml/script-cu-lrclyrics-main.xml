@@ -9,7 +9,7 @@
             <centerleft>50%</centerleft>        
             <centertop>50%</centertop>
             <height>900</height>
-            <include  condition="!Skin.HasSetting(lrclyrics_alternative_view)" content="DialogBackgroundCommons">
+            <include  condition="!Skin.HasSetting(lrclyrics_alternative_view)" name="DialogBackgroundCommons">
                 <param name="width" value="1320" />
                 <param name="height" value="780" />
                 <param name="header_label" value="$ADDON[script.cu.lrclyrics 32199]" />

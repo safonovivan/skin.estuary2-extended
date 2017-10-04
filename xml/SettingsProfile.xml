@@ -68,7 +68,7 @@
 						<align>center</align>
 						<aligny>top</aligny>
 						<label>$LOCALIZE[31029]:</label>
-						<visible>!String.IsEqual(Listitem.Label,$LOCALIZE[20058])</visible>
+						<visible>!StringCompare(Listitem.Label,$LOCALIZE[20058])</visible>
 					</control>
 					<control type="label">
 						<left>10</left>
@@ -79,7 +79,7 @@
 						<align>center</align>
 						<aligny>top</aligny>
 						<label fallback="13170">$INFO[ListItem.Label2]</label>
-						<visible>!String.Contains(Listitem.Label,$LOCALIZE[20058])</visible>
+						<visible>!SubString(Listitem.Label,$LOCALIZE[20058])</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout height="390" width="354">
@@ -128,7 +128,7 @@
 							<align>center</align>
 							<aligny>top</aligny>
 							<label>$LOCALIZE[31029]:</label>
-							<visible>!String.Contains(Listitem.Label,$LOCALIZE[20058])</visible>
+							<visible>!SubString(Listitem.Label,$LOCALIZE[20058])</visible>
 						</control>
 						<control type="label">
 							<left>10</left>
@@ -139,7 +139,7 @@
 							<align>center</align>
 							<aligny>top</aligny>
 							<label fallback="13170">$INFO[ListItem.Label2]</label>
-							<visible>!String.Contains(Listitem.Label,$LOCALIZE[20058])</visible>
+							<visible>!SubString(Listitem.Label,$LOCALIZE[20058])</visible>
 						</control>
 					</control>
 				</focusedlayout>
@@ -168,7 +168,7 @@
 		<control type="group">
 			<depth>DepthContentPanel</depth>
 			<include>OpenClose_Left</include>
-			<include content="ContentPanel">
+			<include name="ContentPanel">
 				<param name="width" value="530" />
 			</include>
 			<control type="list" id="9000">
@@ -221,7 +221,7 @@
 				</content>
 			</control>
 		</control>
-		<include content="TopBar">
+		<include name="TopBar">
 			<param name="breadcrumbs_label" value="$LOCALIZE[10034]" />
 		</include>
 		<include>BottomBar</include>

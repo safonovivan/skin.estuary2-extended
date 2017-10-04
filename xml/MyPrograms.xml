@@ -10,7 +10,7 @@
         <!-- Background -->
 		<include>DefaultBackground</include>
 		<control type="group">
-			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(script-script.extendedinfo-VideoList.xml)">Conditional</animation>
 			<include>View_50_List</include>
 			<include>View_52_IconWall</include>
 			<include>View_55_WideList</include>
@@ -21,10 +21,10 @@
 				<visible>Control.IsVisible(55)</visible>
 				<include>ListThumbInfoPanel</include>
 			</control>
-			<include content="TopBar">
+			<include name="TopBar">
 				<param name="breadcrumbs_label" value="$LOCALIZE[10001]" />
 			</include>
-			<include content="BottomBar">
+			<include name="BottomBar">
 				<param name="info_visible" value="true" />
 			</include>
 			<include>CommonScrollbars</include>
@@ -44,7 +44,7 @@
 						<include>MediaMenuItemsCommon</include>
 						<label>$LOCALIZE[10140]</label>
 						<onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
-						<visible>!String.IsEmpty(Container.PluginName)</visible>
+						<visible>!IsEmpty(Container.PluginName)</visible>
 					</control>
 					<control type="button" id="621">
 						<description>Get more</description>

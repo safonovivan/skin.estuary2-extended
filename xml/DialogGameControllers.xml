@@ -8,7 +8,7 @@
 			<centerleft>50%</centerleft>
 			<width>1820</width>
 			<height>690</height>
-			<include content="DialogBackgroundCommons">
+			<include name="DialogBackgroundCommons">
 				<param name="width" value="1820" />
 				<param name="height" value="690" />
 				<param name="header_label" value="$LOCALIZE[35058]" />
@@ -139,27 +139,27 @@
 				<onright>3</onright>
 				<width>350</width>
 				<itemgap>dialogbuttons_itemgap</itemgap>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="width" value="350" />
 					<param name="id" value="18" />
 					<param name="label" value="$LOCALIZE[186]" />
 				</include>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="width" value="350" />
 					<param name="id" value="19" />
 					<param name="label" value="$LOCALIZE[10035]" />
 				</include>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="width" value="350" />
 					<param name="id" value="20" />
 					<param name="label" value="$LOCALIZE[21452]" />
 				</include>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="width" value="350" />
 					<param name="id" value="17" />
 					<param name="label" value="$LOCALIZE[10043]" />
 				</include>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="width" value="350" />
 					<param name="id" value="21" />
 					<param name="label" value="$LOCALIZE[35013]" />

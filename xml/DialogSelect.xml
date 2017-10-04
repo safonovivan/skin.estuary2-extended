@@ -9,7 +9,7 @@
 			<centerleft>50%</centerleft>
 			<height>742</height>
 			<width>1220</width>
-			<include content="DialogBackgroundCommons">
+			<include name="DialogBackgroundCommons">
 				<param name="width" value="1220" />
 				<param name="height" value="742" />
 				<param name="header_label" value="" />
@@ -33,7 +33,7 @@
 				<onright>61</onright>
 				<pagecontrol>61</pagecontrol>
 				<scrolltime>200</scrolltime>
-				<include content="DefaultSimpleListLayout">
+				<include name="DefaultSimpleListLayout">
 					<param name="width" value="880" />
 					<param name="height" value="69" />
 					<param name="list_id" value="3" />
@@ -142,13 +142,14 @@
 				<onleft>61</onleft>
 				<itemgap>dialogbuttons_itemgap</itemgap>
 				<onright>3</onright>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="id" value="5" />
 					<param name="label" value="" />
 				</include>
-				<include content="DefaultDialogButton">
-					<param name="id" value="7" />
+				<include name="DefaultDialogButton">
+					<param name="id" value="99" />
 					<param name="label" value="$LOCALIZE[222]" />
+                    <param name="onclick" value="PreviousMenu"/>
 				</include>
 			</control>
 		</control>

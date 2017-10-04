@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window>
-	<defaultcontrol always="true">50</defaultcontrol>
-	<backgroundcolor>background</backgroundcolor>
-    <onload>SetProperty(fanarthometype,video,home)</onload>
-    <onload>SetProperty(homebackground,$VAR[BackgroundVideosVar],home)</onload>
-	<views>50</views>
-	<controls>
+<includes>
+	<include name="MyPlaylists">
         <!-- Background -->
 		<include>DefaultBackground</include>
 		<control type="group">
-			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(script-script.extendedinfo-VideoList.xml)">Conditional</animation>
 			<control type="group">
 				<include>OpenClose_Left</include>
 				<control type="fixedlist" id="50">
@@ -81,7 +76,7 @@
 				</control>
 				<control type="group">
 					<depth>DepthContentPanel</depth>
-					<include content="ContentPanel">
+					<include name="ContentPanel">
 						<param name="width" value="470" />
 					</include>
 					<control type="grouplist" id="700">
@@ -106,19 +101,19 @@
 							<textoffsety>35</textoffsety>
 							<label>$LOCALIZE[191]</label>
 						</control>
-						<include content="PlaylistWindowButton">
+						<include name="PlaylistWindowButton">
 							<param name="control_id" value="26" />
 							<param name="label" value="" />
 						</include>
-						<include content="PlaylistWindowButton">
+						<include name="PlaylistWindowButton">
 							<param name="control_id" value="21" />
 							<param name="label" value="$LOCALIZE[190]" />
 						</include>
-						<include content="PlaylistWindowButton">
+						<include name="PlaylistWindowButton">
 							<param name="control_id" value="22" />
 							<param name="label" value="$LOCALIZE[192]" />
 						</include>
-						<include content="MediaMenuNowPlaying">
+						<include name="MediaMenuNowPlaying">
 							<param name="left" value="-5" />
 						</include>
 					</control>
@@ -129,7 +124,7 @@
 				<right>0</right>
 				<width>593</width>
 				<include>OpenClose_Right</include>
-				<include content="ListThumbInfoPanel">
+				<include name="ListThumbInfoPanel">
 					<param name="flip_bg" value="true" />
 				</include>
 				<control type="scrollbar" id="60">
@@ -145,11 +140,11 @@
 				</control>
 			</control>
 		</control>
-		<include content="TopBar" condition="Window.IsActive(videoplaylist)">
+		<include name="TopBar" condition="Window.IsActive(videoplaylist)">
 			<param name="breadcrumbs_label" value="$LOCALIZE[31065]" />
 			<param name="sublabel">$INFO[Container.TotalTime,, - ] $INFO[Playlist.Position(video),, / ]$INFO[Playlist.Length(video)]</param>
 		</include>
-		<include content="TopBar" condition="Window.IsActive(musicplaylist)">
+		<include name="TopBar" condition="Window.IsActive(musicplaylist)">
 			<param name="breadcrumbs_label" value="$LOCALIZE[31066]" />
 			<param name="sublabel">$INFO[Container.TotalTime,, - ] $INFO[Playlist.Position(music),, / ]$INFO[Playlist.Length(music)]</param>
 		</include>
@@ -162,5 +157,5 @@
 			<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 			<include condition="!Skin.HasSetting(hide_mediaflags)">MediaFlags</include>
 		</control>
-	</controls>
-</window>
+	</include>
+</includes>

@@ -18,7 +18,7 @@
 			<onright>2000</onright>
 			<align>justify</align>
 			<!-- Power button -->
-			<include content="IconButton">
+			<include name="IconButton">
 				<param name="control_id" value="801" />
                 <param name="onclick" value="SetProperty(fanarthometype,power,home)" />
                 <param name="onclick_2" value="SetProperty(homebackground,$VAR[BackgroundPowerVar],home)" />
@@ -27,7 +27,7 @@
 				<param name="label" value="$LOCALIZE[33060]" />
 			</include>
 			<!-- Settings button -->
-			<include content="IconButton">
+			<include name="IconButton">
 				<param name="control_id" value="802" />
                 <param name="onclick" value="SetProperty(fanarthometype,settings,home)" />
                 <param name="onclick_2" value="SetProperty(homebackground,$VAR[BackgroundSettingsVar],home)" />
@@ -36,7 +36,7 @@
 				<param name="label" value="$LOCALIZE[21417]" />
 			</include>
 			<!-- Search button -->
-			<include content="IconButton">
+			<include name="IconButton">
 				<param name="control_id" value="803" />
                 <param name="onclick" value="SetProperty(fanarthometype,search,home)" />
                 <param name="onclick_2" value="SetProperty(homebackground,$VAR[BackgroundSearchVar],home)" />
@@ -45,7 +45,7 @@
 				<param name="label" value="$LOCALIZE[137]" />
 			</include>
 			<!-- FullScreen button -->
-			<include content="IconButton">
+			<include name="IconButton">
 				<param name="control_id" value="804" />
 				<param name="onclick" value="Fullscreen" />
 				<param name="icon" value="icons/now-playing/fullscreen.png" />
@@ -59,7 +59,7 @@
 		<control type="group">
 			<depth>DepthContentPanel</depth>
 			<include>OpenClose_Left</include>
-			<include content="ContentPanel">
+			<include name="ContentPanel">
 				<param name="width" value="522" />
 			</include>
 			<control type="fixedlist" id="9000">
@@ -214,6 +214,7 @@
 						<property name="defaultID">livetv</property>
                         <property name="background">$VAR[BackgroundLiveTVVar]</property>
 						<visible>!Skin.HasSetting(HomeMenuNoTVButton)</visible>
+						<visible>PVR.HasTVChannels</visible>
 					</item>
 					<!-- Radio -->
 					<item>
@@ -226,6 +227,7 @@
                         <property name="defaultID">radio</property>
                         <property name="background">$VAR[BackgroundRadioVar]</property>						
 						<visible>!Skin.HasSetting(HomeMenuNoRadioButton)</visible>
+						<visible>PVR.HasRadioChannels</visible>
 					</item>
 					<!-- Addons -->
 					<item>
@@ -280,8 +282,8 @@
 						<label>$LOCALIZE[8]</label>
                         <onclick>SetProperty(fanarthometype,weather,home)</onclick>
                         <onclick>SetProperty(homebackground,$VAR[BackgroundWeatherVar],home)</onclick>
-						<onclick condition="!String.IsEmpty(Weather.Plugin)">ActivateWindow(Weather)</onclick>
-						<onclick condition="String.IsEmpty(Weather.Plugin)">ReplaceWindow(servicesettings,weather)</onclick>
+						<onclick condition="!IsEmpty(Weather.Plugin)">ActivateWindow(Weather)</onclick>
+						<onclick condition="IsEmpty(Weather.Plugin)">ReplaceWindow(servicesettings,weather)</onclick>
                         <icon>icons/sidemenu/weather.png</icon>
 						<property name="menu_id">$NUMBER[15000]</property>
                         <property name="defaultID">weather</property>

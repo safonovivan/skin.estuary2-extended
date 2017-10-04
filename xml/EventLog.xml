@@ -9,7 +9,7 @@
 		<!-- Background -->
         <include>DefaultBackground</include>
 		<control type="group">
-			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(script-script.extendedinfo-VideoList.xml)">Conditional</animation>
 			<control type="group">
 				<visible>Control.IsVisible(50)</visible>
 				<include>OpenClose_Right</include>
@@ -117,7 +117,7 @@
 			<control type="group">
 				<depth>DepthContentPanel</depth>
 				<include>OpenClose_Left</include>
-				<include content="ContentPanel">
+				<include name="ContentPanel">
 					<param name="width" value="550" />
 				</include>
 				<control type="grouplist" id="9000">
@@ -143,7 +143,7 @@
 						<label>$LOCALIZE[31032]: $LOCALIZE[584]</label>
 						<altlabel>$LOCALIZE[31032]: $LOCALIZE[585]</altlabel>
 					</control>
-					<include content="PlaylistWindowButton">
+					<include name="PlaylistWindowButton">
 						<param name="control_id" value="21" />
 						<param name="onclick" value="" />
 						<param name="label" value="" />
@@ -156,12 +156,12 @@
 						<textoffsetx>40</textoffsetx>
 						<textoffsety>35</textoffsety>
 					</control>
-					<include content="PlaylistWindowButton">
+					<include name="PlaylistWindowButton">
 						<param name="control_id" value="20" />
 						<param name="onclick" value="" />
 						<param name="label" value="$LOCALIZE[192]" />
 					</include>
-					<include content="PlaylistWindowButton">
+					<include name="PlaylistWindowButton">
 						<param name="control_id" value="501" />
 						<param name="onclick" value="ActivateWindow(systemsettings,logging)" />
 						<param name="label" value="$LOCALIZE[5]" />
@@ -191,7 +191,7 @@
 				<visible>Control.IsVisible(50)</visible>
 			</control>
 		</control>
-		<include content="TopBar">
+		<include name="TopBar">
 			<param name="breadcrumbs_label" value="$LOCALIZE[31067]" />
 		</include>
 		<include>BottomBar</include>

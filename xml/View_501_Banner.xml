@@ -43,7 +43,7 @@
 							<font>font52_title</font>
 							<shadowcolor>text_shadow</shadowcolor>
 							<aligny>center</aligny>
-							<visible>String.IsEmpty(ListItem.Art(banner)) + !Listitem.IsParentFolder</visible>
+							<visible>IsEmpty(ListItem.Art(banner)) + !Listitem.IsParentFolder</visible>
 						</control>
 						<control type="group">
 							<left>405</left>
@@ -80,7 +80,7 @@
 							<font>font52_title</font>
 							<shadowcolor>text_shadow</shadowcolor>
 							<aligny>center</aligny>
-							<visible>String.IsEmpty(ListItem.Art(banner)) + !Listitem.IsParentFolder</visible>
+							<visible>IsEmpty(ListItem.Art(banner)) + !Listitem.IsParentFolder</visible>
 						</control>
 						<control type="group">
 							<include>Animation_FocusTextureFade</include>
@@ -123,7 +123,7 @@
 								<width>22</width>
 								<height>22</height>
 								<texture>lists/rating.png</texture>
-								<visible>!String.IsEmpty(ListItem.Rating)</visible>
+								<visible>!IsEmpty(ListItem.Rating)</visible>
 							</control>
 							<control type="label">
 								<right>258</right>
@@ -134,7 +134,7 @@
 								<align>right</align>
 								<aligny>center</aligny>
 								<label>$INFO[ListItem.Rating]</label>
-								<visible>!String.IsEmpty(ListItem.Rating)</visible>
+								<visible>!IsEmpty(ListItem.Rating)</visible>
 							</control>
 							<control type="image">
 								<right>73</right>
@@ -142,7 +142,7 @@
 								<width>22</width>
 								<height>22</height>
 								<texture>lists/played-total.png</texture>
-								<visible>String.IsEqual(Listitem.dbtype,tvshow) + !String.IsEmpty(ListItem.Property(TotalEpisodes))</visible>
+								<visible>StringCompare(Listitem.dbtype,tvshow) + !IsEmpty(ListItem.Property(TotalEpisodes))</visible>
 							</control>
 							<control type="label">
 								<right>103</right>

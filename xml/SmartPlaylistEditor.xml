@@ -7,7 +7,7 @@
 			<top>150</top>
 			<centerleft>50%</centerleft>
 			<width>1700</width>
-			<include content="DialogBackgroundCommons">
+			<include name="DialogBackgroundCommons">
 				<param name="width" value="1700" />
 				<param name="height" value="790" />
 				<param name="header_label" value="" />
@@ -85,7 +85,7 @@
 				<onleft>500</onleft>
 				<onright>9000</onright>
 				<orientation>vertical</orientation>
-				<include content="DefaultSimpleListLayout">
+				<include name="DefaultSimpleListLayout">
 					<param name="width" value="600" />
 					<param name="list_id" value="10" />
 				</include>
@@ -108,15 +108,15 @@
 				<top>100</top>
 				<onleft>10</onleft>
 				<onright>9001</onright>
-                <include content="DefaultDialogButton">
+                <include name="DefaultDialogButton">
 					<param name="id" value="13" />
 					<param name="label" value="$LOCALIZE[15019]" />
 				</include>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="id" value="14" />
 					<param name="label" value="$LOCALIZE[1210]" />
 				</include>
-                <include content="DefaultDialogButton">
+                <include name="DefaultDialogButton">
 					<param name="id" value="15" />
 					<param name="label" value="$LOCALIZE[21435]" />
 				</include>
@@ -129,11 +129,11 @@
 				<top>445</top>
 				<onleft>10</onleft>
 				<onright>500</onright>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="id" value="20" />
 					<param name="label" value="$LOCALIZE[186]" />
 				</include>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="id" value="21" />
 					<param name="label" value="$LOCALIZE[222]" />
 				</include>

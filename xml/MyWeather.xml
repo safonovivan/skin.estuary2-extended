@@ -26,7 +26,7 @@
 			<onclick>noop</onclick>
 		</control>
         <!-- Background -->
-		<include content="DefaultBackground">
+		<include name="DefaultBackground">
 			<param name="overlay_background" value="$VAR[WeatherFanartVar]" />
 		</include>
 		<control type="grouplist" id="2000">
@@ -110,32 +110,32 @@
 					<orientation>horizontal</orientation>
 					<align>left</align>
 					<itemgap>-65</itemgap>
-					<include content="WeatherIcon">
+					<include name="WeatherIcon">
 						<param name="label" value="Window(weather).Property(Current.Wind)" />
 						<param name="texture" value="icons/weather/wind.png" />
 						<param name="header" value="$LOCALIZE[404]" />
 					</include>
-					<include content="WeatherIcon">
+					<include name="WeatherIcon">
 						<param name="label" value="Window(weather).Property(Current.Humidity)" />
 						<param name="texture" value="icons/weather/humidity.png" />
 						<param name="header" value="$LOCALIZE[406]" />
 					</include>
-					<include content="WeatherIcon">
+					<include name="WeatherIcon">
 						<param name="label" value="Window(weather).Property(Current.Precipitation)" />
 						<param name="texture" value="icons/weather/rain.png" />
 						<param name="header" value="$LOCALIZE[33021]" />
 					</include>
-					<include content="WeatherIcon">
+					<include name="WeatherIcon">
 						<param name="label" value="Window(weather).Property(Today.Sunrise)" />
 						<param name="texture" value="icons/weather/sunrise.png" />
 						<param name="header" value="$LOCALIZE[405]" />
 					</include>
-					<include content="WeatherIcon">
+					<include name="WeatherIcon">
 						<param name="label" value="Window(weather).Property(Today.Sunset)" />
 						<param name="texture" value="icons/weather/sunset.png" />
 						<param name="header" value="$LOCALIZE[403]" />
 					</include>
-					<include content="WeatherIcons">
+					<include name="WeatherIcons">
 						<param name="left" value="-20" />
 						<param name="top" value="-10" />
 						<param name="width" value="150" />
@@ -145,47 +145,47 @@
 					</include>
 				</control>
 			</control>
-			<include content="Widget-Weather">
+			<include name="Widget-Weather">
 				<param name="content_include" value="DailyItems" />
 				<param name="list_id" value="15100" />
 				<param name="widget_header" value="$LOCALIZE[31019]"/>
-				<param name="visible" value="!String.IsEmpty(Window(weather).Property(Daily.IsFetched))" />
+				<param name="visible" value="!IsEmpty(Window(weather).Property(Daily.IsFetched))" />
 				<param name="width" value="258" />
 			</include>
-			<include content="Widget-Weather">
+			<include name="Widget-Weather">
 				<param name="content_include" value="HourlyItems" />
 				<param name="list_id" value="15200" />
 				<param name="widget_header" value="$LOCALIZE[33036]"/>
-				<param name="visible" value="!String.IsEmpty(Window(weather).Property(Hourly.IsFetched))" />
+				<param name="visible" value="!IsEmpty(Window(weather).Property(Hourly.IsFetched))" />
 				<param name="width" value="258" />
 			</include>
-			<include content="WeatherMapItem">
+			<include name="WeatherMapItem">
 				<param name="item_id" value="1" />
 				<param name="onup_id" value="15100" />
 				<param name="ondown_id" value="70020" />
 			</include>
-			<include content="WeatherMapItem">
+			<include name="WeatherMapItem">
 				<param name="item_id" value="2" />
 				<param name="onup_id" value="70010" />
 				<param name="ondown_id" value="70030" />
 			</include>
-			<include content="WeatherMapItem">
+			<include name="WeatherMapItem">
 				<param name="item_id" value="3" />
 				<param name="onup_id" value="70020" />
 				<param name="ondown_id" value="70040" />
 			</include>
-			<include content="WeatherMapItem">
+			<include name="WeatherMapItem">
 				<param name="item_id" value="4" />
 				<param name="onup_id" value="70030" />
 				<param name="ondown_id" value="70050" />
 			</include>
-			<include content="WeatherMapItem">
+			<include name="WeatherMapItem">
 				<param name="item_id" value="5" />
 				<param name="onup_id" value="70040" />
 				<param name="ondown_id" value="20001" />
 			</include>
 		</control>
-		<include content="TopBar">
+		<include name="TopBar">
 			<param name="breadcrumbs_label" value="$LOCALIZE[8]$INFO[Window(Weather).Property(Location), / ]" />
 			<param name="sublabel" value="$INFO[Window(weather).Property(WeatherProvider)]" />
 		</include>

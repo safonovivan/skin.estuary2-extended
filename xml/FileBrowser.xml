@@ -8,7 +8,7 @@
 			<centertop>50%</centertop>
 			<width>1300</width>
 			<height>850</height>
-			<include content="DialogBackgroundCommons">
+			<include name="DialogBackgroundCommons">
 				<param name="width" value="1300" />
 				<param name="height" value="850" />
 				<param name="header_label" value="" />
@@ -25,20 +25,20 @@
 				<onright>450</onright>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="id" value="413" />
 					<param name="label" value="$LOCALIZE[186]" />
 				</include>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="id" value="414" />
 					<param name="label" value="$LOCALIZE[222]" />
 				</include>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="id" value="415" />
 					<param name="label" value="$LOCALIZE[119]" />
 					<param name="visible" value="Control.IsEnabled(415)" />
 				</include>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="id" value="416" />
 					<param name="label" value="$LOCALIZE[749]" />
 					<param name="visible" value="Control.IsEnabled(416)" />
@@ -209,7 +209,7 @@
 				<label>$VAR[FileBrowserSelectLabelVar]</label>
 			</control>
 		</control>
-		<include content="UpDownArrows">
+		<include name="UpDownArrows">
 			<param name="container_id" value="450" />
 			<param name="posx" value="830" />
 			<param name="up_posy" value="50" />

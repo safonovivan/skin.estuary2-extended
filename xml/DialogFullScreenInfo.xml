@@ -16,7 +16,6 @@
 		<control type="group">
 			<bottom>0</bottom>
 			<height>230</height>
-			<visible>!Window.IsVisible(playerprocessinfo)</visible>
 			<animation effect="fade" time="200">VisibleChange</animation>
 			<control type="group">
 				<animation effect="slide" end="0,-80" time="150" condition="PVR.IsTimeShift">conditional</animation>
@@ -75,7 +74,7 @@
 							<height>100</height>
 							<textoffsetx>80</textoffsetx>
 							<label>$LOCALIZE[206]</label>
-							<visible>!String.IsEmpty(VideoPlayer.CastAndRole)</visible>
+							<visible>!IsEmpty(VideoPlayer.CastAndRole)</visible>
 						</control>
 						<control type="button" id="5555">
 							<width>auto</width>
@@ -97,16 +96,16 @@
 				<orientation>horizontal</orientation>
 				<itemgap>10</itemgap>
 				<visible>!Player.ChannelPreviewActive</visible>
-				<include content="MediaFlag">
+				<include name="MediaFlag">
 					<param name="texture" value="$INFO[VideoPlayer.AudioChannels,flags/audiochannel/,.png]" />
 				</include>
-				<include content="MediaFlag">
+				<include name="MediaFlag">
 					<param name="texture" value="$INFO[VideoPlayer.AudioCodec,flags/audiocodec/,.png]" />
 				</include>
-				<include content="MediaFlag">
+				<include name="MediaFlag">
 					<param name="texture" value="$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]" />
 				</include>
-				<include content="MediaFlag">
+				<include name="MediaFlag">
 					<param name="texture" value="$INFO[VideoPlayer.VideoCodec,flags/videocodec/,.png]" />
 				</include>
 			</control>

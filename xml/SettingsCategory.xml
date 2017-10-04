@@ -75,7 +75,7 @@
 		<control type="group">
 			<depth>DepthContentPanel</depth>
 			<include>OpenClose_Left</include>
-			<include content="ContentPanel">
+			<include name="ContentPanel">
 				<param name="width" value="530" />
 			</include>
 			<control type="grouplist" id="3">
@@ -141,7 +141,7 @@
 			<animation effect="fade" start="0" end="100" delay="300" time="320">WindowOpen</animation>
 			<animation effect="fade" start="100" end="0" time="150">WindowClose</animation>
 		</control>
-		<include content="TopBar">
+		<include name="TopBar">
 			<param name="breadcrumbs_label" value="$LOCALIZE[5]$INFO[Control.GetLabel(2), / ]" />
 		</include>
 		<include>BottomBar</include>

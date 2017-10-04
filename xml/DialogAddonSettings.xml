@@ -8,7 +8,7 @@
 			<height>800</height>
 			<centerleft>50%</centerleft>
 			<width>1820</width>
-			<include content="DialogBackgroundCommons">
+			<include name="DialogBackgroundCommons">
 				<param name="width" value="1820" />
 				<param name="height" value="800" />
 				<param name="header_label" value="" />
@@ -27,7 +27,7 @@
 				<onup>9</onup>
 				<ondown>9</ondown>
 			</control>
-			<include content="UpDownArrows">
+			<include name="UpDownArrows">
 				<param name="container_id" value="2" />
 				<param name="posx" value="830" />
 				<param name="up_posy" value="-42" />
@@ -63,15 +63,15 @@
 				<ondown>9001</ondown>
 				<onleft>2</onleft>
 				<onright>9</onright>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="id" value="10" />
 					<param name="label" value="$LOCALIZE[186]" />
 				</include>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="id" value="11" />
 					<param name="label" value="$LOCALIZE[222]" />
 				</include>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="id" value="12" />
 					<param name="label" value="$LOCALIZE[409]" />
 				</include>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<visible>Player.Seeking | Player.DisplayAfterSeek | [Player.Paused + !Player.Caching] | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(fullscreeninfo) | Window.IsActive(videoosd) | Window.IsActive(musicosd) | Window.IsActive(playerprocessinfo) | !IsEmpty(Player.SeekNumeric)</visible>
+	<visible>Player.Seeking | Player.DisplayAfterSeek | [Player.Paused + !Player.Caching] | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(fullscreeninfo) | Window.IsActive(videoosd) | Window.IsActive(musicosd) | !IsEmpty(Player.SeekNumeric)</visible>
 	<visible>!Window.IsActive(sliderdialog)</visible>
 	<visible>Window.IsActive(visualisation) | Window.IsActive(fullscreenvideo)</visible>
 	<include>Animation_BottomSlide</include>
@@ -27,14 +27,6 @@
 					<texture>$INFO[MusicPlayer.Codec,flags/audiocodec/,.png]</texture>
 					<aspectratio>keep</aspectratio>
 					<visible>!Player.ChannelPreviewActive</visible>
-				</control>
-				<control type="image">
-					<left>200</left>
-					<top>120</top>
-					<width>264</width>
-					<height>40</height>
-					<texture>$INFO[MusicPlayer.UserRating,flags/starrating/,.png]</texture>
-					<aspectratio>keep</aspectratio>
 				</control>
 				<control type="label">
 					<top>110</top>
@@ -88,7 +80,7 @@
 				<height>75</height>
 				<align>center</align>
 				<aligny>bottom</aligny>
-				<animation delay="0" effect="slide" time="120" start="0,0" end="0,-20" tween="sine" easing="inout" condition="!String.IsEmpty(Control.GetLabel(40000))">Conditional</animation>
+				<animation delay="0" effect="slide" time="120" start="0,0" end="0,-20" tween="sine" easing="inout" condition="!IsEmpty(Control.GetLabel(40000))">Conditional</animation>
 				<label>$VAR[SeekTimeLabelVar]</label>
 				<font>font45</font>
 				<shadowcolor>black</shadowcolor>
@@ -249,21 +241,21 @@
 				<itemgap>10</itemgap>
 				<visible>!Player.ChannelPreviewActive</visible>
 				<animation effect="fade" start="0" end="100" time="200" delay="1000">Visible</animation>
-				<include content="MediaFlag">
+				<include name="MediaFlag">
 					<param name="texture" value="$INFO[VideoPlayer.AudioChannels,flags/audiochannel/,.png]" />
-					<param name="visible" value="!String.IsEmpty(VideoPlayer.AudioChannels)" />
+					<param name="visible" value="!IsEmpty(VideoPlayer.AudioChannels)" />
 				</include>
-				<include content="MediaFlag">
+				<include name="MediaFlag">
 					<param name="texture" value="$INFO[VideoPlayer.AudioCodec,flags/audiocodec/,.png]" />
-					<param name="visible" value="!String.IsEmpty(VideoPlayer.AudioCodec)" />
+					<param name="visible" value="!IsEmpty(VideoPlayer.AudioCodec)" />
 				</include>
-				<include content="MediaFlag">
+				<include name="MediaFlag">
 					<param name="texture" value="$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]" />
-					<param name="visible" value="!String.IsEmpty(VideoPlayer.VideoAspect)" />
+					<param name="visible" value="!IsEmpty(VideoPlayer.VideoAspect)" />
 				</include>
-				<include content="MediaFlag">
+				<include name="MediaFlag">
 					<param name="texture" value="$INFO[VideoPlayer.VideoCodec,flags/videocodec/,.png]" />
-					<param name="visible" value="!String.IsEmpty(VideoPlayer.VideoCodec)" />
+					<param name="visible" value="!IsEmpty(VideoPlayer.VideoCodec)" />
 				</include>
 			</control>
 		</control>

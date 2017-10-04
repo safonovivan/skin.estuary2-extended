@@ -10,7 +10,7 @@
 		<control type="group">
 			<include>OpenClose_Left</include>
 			<left>302</left>
-			<include content="FileManagerPanel">
+			<include name="FileManagerPanel">
 				<param name="header_id" value="22" />
 				<param name="header_label" value="$LOCALIZE[20094]" />
 				<param name="list_id" value="50" />
@@ -22,7 +22,7 @@
 		</control>
 		<control type="group">
 			<include>OpenClose_Left</include>
-			<include content="ContentPanel">
+			<include name="ContentPanel">
 				<param name="width" value="360" />
 			</include>
 			<control type="grouplist" id="9000">
@@ -33,21 +33,21 @@
 				<itemgap>-20</itemgap>
 				<control type="button" id="6">
 					<description>Button Network</description>
-					<include content="DefaultSettingButton">
+					<include name="DefaultSettingButton">
 						<param name="height" value="120" />
 					</include>
 					<width>300</width>
 					<label>$LOCALIZE[502]</label>
 				</control>
 				<control type="button" id="7">
-					<include content="DefaultSettingButton">
+					<include name="DefaultSettingButton">
 						<param name="height" value="120" />
 					</include>
 					<width>300</width>
 					<label>$LOCALIZE[190]</label>
 				</control>
 				<control type="button" id="8">
-					<include content="DefaultSettingButton">
+					<include name="DefaultSettingButton">
 						<param name="height" value="120" />
 					</include>
 					<width>300</width>
@@ -59,11 +59,11 @@
 			<include>OpenClose_Right</include>
 			<width>845</width>
 			<right>0</right>
-			<include content="ContentPanel">
+			<include name="ContentPanel">
 				<param name="width" value="1100" />
 				<param name="left" value="-21" />
 			</include>
-			<include content="FileManagerPanel">
+			<include name="FileManagerPanel">
 				<param name="header_id" value="23" />
 				<param name="header_label" value="$LOCALIZE[13350]" />
 				<param name="list_id" value="100" />
@@ -95,11 +95,11 @@
 				<orientation>vertical</orientation>
 			</control>
 		</control>
-		<include content="TopBar">
+		<include name="TopBar">
 			<param name="breadcrumbs_label" value="$LOCALIZE[10503][COLOR $VAR[MainColorVar]][/COLOR]" />
 		</include>
 		<include>BottomBar</include>
-		<include content="BottomBarTwoListInfo">
+		<include name="BottomBarTwoListInfo">
 			<param name="left_container_id">50</param>
 			<param name="left_scrollbar_id">60</param>
 			<param name="right_container_id">100</param>

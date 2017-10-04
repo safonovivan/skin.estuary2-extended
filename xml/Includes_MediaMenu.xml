@@ -33,8 +33,8 @@
 				<textureradioofffocus>$PARAM[icon]</textureradioofffocus>
 				<textureradiooffnofocus>$PARAM[icon]</textureradiooffnofocus>
 				<textureradiooffdisabled colordiffuse="$VAR[MainColorVar]">$PARAM[icon]</textureradiooffdisabled>
-				<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TV$PARAM[area])</onclick>
-				<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(Radio$PARAM[area])</onclick>
+				<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TV$PARAM[area])</onclick>
+				<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(Radio$PARAM[area])</onclick>
 				<enable>!Window.IsActive(TV$PARAM[area]) + !Window.IsActive(Radio$PARAM[area])</enable>
 			</control>
 		</definition>
@@ -89,32 +89,32 @@
 						<onup>14100</onup>
 						<ondown>6054</ondown>
 						<width>1000</width>
-						<include content="PVRQuickNavItemsCommon">
+						<include name="PVRQuickNavItemsCommon">
 							<param name="control_id" value="100" />
 							<param name="area" value="Channels" />
 							<param name="icon" value="icons/submenu/channels.png" />
 						</include>
-						<include content="PVRQuickNavItemsCommon">
+						<include name="PVRQuickNavItemsCommon">
 							<param name="control_id" value="101" />
 							<param name="area" value="Guide" />
 							<param name="icon" value="icons/submenu/guide.png" />
 						</include>
-						<include content="PVRQuickNavItemsCommon">
+						<include name="PVRQuickNavItemsCommon">
 							<param name="control_id" value="102" />
 							<param name="area" value="Recordings" />
 							<param name="icon" value="icons/submenu/recordings.png" />
 						</include>
-						<include content="PVRQuickNavItemsCommon">
+						<include name="PVRQuickNavItemsCommon">
 							<param name="control_id" value="103" />
 							<param name="area" value="Timers" />
 							<param name="icon" value="icons/submenu/timers.png" />
 						</include>
-						<include content="PVRQuickNavItemsCommon">
+						<include name="PVRQuickNavItemsCommon">
 							<param name="control_id" value="104" />
 							<param name="area" value="TimerRules" />
 							<param name="icon" value="icons/submenu/timer-rules.png" />
 						</include>
-						<include content="PVRQuickNavItemsCommon">
+						<include name="PVRQuickNavItemsCommon">
 							<param name="control_id" value="105" />
 							<param name="area" value="Search" />
 							<param name="icon" value="icons/submenu/tv-search.png" />
@@ -200,26 +200,26 @@
 						<onleft>14100</onleft>
 						<onup>8</onup>
 						<ondown>6056</ondown>
-						<visible>Player.HasMedia + [$EXP[sidebar_visible]]</visible>
+						<visible>Player.HasMedia + [ControlGroup(9000).HasFocus | Control.HasFocus(6130) | Window.IsActive(MyPlaylist.xml)]</visible>
 						<visible>!System.HasModalDialog</visible>
-						<include content="BottomMainMenuToggleItem">
+						<include name="BottomMainMenuToggleItem">
 							<param name="control_id" value="14101" />
 							<param name="onclick" value="PlayerControl(Play)" />
 							<param name="icon_on" value="icons/now-playing/play.png" />
 							<param name="icon_off" value="icons/now-playing/pause.png" />
 							<param name="selected" value="Player.Paused" />
 						</include>
-						<include content="IconButton">
+						<include name="IconButton">
 							<param name="control_id" value="14102" />
 							<param name="onclick" value="Stop" />
 							<param name="icon" value="icons/now-playing/stop.png" />
 						</include>
-						<include content="IconButton">
+						<include name="IconButton">
 							<param name="control_id" value="14104" />
 							<param name="onclick" value="Next" />
 							<param name="icon" value="icons/now-playing/next.png" />
 						</include>
-						<include content="IconButton">
+						<include name="IconButton">
 							<param name="control_id" value="14105" />
 							<param name="onclick" value="Fullscreen" />
 							<param name="icon" value="icons/now-playing/fullscreen.png" />
@@ -243,7 +243,7 @@
 		<include>OpenClose_Left</include>
 		<depth>DepthSideBlade</depth>
 		<left>-520</left>
-		<animation type="Conditional" condition="$EXP[sidebar_visible]" reversible="true">
+		<animation type="Conditional" condition="ControlGroup(9000).HasFocus | Control.HasFocus(6130) | Window.IsActive(MyPlaylist.xml)" reversible="true">
 			<effect type="slide" start="0" end="520" time="400" tween="cubic" easing="out" />
 		</animation>
 		<control type="image">
@@ -251,7 +251,7 @@
 			<height>100%</height>
 			<aspectratio>scale</aspectratio>
 			<texture colordiffuse="80FFFFFF">colors/black.png</texture>
-			<visible>$EXP[sidebar_visible] + !System.HasModalDialog</visible>
+			<visible>ControlGroup(9000).HasFocus | Control.HasFocus(6130) | Window.IsActive(MyPlaylist.xml) + !System.HasModalDialog</visible>
 			<animation effect="fade" time="200">VisibleChange</animation>
 		</control>
 		<control type="image">
@@ -282,27 +282,27 @@
 				<left>$PARAM[left]</left>
 				<onleft>14100</onleft>
 				<width>450</width>
-				<visible>Player.HasMedia + [$EXP[sidebar_visible]]</visible>
+				<visible>Player.HasMedia + [ControlGroup(9000).HasFocus | Control.HasFocus(6130) | Window.IsActive(MyPlaylist.xml)]</visible>
 				<visible>!System.HasModalDialog</visible>
-				<include content="BottomMainMenuToggleItem">
+				<include name="BottomMainMenuToggleItem">
 					<param name="control_id" value="14101" />
 					<param name="onclick" value="PlayerControl(Play)" />
 					<param name="icon_on" value="icons/now-playing/play.png" />
 					<param name="icon_off" value="icons/now-playing/pause.png" />
 					<param name="selected" value="Player.Paused" />
 				</include>
-				<include content="IconButton">
+				<include name="IconButton">
 					<param name="control_id" value="14102" />
 					<param name="onclick" value="Stop" />
 					<param name="onclick_2" value="SetFocus(50)" />
 					<param name="icon" value="icons/now-playing/stop.png" />
 				</include>
-				<include content="IconButton">
+				<include name="IconButton">
 					<param name="control_id" value="14104" />
 					<param name="onclick" value="PlayerControl(Next)" />
 					<param name="icon" value="icons/now-playing/next.png" />
 				</include>
-				<include content="IconButton">
+				<include name="IconButton">
 					<param name="control_id" value="14105" />
 					<param name="onclick" value="Fullscreen" />
 					<param name="icon" value="icons/now-playing/fullscreen.png" />
@@ -329,7 +329,7 @@
 				<include>MediaMenuItemsCommon</include>
 				<label>$LOCALIZE[31023]</label>
 				<label2>[B]$INFO[Container.Viewmode][/B]</label2>
-				<visible>Integer.IsGreater(Container.ViewCount,1)</visible>
+				<visible>IntegerGreaterThan(Container.ViewCount,1)</visible>
 				<onclick>Container.NextViewMode</onclick>
 			</control>
 			<control type="button" id="6053">

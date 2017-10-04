@@ -41,7 +41,7 @@
 					<height>820</height>
 					<texture border="22">dialogs/dialog-bg.png</texture>
 				</control>
-				<include content="UpDownArrows">
+				<include name="UpDownArrows">
 					<param name="container_id" value="5" />
 					<param name="posx" value="1590" />
 					<param name="up_posy" value="-20" />
@@ -118,7 +118,7 @@
 				</control>
 			</control>
 		</control>
-		<include content="InfoDialogTopBarInfo">
+		<include name="InfoDialogTopBarInfo">
 			<param name="main_label" value="[COLOR white]$INFO[ListItem.Label][/COLOR]" />
 			<param name="sub_label" value="[COLOR white]$INFO[ListItem.PictureDateTime][/COLOR]" />
 		</include>

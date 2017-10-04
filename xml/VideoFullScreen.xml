@@ -14,7 +14,7 @@
             <textcolor>white</textcolor>
             <shadowcolor>black</shadowcolor>
             <label>$INFO[System.Time]</label>
-            <visible>Skin.HasSetting(full_screen_clock) + ![Player.ShowInfo | Window.IsActive(videoosd) | Window.IsActive(fullscreeninfo) | Window.IsActive(PVROSDChannels) | Window.IsActive(PVROSDGuide) | Window.IsActive(playerprocessinfo)]</visible>
+            <visible>Skin.HasSetting(full_screen_clock) + ![Player.ShowInfo | Window.IsActive(videoosd) | Window.IsActive(fullscreeninfo) | Window.IsActive(PVROSDChannels) | Window.IsActive(PVROSDGuide)]</visible>
         </control>
 		<control type="group" id="0">
 			<control type="label" id="10">

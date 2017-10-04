@@ -2,17 +2,17 @@
 <window>
 	<defaultcontrol always="true">50</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
-    <onload condition="String.IsEmpty(Window(home).Property(fanarthometype)) | ![String.IsEqual(window(home).Property(fanarthometype),movies) | String.IsEqual(window(home).Property(fanarthometype),tvshows) | String.IsEqual(window(home).Property(fanarthometype),musicvideos)]">SetProperty(fanarthometype,video,home)</onload>
-    <onload condition="String.IsEmpty(Window(home).Property(homebackground)) | ![String.IsEqual(window(home).Property(fanarthometype),movies) | String.IsEqual(window(home).Property(fanarthometype),tvshows) | String.IsEqual(window(home).Property(fanarthometype),musicvideos)]">SetProperty(homebackground,$VAR[BackgroundVideosVar],home)</onload>
+    <onload condition="IsEmpty(Window(home).Property(fanarthometype)) | ![StringCompare(window(home).Property(fanarthometype),movies) | StringCompare(window(home).Property(fanarthometype),tvshows) | StringCompare(window(home).Property(fanarthometype),musicvideos)]">SetProperty(fanarthometype,video,home)</onload>
+    <onload condition="IsEmpty(Window(home).Property(homebackground)) | ![StringCompare(window(home).Property(fanarthometype),movies) | StringCompare(window(home).Property(fanarthometype),tvshows) | StringCompare(window(home).Property(fanarthometype),musicvideos)]">SetProperty(homebackground,$VAR[BackgroundVideosVar],home)</onload>
     <views>50,51,52,53,54,55,56,57,58,500,501,502</views>
 	<menucontrol>9000</menucontrol>
 	<controls>
         <!-- Background -->
-		<include content="DefaultBackground">
+		<include name="DefaultBackground">
 			<param name="overlay_background" value="$VAR[MediaFanartVar]" />
 		</include>
 		<control type="group">
-			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(script-script.extendedinfo-VideoList.xml)">Conditional</animation>
 			<include>View_50_List</include>
 			<include>View_51_Poster</include>
 			<include>View_52_IconWall</include>
@@ -35,9 +35,9 @@
 			<control type="group">
 				<depth>DepthContentPanel</depth>
 				<include>OpenClose_Left</include>
-				<visible>Control.IsVisible(50) | Control.Isvisible(54) | [Control.IsVisible(501) + String.IsEqual(Skin.AspectRatio,21:9)]</visible>
+				<visible>Control.IsVisible(50) | Control.Isvisible(54) | [Control.IsVisible(501) + StringCompare(Skin.AspectRatio,21:9)]</visible>
 				<include>Visible_Left</include>
-				<include content="ContentPanel">
+				<include name="ContentPanel">
 					<param name="width" value="656" />
 				</include>
 				<control type="group">
@@ -71,13 +71,13 @@
 						<font>font27</font>
 						<textcolor>80FFFFFF</textcolor>
 						<label>$LOCALIZE[19055]</label>
-						<visible>String.IsEmpty(Listitem.Plot) + String.IsEmpty(Listitem.Tagline) + !ListItem.IsCollection + !ListItem.IsParentFolder</visible>
+						<visible>IsEmpty(Listitem.Plot) + IsEmpty(Listitem.Tagline) + !ListItem.IsCollection + !ListItem.IsParentFolder</visible>
 					</control>
 					<control type="group">
 						<left>20</left>
 						<top>245</top>
 						<visible>ListItem.IsCollection</visible>
-						<include content="InfoList">
+						<include name="InfoList">
 							<param name="bottom" value="108" />
 							<param name="width" value="540" />
 							<param name="sortby" value="year" />
@@ -87,10 +87,10 @@
 					</control>
 				</control>
 			</control>
-			<include content="TopBar">
+			<include name="TopBar">
 				<param name="breadcrumbs_label" value="$VAR[BreadcrumbsVideoVar]" />
 			</include>
-			<include content="BottomBar">
+			<include name="BottomBar">
 				<param name="info_visible" value="true" />
 			</include>
 			<control type="group">
@@ -138,7 +138,7 @@
 						<include>MediaMenuItemsCommon</include>
 						<label>$LOCALIZE[653]</label>
 						<onclick>UpdateLibrary(video)</onclick>
-						<visible>!Container.Content(addons)+ String.IsEmpty(Container.PluginName)</visible>
+						<visible>!Container.Content(addons)+ IsEmpty(Container.PluginName)</visible>
 						<altlabel>$LOCALIZE[13353]</altlabel>
 						<usealttexture>library.isscanningvideo</usealttexture>
 					</control>
@@ -147,7 +147,7 @@
 						<include>MediaMenuItemsCommon</include>
 						<label>$LOCALIZE[31056]</label>
 						<onclick>ActivateWindow(videoplaylist)</onclick>
-						<visible>Integer.IsGreater(Playlist.Length(video),0)</visible>
+						<visible>IntegerGreaterThan(Playlist.Length(video),0)</visible>
 					</control>
 					<control type="button" id="621">
 						<description>Get more</description>
@@ -160,20 +160,13 @@
 						<include>MediaMenuItemsCommon</include>
 						<label>$LOCALIZE[31117]</label>
 						<onclick condition="System.HasAddon(plugin.library.node.editor)">ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=video,return)</onclick>
-						<onclick condition="!System.HasAddon(plugin.library.node.editor)">InstallAddon(plugin.library.node.editor)</onclick>
-						<visible>Container.Content() + String.IsEmpty(Container.PluginName)</visible>
-					</control>
-					<control type="button" id="623">
-						<include>MediaMenuItemsCommon</include>
-						<label>$LOCALIZE[31009]</label>
-						<onclick>InstallAddon(resource.images.studios.white)</onclick>
-						<visible>Container.Content(studios) + !System.HasAddon(resource.images.studios.white)</visible>
+						<visible>Container.Content() + IsEmpty(Container.PluginName) + System.HasAddon(plugin.library.node.editor)</visible>
 					</control>
 					<control type="button" id="624">
 						<include>MediaMenuItemsCommon</include>
 						<label>$LOCALIZE[10140]</label>
 						<onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
-						<visible>!String.IsEmpty(Container.PluginName)</visible>
+						<visible>!IsEmpty(Container.PluginName)</visible>
 					</control>
 					<include>MediaMenuNowPlaying</include>
 				</control>

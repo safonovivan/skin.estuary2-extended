@@ -6,7 +6,7 @@
 			<left>596</left>
 			<visible>Control.IsVisible(50)</visible>
 			<include>Visible_Right</include>
-			<include content="ListContainer">
+			<include name="ListContainer">
 				<param name="list_id" value="50" />
 				<param name="viewtype_label" value="$LOCALIZE[535]" />
 			</include>
@@ -15,7 +15,7 @@
 				<control type="group">
 					<right>-20</right>
 					<width>634</width>
-					<include content="ContentPanel">
+					<include name="ContentPanel">
 						<param name="left" value="0" />
 						<param name="top" value="-20" />
 						<param name="width" value="656" />
@@ -40,7 +40,7 @@
 						<fadetime>200</fadetime>
 						<aspectratio>scale</aspectratio>
 						<texture fallback="DefaultVideo.png" background="true">$VAR[InfoWallThumbVar]</texture>
-						<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+						<visible>!IsEmpty(ListItem.Art(poster))</visible>
 					</control>
 					<control type="image">
 						<depth>DepthContentPopout</depth>
@@ -51,12 +51,12 @@
 						<fadetime>200</fadetime>
 						<aspectratio aligny="center">keep</aspectratio>
 						<texture fallback="DefaultVideo.png" background="true">$VAR[InfoWallThumbVar]</texture>
-						<visible>String.IsEmpty(ListItem.Art(poster))</visible>
+						<visible>IsEmpty(ListItem.Art(poster))</visible>
 					</control>
 					<control type="group">
 						<left>310</left>
 						<top>100</top>
-						<include content="UserRatingCircle">
+						<include name="UserRatingCircle">
 							<param name="animation" value="True" />
 						</include>
 					</control>
@@ -68,7 +68,7 @@
 						<texturebg></texturebg>
 						<midtexture colordiffuse="$VAR[MainColorVar]" border="3">progress/texturebg_alt_white.png</midtexture>
 						<info>ListItem.PercentPlayed</info>
-						<visible>!Integer.IsEqual(ListItem.PercentPlayed,0)</visible>
+						<visible>!StringCompare(ListItem.PercentPlayed,0)</visible>
 					</control>
 				</control>
 			</control>
@@ -180,7 +180,7 @@
 		<definition>
 			<control type="group">
 				<depth>DepthContentPanel</depth>
-				<include content="ContentPanel">
+				<include name="ContentPanel">
 					<param name="width" value="654" />
 					<param name="flipx" value="$PARAM[flip_bg]" />
 				</include>
@@ -194,7 +194,7 @@
                         <aspectratio>scale</aspectratio>
                         <fadetime>300</fadetime>
                         <texture background="true">$VAR[IconWallThumbVar]</texture>
-                        <visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+                        <visible>!IsEmpty(ListItem.Art(poster))</visible>
                     </control>
                     <control type="image">
                         <left>30</left>
@@ -204,7 +204,7 @@
                         <aspectratio aligny="center">keep</aspectratio>
                         <fadetime>300</fadetime>
                         <texture background="true">$VAR[IconWallThumbVar]</texture>
-                        <visible>String.IsEmpty(ListItem.Art(poster))</visible>
+                        <visible>IsEmpty(ListItem.Art(poster))</visible>
                     </control>
                     <control type="group">
                         <left>268</left>
@@ -219,7 +219,7 @@
                         <texturebg></texturebg>
                         <midtexture colordiffuse="$VAR[MainColorVar]" border="3">progress/texturebg_alt_white.png</midtexture>
                         <info>ListItem.PercentPlayed</info>
-                        <visible>!Integer.IsEqual(ListItem.PercentPlayed,0)</visible>
+                        <visible>!StringCompare(ListItem.PercentPlayed,0)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -247,13 +247,13 @@
 					<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
 					<label>$VAR[ListBoxInfoVar]</label>
                     <textcolor>$VAR[MainColorVar]</textcolor>
-					<visible>!Container.Content() | !String.IsEmpty(ListItem.Plot)</visible>
+					<visible>!Container.Content() | !IsEmpty(ListItem.Plot)</visible>
 				</control>
 				<control type="group">
 					<left>20</left>
 					<top>640</top>
 					<visible>ListItem.IsCollection</visible>
-					<include content="InfoList">
+					<include name="InfoList">
 						<param name="bottom" value="100" />
 						<param name="width" value="540" />
 						<param name="sortby" value="year" />
@@ -262,7 +262,7 @@
 					</include>
 				</control>
 				<control type="group">
-					<visible>String.IsEmpty(Control.GetLabel(15500)) + !ListItem.IsCollection</visible>
+					<visible>IsEmpty(Control.GetLabel(15500)) + !ListItem.IsCollection</visible>
 					<control type="textbox">
 						<left>30</left>
 						<top>460</top>
@@ -274,30 +274,30 @@
 						<textcolor>80FFFFFF</textcolor>
 						<label>$LOCALIZE[19055]</label>
 						<visible>!ListItem.IsParentFolder</visible>
-						<visible>!Integer.IsGreater(Container(42000).NumItems,0) + !Integer.IsGreater(Container(43000).NumItems,0)</visible>
-						<visible>!Container.Content() | !String.IsEmpty(ListItem.Plot)</visible>
+						<visible>!IntegerGreaterThan(Container(42000).NumItems,0) + !IntegerGreaterThan(Container(43000).NumItems,0)</visible>
+						<visible>!Container.Content() | !IsEmpty(ListItem.Plot)</visible>
 					</control>
 					<control type="group">
 						<left>20</left>
 						<top>640</top>
-						<visible>!String.IsEmpty(ListItem.DBID)</visible>
-						<include content="InfoList">
+						<visible>!IsEmpty(ListItem.DBID)</visible>
+						<include name="InfoList">
 							<param name="list_id" value="42000" />
 							<param name="bottom" value="100" />
 							<param name="width" value="540" />
 							<param name="sortby" value="year" />
 							<param name="sortorder" value="descending" />
 							<param name="item_label" value="$INFO[ListItem.Year,,[COLOR white]  -  [/COLOR]][COLOR white]$INFO[ListItem.Label][/COLOR]" />
-							<param name="visible" value="String.IsEqual(ListItem.DBType,artist)" />
+							<param name="visible" value="StringCompare(ListItem.DBType,artist)" />
 						</include>
-						<include content="InfoList">
+						<include name="InfoList">
 							<param name="list_id" value="43000" />
 							<param name="bottom" value="100" />
 							<param name="width" value="540" />
 							<param name="sortby" value="track" />
 							<param name="sortorder" value="ascending" />
 							<param name="item_label" value="$INFO[ListItem.Duration,,[COLOR white]  -  [/COLOR]][COLOR white]$INFO[ListItem.Label][/COLOR]" />
-							<param name="visible" value="String.IsEqual(ListItem.DBType,album)" />
+							<param name="visible" value="StringCompare(ListItem.DBType,album)" />
 						</include>
 					</control>
 				</control>

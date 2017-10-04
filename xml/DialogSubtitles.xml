@@ -8,7 +8,7 @@
 			<centerleft>50%</centerleft>
 			<width>1720</width>
 			<control type="group" id="250">
-				<include content="DialogBackgroundCommons">
+				<include name="DialogBackgroundCommons">
 					<param name="width" value="1720" />
 					<param name="height" value="750" />
 					<param name="header_label" value="$LOCALIZE[24012]" />
@@ -22,7 +22,7 @@
 						<onright>150</onright>
 						<onleft>73</onleft>
 						<orientation>vertical</orientation>
-						<include content="DefaultDialogButton">
+						<include name="DefaultDialogButton">
 							<param name="id" value="160" />
 							<param name="label" value="$LOCALIZE[24120]" />
 							<param name="width" value="420" />
@@ -258,7 +258,7 @@
 					<onup>150</onup>
 					<ondown>150</ondown>
 					<scrolltime>200</scrolltime>
-					<include content="DefaultSimpleListLayout">
+					<include name="DefaultSimpleListLayout">
 						<param name="width" value="320" />
 						<param name="height" value="80" />
 						<param name="list_id" value="150" />

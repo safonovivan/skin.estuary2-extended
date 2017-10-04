@@ -6,54 +6,54 @@
 	<backgroundcolor>background</backgroundcolor>
 	<controls>
         <!-- Background -->
-		<include content="DefaultBackground">
+		<include name="DefaultBackground">
 			<param name="overlay_background" value="$VAR[AddonsFanartVar]" />
 		</include>
 		<control type="group">
-			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(script-script.extendedinfo-VideoList.xml)">Conditional</animation>
 			<control type="group" id="400">
 				<include>OpenClose_Right</include>
-				<include content="AddonLauncherPanel">
+				<include name="AddonLauncherPanel">
 					<param name="group_id" value="500" />
 					<param name="id" value="video" />
 					<param name="container_path" value="addons://sources/video/" />
 					<param name="container_target" value="videos" />
 					<param name="imagewidget_onclick" value="ActivateWindow(addonbrowser,addons://all/xbmc.addon.video,return)" />
 				</include>
-				<include content="AddonLauncherPanel">
+				<include name="AddonLauncherPanel">
 					<param name="group_id" value="501" />
 					<param name="id" value="music" />
 					<param name="container_path" value="addons://sources/audio/" />
 					<param name="container_target" value="music" />
 					<param name="imagewidget_onclick" value="ActivateWindow(addonbrowser,addons://all/xbmc.addon.audio,return)" />
 				</include>
-				<include content="AddonLauncherPanel">
+				<include name="AddonLauncherPanel">
 					<param name="group_id" value="502" />
 					<param name="id" value="addons" />
 					<param name="container_path" value="addons://sources/executable/" />
 					<param name="container_target" value="programs" />
 					<param name="imagewidget_onclick" value="ActivateWindow(addonbrowser,addons://all/xbmc.addon.executable,return)" />
 				</include>
-				<include content="AddonLauncherPanel" condition="System.Platform.Android">
+				<include name="AddonLauncherPanel" condition="System.Platform.Android">
 					<param name="group_id" value="506" />
 					<param name="id" value="android" />
-					<param name="container_path" value="androidapp://sources/apps/" />
+					<param name="container_path" value="androidapps://" />
 					<param name="container_target" value="programs" />
 				</include>
-				<include content="AddonLauncherPanel">
+				<include name="AddonLauncherPanel">
 					<param name="group_id" value="503" />
 					<param name="id" value="pictures" />
 					<param name="container_path" value="addons://sources/image/" />
 					<param name="container_target" value="pictures" />
 					<param name="imagewidget_onclick" value="ActivateWindow(addonbrowser,addons://all/xbmc.addon.image,return)" />
 				</include>
-				<include content="AddonLauncherPanel">
+				<include name="AddonLauncherPanel">
 					<param name="group_id" value="507" />
 					<param name="id" value="download" />
 					<param name="container_path" value="addons://all/" />
 					<param name="container_target" value="addonbrowser" />
 				</include>
-				<include content="AddonLauncherPanel">
+				<include name="AddonLauncherPanel">
 					<param name="group_id" value="508" />
 					<param name="id" value="manage" />
 					<param name="container_path" value="addons://user" />
@@ -62,7 +62,7 @@
 			</control>
 			<control type="group">
 				<include>OpenClose_Left</include>
-				<include content="ContentPanel">
+				<include name="ContentPanel">
 					<param name="width" value="523" />
 				</include>
 				<control type="list" id="9000">
@@ -243,7 +243,7 @@
 					<radioposy>0</radioposy>
 					<radiowidth>40</radiowidth>
 					<radioheight>40</radioheight>
-					<enable>Integer.IsGreater(Container(8000).NumItems,0)</enable>
+					<enable>IntegerGreaterThan(Container(8000).NumItems,0)</enable>
 					<textureradioonfocus>icons/submenu/updatelibrary.png</textureradioonfocus>
 					<textureradioonnofocus>icons/submenu/updatelibrary.png</textureradioonnofocus>
 					<textureradioofffocus>icons/submenu/updatelibrary.png</textureradioofffocus>
@@ -256,7 +256,7 @@
 					<height>120</height>
 					<align>right</align>
 					<aligny>center</aligny>
-					<onclick>ActivateWindow(systemsettings,addons)</onclick>
+					<onclick>ActivateWindow(addonbrowser,addons://user/,return)</onclick>
 					<font>font12</font>
 					<label></label>
 					<textoffsetx>40</textoffsetx>
@@ -284,13 +284,13 @@
 					<shadowcolor>text_shadow</shadowcolor>
 				</control>
 			</control>
-			<include content="TopBar">
+			<include name="TopBar">
 				<param name="breadcrumbs_label" value="$LOCALIZE[24001]" />
 			</include>
 			<include>BottomBar</include>
 			<control type="group">
 				<left>-10000</left>
-				<include content="InfoList">
+				<include name="InfoList">
 					<param name="path" value="addons://outdated/" />
 					<param name="bottom" value="1" />
 					<param name="width" value="1" />

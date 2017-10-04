@@ -7,7 +7,7 @@
             <centerleft>50%</centerleft>            
             <centertop>50%</centertop>
             <height>712</height>
-            <include content="DialogBackgroundCommons">
+            <include name="DialogBackgroundCommons">
                 <param name="width" value="1220" />
                 <param name="height" value="712" />
                 <param name="header_label" value="" />

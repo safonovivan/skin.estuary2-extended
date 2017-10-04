@@ -39,10 +39,10 @@
 					<visible>Control.HasFocus(53)</visible>
 					<animation effect="fade" time="200">VisibleChange</animation>
 					<texture colordiffuse="$VAR[MainColorVar]">colors/grey.png</texture>
-					<animation effect="slide" start="0,0" end="-364,0" time="300" tween="sine" easing="inout" condition="Integer.IsEqual(Container.Position,1) | Integer.IsEqual(Container.Position,0)">Conditional</animation>
-					<animation effect="slide" start="0,0" end="-364,0" time="300" tween="sine" easing="inout" condition="Integer.IsEqual(Container.Position,0)">Conditional</animation>
-					<animation effect="slide" start="0,0" end="364,0" time="300" tween="sine" easing="inout" condition="Integer.IsEqual(Container.Position,3) | Integer.IsEqual(Container.Position,4)">Conditional</animation>
-					<animation effect="slide" start="0,0" end="364,0" time="300" tween="sine" easing="inout" condition="Integer.IsEqual(Container.Position,4)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="-364,0" time="300" tween="sine" easing="inout" condition="StringCompare(Container.Position,1) | StringCompare(Container.Position,0)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="-364,0" time="300" tween="sine" easing="inout" condition="StringCompare(Container.Position,0)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="364,0" time="300" tween="sine" easing="inout" condition="StringCompare(Container.Position,3) | StringCompare(Container.Position,4)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="364,0" time="300" tween="sine" easing="inout" condition="StringCompare(Container.Position,4)">Conditional</animation>
 				</control>
 				<control type="fixedlist" id="53">
 					<left>-150</left>
@@ -83,7 +83,7 @@
 								<texture fallback="DefaultMovies.png" background="true">$VAR[ShiftThumbVar]</texture>
 								<bordertexture border="21">overlays/shadow.png</bordertexture>
 								<bordersize>20</bordersize>
-								<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+								<visible>!IsEmpty(ListItem.Art(poster))</visible>
 							</control>
 							<control type="image">
 								<left>15</left>
@@ -93,7 +93,7 @@
                                 <aspectratio aligny="center">keep</aspectratio>
 								<texture fallback="DefaultVideo.png" background="true">$INFO[ListItem.Icon]</texture>
 								<bordersize>25</bordersize>
-								<visible>String.IsEmpty(ListItem.Art(poster)) + !ListItem.IsParentFolder</visible>
+								<visible>IsEmpty(ListItem.Art(poster)) + !ListItem.IsParentFolder</visible>
 							</control>
 							<control type="image">
 								<left>15</left>
@@ -103,7 +103,7 @@
                                 <aspectratio>scale</aspectratio>
 								<texture fallback="DefaultVideo.png" background="true">$INFO[ListItem.Icon]</texture>								
 								<bordersize>20</bordersize>
-								<visible>String.IsEmpty(ListItem.Art(poster)) + ListItem.IsParentFolder</visible>
+								<visible>IsEmpty(ListItem.Art(poster)) + ListItem.IsParentFolder</visible>
 							</control>
 							<control type="group">
 								<left>163</left>
@@ -111,7 +111,7 @@
 								<include>UserRatingCircle</include>
 							</control>
 							<control type="group">
-								<visible>String.IsEqual(ListItem.DBtype,tvshow) + !String.IsEmpty(ListItem.Property(TotalEpisodes))</visible>
+								<visible>StringCompare(ListItem.DBtype,tvshow) + !IsEmpty(ListItem.Property(TotalEpisodes))</visible>
 								<top>500</top>
 								<control type="image">
 									<left>35</left>
@@ -119,7 +119,7 @@
 									<width>300</width>
 									<height>50</height>
 									<texture colordiffuse="CCFFFFFF">overlays/overlayfade.png</texture>
-									<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+									<visible>!IsEmpty(ListItem.Art(poster))</visible>
 								</control>
 								<control type="label">
 									<left>0</left>
@@ -146,7 +146,7 @@
 								<texturebg></texturebg>
 								<midtexture colordiffuse="$VAR[MainColorVar]" border="3">progress/texturebg_alt_white.png</midtexture>
 								<info>ListItem.PercentPlayed</info>
-								<visible>!Integer.IsEqual(ListItem.PercentPlayed,0)</visible>
+								<visible>!StringCompare(ListItem.PercentPlayed,0)</visible>
 							</control>
 						</control>
 						<control type="group">
@@ -210,7 +210,7 @@
 								<texture fallback="DefaultMovies.png" background="true">$VAR[ShiftThumbVar]</texture>
 								<bordertexture border="21">overlays/shadow.png</bordertexture>
 								<bordersize>20</bordersize>
-								<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+								<visible>!IsEmpty(ListItem.Art(poster))</visible>
 							</control>
 							<control type="image">
 								<left>15</left>
@@ -220,7 +220,7 @@
                                 <aspectratio aligny="center">keep</aspectratio>
 								<texture fallback="DefaultVideo.png" background="true">$INFO[ListItem.Icon]</texture>
 								<bordersize>25</bordersize>
-								<visible>String.IsEmpty(ListItem.Art(poster)) + !ListItem.IsParentFolder</visible>
+								<visible>IsEmpty(ListItem.Art(poster)) + !ListItem.IsParentFolder</visible>
 							</control>
 							<control type="image">
 								<left>15</left>
@@ -230,7 +230,7 @@
                                 <aspectratio>scale</aspectratio>
 								<texture fallback="DefaultVideo.png" background="true">$INFO[ListItem.Icon]</texture>								
 								<bordersize>20</bordersize>
-								<visible>String.IsEmpty(ListItem.Art(poster)) + ListItem.IsParentFolder</visible>
+								<visible>IsEmpty(ListItem.Art(poster)) + ListItem.IsParentFolder</visible>
 							</control>
 							<control type="group">
 								<left>163</left>
@@ -238,7 +238,7 @@
 								<include>UserRatingCircle</include>
 							</control>
 							<control type="group">
-								<visible>String.IsEqual(ListItem.DBtype,tvshow) + !String.IsEmpty(ListItem.Property(TotalEpisodes))</visible>
+								<visible>StringCompare(ListItem.DBtype,tvshow) + !IsEmpty(ListItem.Property(TotalEpisodes))</visible>
 								<top>500</top>
 								<control type="image">
 									<left>35</left>
@@ -246,7 +246,7 @@
 									<width>300</width>
 									<height>50</height>
 									<texture colordiffuse="CCFFFFFF">overlays/overlayfade.png</texture>
-									<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+									<visible>!IsEmpty(ListItem.Art(poster))</visible>
 								</control>
 								<control type="label">
 									<left>0</left>
@@ -273,7 +273,7 @@
 								<texturebg></texturebg>
 								<midtexture colordiffuse="$VAR[MainColorVar]" border="3">progress/texturebg_alt_white.png</midtexture>
 								<info>ListItem.PercentPlayed</info>
-								<visible>!Integer.IsEqual(ListItem.PercentPlayed,0)</visible>
+								<visible>!StringCompare(ListItem.PercentPlayed,0)</visible>
 							</control>
 						</control>
 						<control type="group">
@@ -324,7 +324,7 @@
 				<include>OpenClose_Right</include>
 				<control type="group">
 					<width>50%</width>
-					<include content="ShiftTextbox">
+					<include name="ShiftTextbox">
 						<param name="textbox_id" value="53200" />
 						<param name="textbox_content" value="$VAR[ShiftLeftTextBoxVar]" />
 					</include>
@@ -332,7 +332,7 @@
 				<control type="group">
 					<left>50%</left>
 					<width>50%</width>
-					<include content="ShiftTextbox">
+					<include name="ShiftTextbox">
 						<param name="textbox_id" value="53300" />
 						<param name="textbox_content" value="$VAR[ShiftRightTextBoxVar]" />
 					</include>
@@ -374,8 +374,8 @@
 	</include>
 	<include name="ShiftTextbox">
 		<control type="group">
-			<animation effect="fade" time="200" start="0" end="100" condition="!String.IsEmpty(Control.GetLabel($PARAM[textbox_id]))">Conditional</animation>
-			<animation effect="fade" time="200" start="100" end="0" condition="String.IsEmpty(Control.GetLabel($PARAM[textbox_id]))">Conditional</animation>
+			<animation effect="fade" time="200" start="0" end="100" condition="!IsEmpty(Control.GetLabel($PARAM[textbox_id]))">Conditional</animation>
+			<animation effect="fade" time="200" start="100" end="0" condition="IsEmpty(Control.GetLabel($PARAM[textbox_id]))">Conditional</animation>
 			<control type="textbox" id="$PARAM[textbox_id]">
 				<left>30</left>
 				<top>45</top>

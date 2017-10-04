@@ -3,7 +3,7 @@
 	<defaultcontrol>9000</defaultcontrol>
 	<onload>SetProperty(fanarthometype,settings,home)</onload>
     <onload>SetProperty(homebackground,$VAR[BackgroundSettingsVar],home)</onload>
-    <onload condition="String.IsEmpty(Skin.String(background_overlay))">Skin.SetString(background_overlay,1)</onload>  
+    <onload condition="IsEmpty(Skin.String(background_overlay))">Skin.SetString(background_overlay,1)</onload>  
     <backgroundcolor>background</backgroundcolor>
 	<controls>
         <!-- Background -->
@@ -12,7 +12,7 @@
 			<depth>DepthContentPanel</depth>
 			<left>0</left>
 			<include>OpenClose_Left</include>
-			<include content="ContentPanel">
+			<include name="ContentPanel">
 				<param name="width" value="530" />
 			</include>
 			<control type="list" id="9000">
@@ -127,9 +127,9 @@
                     <description>Show Weather Info</description>
 					<include>DefaultSettingButton</include>
 					<label>$LOCALIZE[31093]</label>
-					<onclick condition="!String.IsEmpty(Weather.Plugin)">Skin.ToggleSetting(show_weatherinfo)</onclick>
-					<onclick condition="String.IsEmpty(Weather.Plugin)">ActivateWindow(servicesettings,weather)</onclick>
-					<selected>Skin.HasSetting(show_weatherinfo) + !String.IsEmpty(Weather.Plugin)</selected>
+					<onclick condition="!IsEmpty(Weather.Plugin)">Skin.ToggleSetting(show_weatherinfo)</onclick>
+					<onclick condition="IsEmpty(Weather.Plugin)">ActivateWindow(servicesettings,weather)</onclick>
+					<selected>Skin.HasSetting(show_weatherinfo) + !IsEmpty(Weather.Plugin)</selected>
 				</control>
 				<control type="radiobutton" id="106">
                     <description>Hide Mediaflags</description>
@@ -147,9 +147,9 @@
                     <description>Activate Global Search</description>					
 					<include>DefaultSettingButton</include>
                     <label>$LOCALIZE[24000] Global Search</label>
-                    <onclick condition="!System.HasAddon(script.globalsearch)">InstallAddon(script.globalsearch)</onclick>
 					<onclick>Skin.ToggleSetting(enable_globalsearch)</onclick>
 					<selected>Skin.HasSetting(enable_globalsearch)</selected>
+                    <enable>System.HasAddon(script.globalsearch)</enable>
 				</control>
                 <control type="button" id="109">
                     <description>Settings Global Search</description>					
@@ -157,14 +157,15 @@
                     <label>- $LOCALIZE[24020]</label>
                     <onclick>Addon.OpenSettings(script.globalsearch)</onclick>
                     <enable>Skin.HasSetting(enable_globalsearch)</enable>
+                    <visible>System.HasAddon(script.globalsearch)</visible>
 				</control>
 				<control type="radiobutton" id="110">
                     <description>Activate Simple Playlists</description>					
 					<include>DefaultSettingButton</include>
                     <label>$LOCALIZE[24000] Simple Playlists</label>
-                    <onclick condition="!System.HasAddon(script.simpleplaylists)">InstallAddon(script.simpleplaylists)</onclick>
 					<onclick>Skin.ToggleSetting(enable_watchitlater)</onclick>
 					<selected>Skin.HasSetting(enable_watchitlater)</selected>
+                    <enable>System.HasAddon(script.simpleplaylists)</enable>
 				</control>
                 <control type="button" id="111">
                     <description>Settings Simple Playlists</description>					
@@ -172,6 +173,7 @@
                     <label>- $LOCALIZE[24020]</label>
                     <onclick>Addon.OpenSettings(script.simpleplaylists)</onclick>
                     <enable>Skin.HasSetting(enable_watchitlater)</enable>
+                    <visible>System.HasAddon(script.simpleplaylists)</visible>
 				</control>
                 <control type="label" id="112">
                     <description>CU LRC Lyrics Label</description>
@@ -182,8 +184,8 @@
                     <description>Settings CU LRC Lyrics</description>					
 					<include>DefaultSettingButton</include>
                     <label>- $LOCALIZE[24020]</label>
-                    <onclick condition="!System.HasAddon(script.cu.lrclyrics)">InstallAddon(script.cu.lrclyrics)</onclick>
                     <onclick>Addon.OpenSettings(script.cu.lrclyrics)</onclick>
+                    <enable>System.HasAddon(script.cu.lrclyrics)</enable>
 				</control>
                 <control type="radiobutton" id="114">
                     <description>CU LRC Lyrics Alternative View</description>					
@@ -191,6 +193,7 @@
                     <label>- $LOCALIZE[44113]</label>
 					<onclick>Skin.ToggleSetting(lrclyrics_alternative_view)</onclick>
 					<selected>Skin.HasSetting(lrclyrics_alternative_view)</selected>
+                    <visible>System.HasAddon(script.cu.lrclyrics)</visible>
 				</control>
                 <control type="image" id="115">
                     <description>Separator Image</description>
@@ -242,7 +245,7 @@
 					<include>DefaultSettingButton</include>
                     <label>$LOCALIZE[43032]</label>
 					<label2>$VAR[WidgetLimitItemsVar]</label2>
-                    <onclick condition="String.IsEmpty(Skin.String(widget_limititems))">Skin.SetString(widget_limititems,25,)</onclick>
+                    <onclick condition="IsEmpty(Skin.String(widget_limititems))">Skin.SetString(widget_limititems,25,)</onclick>
 					<onclick>Skin.SetNumeric(widget_limititems)</onclick>
 				</control>
                 <control type="image" id="205">
@@ -255,7 +258,6 @@
 					<include>DefaultSettingButton</include>
                     <label>$LOCALIZE[43013]</label>
 					<label2>$VAR[StudiosImagesNameVar]</label2>
-                    <onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
                     <onclick condition="System.HasAddon(script.image.resource.select)">RunScript(script.image.resource.select,property=StudiosImages&amp;type=resource.images.studios)</onclick>                    
 				</control>
                 <control type="button" id="207">
@@ -263,7 +265,6 @@
 					<include>DefaultSettingButton</include>
                     <label>$LOCALIZE[43014]</label>
 					<label2>$VAR[LanguageFlagsNameVar]</label2>
-                    <onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
 					<onclick condition="System.HasAddon(script.image.resource.select)">RunScript(script.image.resource.select,property=LanguageFlags&amp;type=resource.images.languageflags)</onclick>                   
 				</control>
 				<control type="button" id="208">
@@ -271,7 +272,6 @@
 					<include>DefaultSettingButton</include>
 					<label>$LOCALIZE[43012]</label>
 					<label2>$VAR[MovieGenreIconsNameVar]</label2>
-                    <onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
 					<onclick condition="System.HasAddon(script.image.resource.select)">RunScript(script.image.resource.select,property=MovieGenreIcons&amp;type=resource.images.moviegenreicons)</onclick>                   
 				</control>
 				<control type="button" id="209">
@@ -279,7 +279,6 @@
 					<include>DefaultSettingButton</include>
 					<label>$LOCALIZE[43033]</label>
 					<label2>$VAR[MusicGenreIconsNameVar]</label2>
-					<onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
 					<onclick condition="System.HasAddon(script.image.resource.select)">RunScript(script.image.resource.select,property=MusicGenreIcons&amp;type=resource.images.musicgenreicons)</onclick>                    
 				</control>
                 <control type="button" id="210">
@@ -287,7 +286,6 @@
 					<include>DefaultSettingButton</include>
                     <label>$LOCALIZE[43015]</label>
 					<label2>$VAR[WeatherIconsNameVar]</label2>
-                    <onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
 					<onclick condition="System.HasAddon(script.image.resource.select)">RunScript(script.image.resource.select,property=WeatherIcons&amp;type=resource.images.weathericons)</onclick>                    
 				</control>
                 <control type="image" id="211">
@@ -384,8 +382,8 @@
 					<label>- $LOCALIZE[31157]</label>
 					<include>DefaultSettingButton</include>
 					<onclick condition="System.HasAddon(plugin.library.node.editor)">ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=video,return)</onclick>
-					<onclick condition="!System.HasAddon(plugin.library.node.editor)">InstallAddon(plugin.library.node.editor)</onclick>
 					<enable>!Skin.HasSetting(HomeMenuNoMovieButton)</enable>
+					<visible>System.HasAddon(plugin.library.node.editor)</visible>
 				</control>
 				<control type="radiobutton" id="302">
 					<label>$LOCALIZE[20343]</label>
@@ -397,8 +395,8 @@
 					<label>- $LOCALIZE[31157]</label>
 					<include>DefaultSettingButton</include>
 					<onclick condition="System.HasAddon(plugin.library.node.editor)">ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=video,return)</onclick>
-					<onclick condition="!System.HasAddon(plugin.library.node.editor)">InstallAddon(plugin.library.node.editor)</onclick>
 					<enable>!Skin.HasSetting(HomeMenuNoTVShowButton)</enable>
+                    <visible>System.HasAddon(plugin.library.node.editor)</visible>
 				</control>
 				<control type="radiobutton" id="303">
 					<label>$LOCALIZE[2]</label>
@@ -410,8 +408,8 @@
 					<label>- $LOCALIZE[31157]</label>
 					<include>DefaultSettingButton</include>
 					<onclick condition="System.HasAddon(plugin.library.node.editor)">ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=music,return)</onclick>
-					<onclick condition="!System.HasAddon(plugin.library.node.editor)">InstallAddon(plugin.library.node.editor)</onclick>
 					<enable>!Skin.HasSetting(HomeMenuNoMusicButton)</enable>
+                    <visible>System.HasAddon(plugin.library.node.editor)</visible>
 				</control>
 				<control type="radiobutton" id="6131">
 					<label>$LOCALIZE[20389]</label>
@@ -491,7 +489,7 @@
                     <label>$LOCALIZE[43021]</label>
 					<visible>Skin.HasSetting(enable_custom_list_addons)</visible>
                 </control>
-                <include content="HomeMainCustomWidgetsAddonsSettings">
+                <include name="HomeMainCustomWidgetsAddonsSettings">
                     <param name="id1" value="11" />
                     <param name="title" value="$LOCALIZE[1037]" />
                     <param name="flags" value="enable_custom_list_addons_video" />
@@ -499,7 +497,7 @@
                     <param name="type" value="xbmc.addon.video" />
 					<param name="visible" value="Skin.HasSetting(enable_custom_list_addons)" />
                 </include>
-                <include content="HomeMainCustomWidgetsAddonsSettings">
+                <include name="HomeMainCustomWidgetsAddonsSettings">
                     <param name="id1" value="12" />
                     <param name="title" value="$LOCALIZE[1038]" />
                     <param name="flags" value="enable_custom_list_addons_audio" />
@@ -507,7 +505,7 @@
                     <param name="type" value="xbmc.addon.audio" />
 					<param name="visible" value="Skin.HasSetting(enable_custom_list_addons)" />
                 </include>
-                <include content="HomeMainCustomWidgetsAddonsSettings">
+                <include name="HomeMainCustomWidgetsAddonsSettings">
                     <param name="id1" value="13" />
                     <param name="title" value="$LOCALIZE[1043]" />
                     <param name="flags" value="enable_custom_list_addons_programs" />
@@ -523,7 +521,7 @@
                     <selected>Skin.HasSetting(enable_custom_list_addons_apps)</selected>					
                     <visible>System.Platform.Android</visible>
                 </control>
-                <include content="HomeMainCustomWidgetsAddonsSettings">
+                <include name="HomeMainCustomWidgetsAddonsSettings">
                     <param name="id1" value="15" />
                     <param name="title" value="$LOCALIZE[1039]" />
                     <param name="flags" value="enable_custom_list_addons_image" />
@@ -537,7 +535,7 @@
                     <label>$LOCALIZE[43022]</label>
 					<visible>Skin.HasSetting(enable_custom_list_channels)</visible>
                 </control>
-				<include content="HomeMainCustomWidgetsChannelsSettings">
+				<include name="HomeMainCustomWidgetsChannelsSettings">
                     <param name="id1" value="21" />
                     <param name="title" value="$LOCALIZE[19020]" />
                     <param name="flags" value="enable_custom_list_channels_tv" />
@@ -545,7 +543,7 @@
                     <param name="type" value="0" />
                     <param name="visible" value="PVR.HasTVChannels + Skin.HasSetting(enable_custom_list_channels)" />
                 </include>
-                <include content="HomeMainCustomWidgetsChannelsSettings">
+                <include name="HomeMainCustomWidgetsChannelsSettings">
                     <param name="id1" value="22" />
                     <param name="title" value="$LOCALIZE[19021]" />
                     <param name="flags" value="enable_custom_list_channels_radio" />
@@ -606,14 +604,14 @@
 					<include>DefaultSettingButton</include>
 					<label>$LOCALIZE[31156]</label>
 					<label2>$VAR[BackgroundOverlayTypeNameVar]</label2>
-					<onclick condition="String.IsEqual(Skin.String(background_overlay),7)">Skin.SetString(background_overlay,0)</onclick>
-					<onclick condition="String.IsEqual(Skin.String(background_overlay),6)">Skin.SetString(background_overlay,7)</onclick>
-					<onclick condition="String.IsEqual(Skin.String(background_overlay),5)">Skin.SetString(background_overlay,6)</onclick>
-					<onclick condition="String.IsEqual(Skin.String(background_overlay),4)">Skin.SetString(background_overlay,5)</onclick>
-					<onclick condition="String.IsEqual(Skin.String(background_overlay),3)">Skin.SetString(background_overlay,4)</onclick>
-					<onclick condition="String.IsEqual(Skin.String(background_overlay),2)">Skin.SetString(background_overlay,3)</onclick>
-					<onclick condition="String.IsEqual(Skin.String(background_overlay),1)">Skin.SetString(background_overlay,2)</onclick>
-					<onclick condition="String.IsEqual(Skin.String(background_overlay),0)">Skin.SetString(background_overlay,1)</onclick>
+					<onclick condition="StringCompare(Skin.String(background_overlay),7)">Skin.SetString(background_overlay,0)</onclick>
+					<onclick condition="StringCompare(Skin.String(background_overlay),6)">Skin.SetString(background_overlay,7)</onclick>
+					<onclick condition="StringCompare(Skin.String(background_overlay),5)">Skin.SetString(background_overlay,6)</onclick>
+					<onclick condition="StringCompare(Skin.String(background_overlay),4)">Skin.SetString(background_overlay,5)</onclick>
+					<onclick condition="StringCompare(Skin.String(background_overlay),3)">Skin.SetString(background_overlay,4)</onclick>
+					<onclick condition="StringCompare(Skin.String(background_overlay),2)">Skin.SetString(background_overlay,3)</onclick>
+					<onclick condition="StringCompare(Skin.String(background_overlay),1)">Skin.SetString(background_overlay,2)</onclick>
+					<onclick condition="StringCompare(Skin.String(background_overlay),0)">Skin.SetString(background_overlay,1)</onclick>
 				</control>
                 <control type="button" id="505">
                     <description>Background Opacity</description>
@@ -781,7 +779,6 @@
 					<include>DefaultSettingButton</include>
 					<label>$LOCALIZE[31131]</label>
 					<label2>$VAR[HomeFanartNameVar]</label2>
-                    <onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
 					<onclick condition="System.HasAddon(script.image.resource.select)">RunScript(script.image.resource.select,property=HomeFanart&amp;type=resource.images.skinbackgrounds)</onclick>					
 					<enable>!Skin.HasSetting(no_fanart)</enable>
 				</control>
@@ -790,7 +787,6 @@
 					<label>$LOCALIZE[31149]</label>
 					<label2>$VAR[MovieGenreFanartNameVar]</label2>
 					<include>DefaultSettingButton</include>
-					<onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>                    
 					<onclick condition="System.HasAddon(script.image.resource.select)">RunScript(script.image.resource.select,property=MovieGenreFanart&amp;type=resource.images.moviegenrefanart)</onclick>
                     <enable>!Skin.HasSetting(no_fanart)</enable>
 				</control>
@@ -799,7 +795,6 @@
 					<include>DefaultSettingButton</include>
 					<label>$LOCALIZE[31062]</label>
 					<label2>$VAR[WeatherFanartNameVar]</label2>
-                    <onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
 					<onclick condition="System.HasAddon(script.image.resource.select)">RunScript(script.image.resource.select,property=WeatherFanart&amp;type=resource.images.weatherfanart)</onclick>					
                     <enable>!Skin.HasSetting(no_fanart)</enable>
 				</control>
@@ -965,7 +960,7 @@
 			<label>$VAR[SkinSettingsHelpTextVar]</label>
 			<autoscroll time="3000" delay="5000" repeat="5000">true</autoscroll>
 		</control>
-		<include content="TopBar">
+		<include name="TopBar">
 			<param name="breadcrumbs_label" value="$LOCALIZE[5] / $LOCALIZE[20077]" />
 		</include>
 		<include>BottomBar</include>

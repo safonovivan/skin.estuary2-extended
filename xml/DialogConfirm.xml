@@ -8,7 +8,7 @@
 			<centertop>50%</centertop>
 			<centerleft>50%</centerleft>
 			<width>915</width>
-			<include content="DialogBackgroundCommons">
+			<include name="DialogBackgroundCommons">
 				<param name="width" value="915" />
 				<param name="height" value="380" />
 				<param name="header_label" value="" />
@@ -35,15 +35,15 @@
 				<top>280</top>
 				<width>915</width>
 				<align>center</align>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="id" value="11" />
 					<param name="label" value="" />
 				</include>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="id" value="10" />
 					<param name="label" value="" />
 				</include>
-				<include content="DefaultDialogButton">
+				<include name="DefaultDialogButton">
 					<param name="id" value="12" />
 					<param name="label" value="" />
 				</include>
