@@ -5,7 +5,7 @@
     
     <!-- SystemInfoWidget Skin Name and Version-->
     <variable name="NameAndVersionSkinVar">
-        <value>Estuary v2 Extended $INFO[System.AddonVersion(skin.estuary2-extended)]</value>
+    <value>Estuary v2 Extended $INFO[System.AddonVersion(skin.estuary2.j-extended)]</value>
     </variable>
     <!-- Stats bar -->
 	<variable name="InfoBarStatsVar">
