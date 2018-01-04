@@ -507,14 +507,14 @@
 		<value condition="Skin.HasSetting(no_fanart)">$VAR[GlobalFanartVar]</value>
         <!-- Fanart -->
 		<value condition="Window.IsActive(musicinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(script-script.extendedinfo-VideoList.xml)">$INFO[Window(home).Property(infobackground)]</value>
-		<value condition="Container.Content(genres) + Window.IsActive(videos) + !IsEmpty(Skin.String(MovieGenreFanart.path))">$INFO[Skin.String(MovieGenreFanart.path)]$INFO[ListItem.Label]$INFO[Skin.String(MovieGenreFanart.ext)]</value>
-        <value condition="Window.IsActive(pictures) + IsEmpty(ListItem.Art(fanart)) + !ListItem.IsFolder">$INFO[ListItem.FolderPath]</value>
-		<value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
-		<value condition="!IsEmpty(Container.Art(tvshow.fanart))">$INFO[Container.Art(tvshow.fanart)]</value>
-		<value condition="!IsEmpty(Container.Art(artist.fanart))">$INFO[Container.Art(artist.fanart)]</value>
-		<value condition="!IsEmpty(Container.Art(fanart))">$INFO[Container.Art(fanart)]</value>
+		<value condition="!ListItem.IsParentFolder + Window.IsActive(videos) + Container.Content(genres) + !IsEmpty(Skin.String(MovieGenreFanart.path))">$INFO[Skin.String(MovieGenreFanart.path)]$INFO[ListItem.Label]$INFO[Skin.String(MovieGenreFanart.ext)]</value>
+        <value condition="!ListItem.IsParentFolder + Window.IsActive(pictures) + IsEmpty(ListItem.Art(fanart)) + !ListItem.IsFolder">$INFO[ListItem.FolderPath]</value>
+		<value condition="!ListItem.IsParentFolder + !IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+		<value condition="!ListItem.IsParentFolder + !IsEmpty(Container.Art(tvshow.fanart))">$INFO[Container.Art(tvshow.fanart)]</value>
+		<value condition="!ListItem.IsParentFolder + !IsEmpty(Container.Art(artist.fanart))">$INFO[Container.Art(artist.fanart)]</value>
+		<value condition="!ListItem.IsParentFolder + !IsEmpty(Container.Art(fanart))">$INFO[Container.Art(fanart)]</value>
         <!-- General -->
-        <value condition="ListItem.IsFolder | IsEmpty(ListItem.Art(fanart)) | IsEmpty(Container.Art(tvshow.fanart)) | IsEmpty(Container.Art(artist.fanart)) | IsEmpty(Container.Art(fanart))">$VAR[GeneralFanartVar]</value>
+        <value condition="ListItem.IsParentFolder | ListItem.IsFolder | IsEmpty(ListItem.Art(fanart)) | IsEmpty(Container.Art(tvshow.fanart)) | IsEmpty(Container.Art(artist.fanart)) | IsEmpty(Container.Art(fanart))">$VAR[GeneralFanartVar]</value>		
 	</variable>
     <!-- Weather Fanart -->
 	<variable name="WeatherFanartVar">
