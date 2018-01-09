@@ -7,7 +7,7 @@
 	<controls>
         <!-- Background -->
 		<include name="DefaultBackground">
-			<param name="overlay_background" value="$VAR[AddonsFanartVar]" />
+			<param name="fanart_media" value="$VAR[AddonsFanartVar]" />
 		</include>
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(script-script.extendedinfo-VideoList.xml)">Conditional</animation>
@@ -71,8 +71,9 @@
 					<width>462</width>
 					<height>671</height>
 					<pagecontrol>70</pagecontrol>
-					<onup>700</onup>
-					<ondown>700</ondown>
+					<onleft>700</onleft>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
 					<onright>SetFocus($INFO[Container(9000).ListItem.Property(menu_id)])</onright>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
 					<focusedlayout height="95" width="462">
