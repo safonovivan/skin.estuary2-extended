@@ -116,7 +116,7 @@
 						<texture colordiffuse="grey">$VAR[ListWatchedIconVar]</texture>
 					</control>
 				</itemlayout>
-				<include condition="Window.IsActive(music)">SongsListLayout</include>
+				<include condition="Window.IsActive(musiclibrary)">SongsListLayout</include>
 				<include>AddonsListLayout</include>
 			</control>
 		</control>
