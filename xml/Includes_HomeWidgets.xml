@@ -584,7 +584,7 @@
             <include name="Widget-Image" condition="IsEmpty(Weather.plugin)">
                 <param name="text_label" value="$LOCALIZE[31120]" />
                 <param name="button_label" value="$LOCALIZE[31121]" />
-                <param name="button_onclick" value="ActivateWindow(servicesettings,weather)"/>
+                <param name="button_onclick" value="ActivateWindow(WeatherSettings)"/>
                 <param name="button_id" value="15300"/>
                 <param name="button2_onclick" value="Skin.SetBool(HomeMenuNoWeatherButton)"/>
             </include>

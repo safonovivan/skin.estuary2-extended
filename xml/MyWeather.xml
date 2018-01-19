@@ -22,7 +22,7 @@
 		</control>
 		<control type="button" id="10000">
 			<include>HiddenObject</include>
-			<onfocus>ActivateWindow(servicesettings,weather)</onfocus>
+			<onfocus>ActivateWindow(WeatherSettings)</onfocus>
 			<onclick>noop</onclick>
 		</control>
         <!-- Background -->

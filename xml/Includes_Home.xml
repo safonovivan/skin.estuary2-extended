@@ -384,7 +384,7 @@
 	</include>    
 	<!-- Weather Daily -->
 	<include name="Widget-WeatherDaily">
-		<include content="Widget-Weather">
+		<include name="Widget-Weather">
             <param name="content_include" value="DailyItems" />
             <param name="widget_header" value="$PARAM[widget_header]"/>
             <param name="visible" value="$PARAM[visible]" />
@@ -393,7 +393,7 @@
 	</include>
 	<!-- Weather Hourly -->
 	<include name="Widget-WeatherHourly">
-		<include content="Widget-Weather">
+		<include name="Widget-Weather">
             <param name="content_include" value="HourlyItems" />
             <param name="widget_header" value="$PARAM[widget_header]"/>
             <param name="visible" value="$PARAM[visible]" />
@@ -894,7 +894,9 @@
 				<include name="Widget-Common">
 					<param name="list_id" value="$PARAM[list_id]"/>
 				</include>
+                <!-- on jarvis it's brokes addons
 				<onclick condition="$PARAM[favourites]">$INFO[ListItem.FileNameAndPath]</onclick>
+                -->
 				<visible>$PARAM[visible]</visible>
 				<visible>IntegerGreaterThan(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
 				<itemlayout width="310" height="500">
