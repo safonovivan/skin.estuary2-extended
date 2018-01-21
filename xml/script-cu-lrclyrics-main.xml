@@ -6,7 +6,7 @@
 	<controls>
 		<control type="group">
 			<width>1320</width>
-			<centerleft>50%</centerleft>        
+			<centerleft>50%</centerleft>
 			<centertop>50%</centertop>
 			<height>900</height>
 			<include  condition="!Skin.HasSetting(lrclyrics_alternative_view)" name="DialogBackgroundCommons">
@@ -173,5 +173,5 @@
 				<visible>false</visible>
 			</control>
 		</control>
-	</controls>    
+	</controls>
 </window>

@@ -6,7 +6,7 @@
 	<controls>
 		<control type="group">
 			<width>1440</width>
-			<centerleft>50%</centerleft>        
+			<centerleft>50%</centerleft>
 			<centertop>50%</centertop>
 				<height>940</height>
 			<include  name="DialogBackgroundCommons">

@@ -149,7 +149,7 @@
 						<icon>icons/sidemenu/movies.png</icon>
 						<property name="menu_id">$NUMBER[5000]</property>
 						<property name="defaultID">movies</property>
-						<property name="background">$VAR[BackgroundMoviesVar]</property>						
+						<property name="background">$VAR[BackgroundMoviesVar]</property>
 						<visible>!Skin.HasSetting(HomeMenuNoMovieButton)</visible>
 					</item>
 					<!-- TVShows -->
@@ -162,7 +162,7 @@
 						<icon>icons/sidemenu/tv.png</icon>
 						<property name="menu_id">$NUMBER[6000]</property>
 						<property name="defaultID">tvshows</property>
-						<property name="background">$VAR[BackgroundTVShowsVar]</property>						
+						<property name="background">$VAR[BackgroundTVShowsVar]</property>
 						<visible>!Skin.HasSetting(HomeMenuNoTVShowButton)</visible>
 					</item>
 					<!-- Music -->
@@ -174,7 +174,7 @@
 						<icon>icons/sidemenu/music.png</icon>
 						<property name="menu_id">$NUMBER[7000]</property>
 						<property name="defaultID">music</property>
-						<property name="background">$VAR[BackgroundMusicVar]</property>						
+						<property name="background">$VAR[BackgroundMusicVar]</property>
 						<visible>!Skin.HasSetting(HomeMenuNoMusicButton)</visible>
 					</item>
 					<!-- Disc -->
@@ -186,7 +186,7 @@
 						<icon>icons/sidemenu/disc.png</icon>
 						<property name="menu_id">$NUMBER[21000]</property>
 						<property name="defaultID">dvd</property>
-						<property name="background">$VAR[BackgroundDiscVar]</property>						
+						<property name="background">$VAR[BackgroundDiscVar]</property>
 						<visible>System.HasMediaDVD</visible>
 					</item>
 					<!-- MusicVideos -->
@@ -195,15 +195,15 @@
 						<onclick>SetProperty(fanarthometype,musicvideos,home)</onclick>
 						<onclick>SetProperty(homebackground,$VAR[BackgroundMusicVideosVar],home)</onclick>
 						<onclick>ActivateWindow(Videos,musicvideos,return)</onclick>
-						<icon>icons/sidemenu/musicvideos.png</icon>                        
+						<icon>icons/sidemenu/musicvideos.png</icon>
 						<property name="menu_id">$NUMBER[16000]</property>
 						<property name="defaultID">musicvideos</property>
-						<property name="background">$VAR[BackgroundMusicVideosVar]</property>						
+						<property name="background">$VAR[BackgroundMusicVideosVar]</property>
 						<visible>!Skin.HasSetting(HomeMenuNoMusicVideoButton)</visible>
 					</item>
 					<!-- LiveTV -->
 					<item>
-						<label>$LOCALIZE[19020]</label>                        
+						<label>$LOCALIZE[19020]</label>
 						<onclick>SetProperty(fanarthometype,livetv,home)</onclick>
 						<onclick>SetProperty(homebackground,$VAR[BackgroundLiveTVVar],home)</onclick>
 						<onclick>ActivateWindow(TVChannels)</onclick>
@@ -223,7 +223,7 @@
 						<icon>icons/sidemenu/radio.png</icon>
 						<property name="menu_id">$NUMBER[13000]</property>
 						<property name="defaultID">radio</property>
-						<property name="background">$VAR[BackgroundRadioVar]</property>						
+						<property name="background">$VAR[BackgroundRadioVar]</property>
 						<visible>!Skin.HasSetting(HomeMenuNoRadioButton)</visible>
 						<visible>PVR.HasRadioChannels</visible>
 					</item>
@@ -236,7 +236,7 @@
 						<icon>icons/sidemenu/addons.png</icon>
 						<property name="menu_id">$NUMBER[8000]</property>
 						<property name="defaultID">addons</property>
-						<property name="background">$VAR[BackgroundAddonsVar]</property>						
+						<property name="background">$VAR[BackgroundAddonsVar]</property>
 						<visible>!Skin.HasSetting(HomeMenuNoProgramsButton)</visible>
 					</item>
 					<!-- Pictures -->
@@ -248,7 +248,7 @@
 						<icon>icons/sidemenu/pictures.png</icon>
 						<property name="menu_id">$NUMBER[4000]</property>
 						<property name="defaultID">pictures</property>
-						<property name="background">$VAR[BackgroundPicturesVar]</property>						
+						<property name="background">$VAR[BackgroundPicturesVar]</property>
 						<visible>!Skin.HasSetting(HomeMenuNoPicturesButton)</visible>
 					</item>
 					<!-- Videos -->
@@ -260,7 +260,7 @@
 						<icon>icons/sidemenu/videos.png</icon>
 						<property name="menu_id">$NUMBER[11000]</property>
 						<property name="defaultID">video</property>
-						<property name="background">$VAR[BackgroundVideosVar]</property>						
+						<property name="background">$VAR[BackgroundVideosVar]</property>
 						<visible>!Skin.HasSetting(HomeMenuNoVideosButton)</visible>
 					</item>
 					<!-- Favourites -->
@@ -272,7 +272,7 @@
 						<icon>icons/sidemenu/favourites.png</icon>
 						<property name="menu_id">$NUMBER[14000]</property>
 						<property name="defaultID">favorites</property>
-						<property name="background">$VAR[BackgroundFavouritesVar]</property>						
+						<property name="background">$VAR[BackgroundFavouritesVar]</property>
 						<visible>!Skin.HasSetting(HomeMenuNoFavButton)</visible>
 					</item>
 					<!-- Weather -->
@@ -281,11 +281,11 @@
 						<onclick>SetProperty(fanarthometype,weather,home)</onclick>
 						<onclick>SetProperty(homebackground,$VAR[BackgroundWeatherVar],home)</onclick>
 						<onclick condition="!IsEmpty(Weather.Plugin)">ActivateWindow(Weather)</onclick>
-						<onclick condition="IsEmpty(Weather.Plugin)">ReplaceWindow(servicesettings,weather)</onclick>
+						<onclick condition="IsEmpty(Weather.Plugin)">ReplaceWindow(WeatherSettings)</onclick>
 						<icon>icons/sidemenu/weather.png</icon>
 						<property name="menu_id">$NUMBER[15000]</property>
 						<property name="defaultID">weather</property>
-						<property name="background">$VAR[BackgroundWeatherVar]</property>						
+						<property name="background">$VAR[BackgroundWeatherVar]</property>
 						<visible>!Skin.HasSetting(HomeMenuNoWeatherButton)</visible>
 					</item>
 				</content>

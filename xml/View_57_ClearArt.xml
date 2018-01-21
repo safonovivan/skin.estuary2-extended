@@ -82,7 +82,7 @@
 							<height>194</height>
 							<aspectratio>scale</aspectratio>
 							<texture fallback="DefaultVideo.png">$VAR[NoClearViewVar]</texture>
-							<visible>!ListItem.IsParentFolder</visible>
+							<visible>!StringCompare(ListItem.Label,..)</visible>
 						</control>
 						<control type="image">
 							<top>18</top>
@@ -91,27 +91,27 @@
 							<height>194</height>
 							<aspectratio>keep</aspectratio>
 							<texture fallback="DefaultVideo.png">$VAR[NoClearViewVar]</texture>
-							<visible>ListItem.IsParentFolder</visible>
+							<visible>StringCompare(ListItem.Label,..)</visible>
 						</control>
 						<control type="image">
 							<top>178</top>
 							<left>13</left>
 							<width>344</width>
-							<height>35</height>							
+							<height>35</height>
 							<texture colordiffuse="CCFFFFFF">overlays/overlayfade.png</texture>
-							<visible>!ListItem.IsParentFolder</visible>
+							<visible>!StringCompare(ListItem.Label,..)</visible>
 						</control>
 						<control type="label">
 							<top>181</top>
 							<left>13</left>
 							<width>344</width>
-							<height>30</height>							
+							<height>30</height>
 							<align>center</align>
 							<aligny>center</aligny>
 							<scroll>true</scroll>
 							<font>font10</font>
 							<label>$INFO[ListItem.Label]</label>
-							<visible>!ListItem.IsParentFolder</visible>
+							<visible>!StringCompare(ListItem.Label,..)</visible>
 						</control>
 					</control>
 					<control type="image">
@@ -129,12 +129,12 @@
 						<visible>IsEmpty(ListItem.Art(tvshow.clearart))</visible>
 						<control type="image">
 							<top>18</top>
-							<left>13</left>						
+							<left>13</left>
 							<width>344</width>
 							<height>194</height>
 							<aspectratio>scale</aspectratio>
 							<texture fallback="DefaultVideo.png">$VAR[NoClearViewVar]</texture>
-							<visible>!ListItem.IsParentFolder</visible>
+							<visible>!StringCompare(ListItem.Label,..)</visible>
 						</control>
 						<control type="image">
 							<top>18</top>
@@ -143,27 +143,27 @@
 							<height>194</height>
 							<aspectratio>keep</aspectratio>
 							<texture fallback="DefaultVideo.png">$VAR[NoClearViewVar]</texture>
-							<visible>ListItem.IsParentFolder</visible>
+							<visible>StringCompare(ListItem.Label,..)</visible>
 						</control>
 						<control type="image">
 							<top>178</top>
 							<left>13</left>
 							<width>344</width>
-							<height>35</height>							
+							<height>35</height>
 							<texture colordiffuse="CCFFFFFF">overlays/overlayfade.png</texture>
-							<visible>!ListItem.IsParentFolder</visible>
+							<visible>!StringCompare(ListItem.Label,..)</visible>
 						</control>
 						<control type="label">
 							<top>181</top>
 							<left>13</left>
 							<width>344</width>
-							<height>30</height>							
+							<height>30</height>
 							<align>center</align>
 							<aligny>center</aligny>
 							<scroll>true</scroll>
 							<font>font10</font>
 							<label>$INFO[ListItem.Label]</label>
-							<visible>!ListItem.IsParentFolder</visible>
+							<visible>!StringCompare(ListItem.Label,..)</visible>
 						</control>
 					</control>
 					<control type="image">

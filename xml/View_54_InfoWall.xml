@@ -31,8 +31,8 @@
 				<texture fallback="$PARAM[fallback_image]" background="true">$VAR[InfoWallThumbVar]</texture>
 				<aspectratio>keep</aspectratio>
 				<bordersize>20</bordersize>
-				<visible>!ListItem.IsParentFolder</visible>
-			</control>        
+				<visible>!StringCompare(ListItem.Label,..)</visible>
+			</control>
 			<control type="image">
 				<left>0</left>
 				<top>0</top>
@@ -41,8 +41,8 @@
 				<texture fallback="$PARAM[fallback_image]" background="true">$VAR[InfoWallThumbVar]</texture>
 				<aspectratio>keep</aspectratio>
 				<bordersize>20</bordersize>
-				<visible>ListItem.IsParentFolder</visible>
-			</control> 
+				<visible>StringCompare(ListItem.Label,..)</visible>
+			</control>
 			<control type="label">
 				<left>28</left>
 				<top>289</top>
@@ -53,7 +53,7 @@
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label]</label>
 				<scroll>$PARAM[focused]</scroll>
-				<visible>!ListItem.IsParentFolder</visible>
+				<visible>!StringCompare(ListItem.Label,..)</visible>
 			</control>
 		</definition>
 	</include>
@@ -93,7 +93,7 @@
 				<texture fallback="$PARAM[fallback_image]" background="true">$VAR[InfoWallThumbVar]</texture>
 				<aspectratio>keep</aspectratio>
 				<bordersize>20</bordersize>
-				<visible>!ListItem.IsParentFolder</visible>
+				<visible>!StringCompare(ListItem.Label,..)</visible>
 			</control>
 			<control type="image">
 				<left>0</left>
@@ -103,7 +103,7 @@
 				<texture fallback="$PARAM[fallback_image]" background="true">$VAR[InfoWallThumbVar]</texture>
 				<aspectratio>keep</aspectratio>
 				<bordersize>20</bordersize>
-				<visible>ListItem.IsParentFolder</visible>
+				<visible>StringCompare(ListItem.Label,..)</visible>
 			</control>
 			<control type="textbox">
 				<left>28</left>
@@ -115,7 +115,7 @@
 				<aligny>center</aligny>
 				<label>$PARAM[single_label]</label>
 				<visible>!$PARAM[istwolabel]</visible>
-				<visible>!ListItem.IsParentFolder</visible>
+				<visible>!StringCompare(ListItem.Label,..)</visible>
 			</control>
 			<control type="group">
 				<visible>$PARAM[istwolabel]</visible>
@@ -187,7 +187,7 @@
 				<texture fallback="$PARAM[fallback_image]" background="true">$VAR[InfoWallThumbVar]</texture>
 				<aspectratio>scale</aspectratio>
 				<bordersize>20</bordersize>
-				<visible>!ListItem.IsParentFolder</visible>
+				<visible>!StringCompare(ListItem.Label,..)</visible>
 			</control>
 			<control type="image">
 				<left>0</left>
@@ -197,7 +197,7 @@
 				<texture fallback="$PARAM[fallback_image]" background="true">$VAR[InfoWallThumbVar]</texture>
 				<aspectratio>keep</aspectratio>
 				<bordersize>20</bordersize>
-				<visible>ListItem.IsParentFolder</visible>
+				<visible>StringCompare(ListItem.Label,..)</visible>
 			</control>
 			<control type="image">
 				<left>136</left>
@@ -205,7 +205,7 @@
 				<width>160</width>
 				<height>70</height>
 				<texture flipx="true">overlays/overlay-bg.png</texture>
-				<visible>!ListItem.IsParentFolder + !IsEmpty(ListItem.Thumb)</visible>
+				<visible>!StringCompare(ListItem.Label,..) + !IsEmpty(ListItem.Thumb)</visible>
 			</control>
 			<control type="label">
 				<left>31</left>
@@ -226,7 +226,7 @@
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label]</label>
 				<visible>Window.IsActive(videos)</visible>
-				<visible>!ListItem.IsParentFolder</visible>
+				<visible>!StringCompare(ListItem.Label,..)</visible>
 			</control>
 			<control type="group">
 				<visible>!Window.IsActive(videos)</visible>
@@ -257,7 +257,7 @@
 				<width>32</width>
 				<height>32</height>
 				<texture>$PARAM[watchedicon]</texture>
-			</control>            
+			</control>
 			<control type="progress">
 				<left>20</left>
 				<top>258</top>
@@ -277,7 +277,7 @@
 			</control>
 		</definition>
 	</include>
-	<include name="InfoWallMovieLayout">		
+	<include name="InfoWallMovieLayout">
 		<param name="focused">false</param>
 		<param name="fallback_image">DefaultMovies.png</param>
 		<param name="poster">$VAR[ListPosterVar]</param>
@@ -292,7 +292,7 @@
 		<param name="overlaybg">Listitem.IsCollection | ListItem.IsPlaying | IntegerGreaterThan(ListItem.Playcount,0)</param>
 		<param name="watchedicon">$VAR[WallWatchedIconVar]</param>
 		<param name="width">298</param>
-		<param name="height">408</param>    
+		<param name="height">408</param>
 		<param name="border">true</param>
 		<param name="tvshows">true</param>
 		<param name="watched">true</param>
@@ -345,11 +345,11 @@
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<autoscroll time="2000" delay="3000" repeat="5000">$PARAM[focused]</autoscroll>
-						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="image">
 						<centerleft>50%</centerleft>
-						<centertop>50%</centertop> 
+						<centertop>50%</centertop>
 						<left>8</left>
 						<right>8</right>
 						<top>8</top>
@@ -357,7 +357,7 @@
 						<texture fallback="$PARAM[fallback_image]" background="true">$PARAM[noposter]</texture>
 						<aspectratio>keep</aspectratio>
 						<bordersize>20</bordersize>
-						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="image">
 						<top>4</top>
@@ -367,7 +367,7 @@
 						<texture fallback="$PARAM[fallback_image]" background="true">$PARAM[noposter]</texture>
 						<aspectratio>keep</aspectratio>
 						<bordersize>20</bordersize>
-						<visible>ListItem.IsParentFolder</visible>
+						<visible>StringCompare(ListItem.Label,..)</visible>
 					</control>
 				</control>
 				<control type="group">

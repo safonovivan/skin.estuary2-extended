@@ -229,7 +229,7 @@
 								<aligny>center</aligny>
 								<font>font25_title</font>
 								<textcolor>grey</textcolor>
-								<shadowcolor>black</shadowcolor>                               
+								<shadowcolor>black</shadowcolor>
 								<info>ListItem.Label</info>
 								<visible>true</visible>
 							</control>
@@ -238,7 +238,7 @@
 								<top>67</top>
 								<height>3</height>
 								<texture colordiffuse="AAAAAAAA" border="3">dialogs/separator-grey.png</texture>
-							</control>							
+							</control>
 						</control>
 						<!-- boolean value -->
 						<control type="group">
@@ -303,13 +303,13 @@
 						<control type="group">
 							<visible>StringCompare(ListItem.Property(Typ), separator)</visible>
 							<control type="label">
-								<width>1450</width>							
+								<width>1450</width>
 								<height>70</height>
 								<align>center</align>
 								<aligny>center</aligny>
 								<font>font25_title</font>
 								<textcolor>grey</textcolor>
-								<shadowcolor>black</shadowcolor>                               
+								<shadowcolor>black</shadowcolor>
 								<info>ListItem.Label</info>
 								<visible>true</visible>
 							</control>
@@ -318,7 +318,7 @@
 								<top>67</top>
 								<height>3</height>
 								<texture colordiffuse="AAAAAAAA" border="3">dialogs/separator-grey.png</texture>
-							</control>							
+							</control>
 						</control>
 						<!-- boolean value -->
 						<control type="group">
@@ -1078,7 +1078,7 @@
 			<right>0</right>
 			<top>163</top>
 			<width>12</width>
-			<bottom>137</bottom>		
+			<bottom>137</bottom>
 			<orientation>vertical</orientation>
 			<texturesliderbackground></texturesliderbackground>
 			<animation effect="slide" end="6,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(60)">conditional</animation>
@@ -1097,7 +1097,7 @@
 			<right>0</right>
 			<top>163</top>
 			<width>12</width>
-			<bottom>137</bottom>		
+			<bottom>137</bottom>
 			<orientation>vertical</orientation>
 			<texturesliderbackground></texturesliderbackground>
 			<animation effect="slide" end="6,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(60)">conditional</animation>
@@ -1116,7 +1116,7 @@
 			<right>0</right>
 			<top>163</top>
 			<width>12</width>
-			<bottom>137</bottom>		
+			<bottom>137</bottom>
 			<orientation>vertical</orientation>
 			<texturesliderbackground></texturesliderbackground>
 			<animation effect="slide" end="6,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(60)">conditional</animation>
@@ -1126,7 +1126,7 @@
 			<animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 			<animation effect="fade" start="0" end="100" delay="300" time="320">WindowOpen</animation>
-			<animation effect="fade" start="100" end="0" time="150">WindowClose</animation>			
+			<animation effect="fade" start="100" end="0" time="150">WindowClose</animation>
 			<visible>Control.IsVisible(1300)</visible>
 		</control>
 		<!-- topbar -->

@@ -365,7 +365,7 @@
 								<aligny>center</aligny>
 								<font>font12</font>
 								<textcolor>$VAR[MainColorVar]</textcolor>
-								<visible>StringCompare(ListItem.Property(State), online) | StringCompareIsEqual(ListItem.Property(State), ready)</visible>
+								<visible>StringCompare(ListItem.Property(State), online) | StringCompare(ListItem.Property(State), ready)</visible>
 								<label>$ADDON[service.libreelec.settings 602]: [COLOR white]$INFO[ListItem.Property(Address)][/COLOR]</label>
 							</control>
 							<!-- State -->

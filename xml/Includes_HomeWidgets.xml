@@ -3,7 +3,7 @@
 	<!-- Home Widgets -->
 	<include name="HomeWidgets">
 		<!-- Movies 5000-->
-		<include>MoviesHomeWidgets</include>    
+		<include>MoviesHomeWidgets</include>
 		<!-- TVShows 6000 -->
 		<include>TVShowsHomeWidgets</include>
 		<!-- Music 7000 -->
@@ -25,7 +25,7 @@
 		<!-- Pictures 4000 -->
 		<include>PicturesHomeWidgets</include>
 		<!-- Disc 21000 -->
-		<include>DiscHomeWidgets</include>    
+		<include>DiscHomeWidgets</include>
 	</include>
 	<!-- Movies 5000 -->
 	<include name="MoviesHomeWidgets">
@@ -243,9 +243,9 @@
 				<include condition="Skin.HasSetting(enable_custom_list_addons) + Skin.HasSetting(enable_custom_list_addons_video)" name="Widget-AddonsCustom">
 					<param name="widget_header" value="$LOCALIZE[1037]"/>
 					<param name="widget_target" value="Video"/>
-					<param name="list_id" value="8100"/>                    
+					<param name="list_id" value="8100"/>
 				</include>
-				<!-- Audio Addons -->					
+				<!-- Audio Addons -->
 				<include condition="![Skin.HasSetting(enable_custom_list_addons) + Skin.HasSetting(enable_custom_list_addons_audio)]" name="Widget-Addons">
 					<param name="content_path" value="addons://sources/audio/"/>
 					<param name="widget_header" value="$LOCALIZE[1038]"/>
@@ -257,9 +257,9 @@
 				<include condition="Skin.HasSetting(enable_custom_list_addons) + Skin.HasSetting(enable_custom_list_addons_audio)" name="Widget-AddonsCustom">
 					<param name="widget_header" value="$LOCALIZE[1038]"/>
 					<param name="widget_target" value="Audio"/>
-					<param name="list_id" value="8200"/>                    
+					<param name="list_id" value="8200"/>
 				</include>
-				<!-- Programs Addons -->					
+				<!-- Programs Addons -->
 				<include condition="![Skin.HasSetting(enable_custom_list_addons) + Skin.HasSetting(enable_custom_list_addons_programs)]" name="Widget-Addons">
 					<param name="content_path" value="addons://sources/executable/"/>
 					<param name="widget_header" value="$LOCALIZE[1043]"/>
@@ -295,7 +295,7 @@
 					<param name="widget_header" value="$LOCALIZE[1039]"/>
 					<param name="widget_target" value="Image"/>
 					<param name="list_id" value="8500"/>
-				</include>					
+				</include>
 			</control>
 			<!-- No Addons -->
 			<include name="Widget-Image">
@@ -483,8 +483,8 @@
 				<param name="visible_1" value="false"/>
 				<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoFavButton)"/>
 			</include>
-		</control>    
-	</include> 
+		</control>
+	</include>
 	<!-- Weather 15000 -->
 	<include name="WeatherHomeWidgets">
 		<control type="group" id="15000">
@@ -682,5 +682,5 @@
 				<param name="button2_onclick" value="EjectTray()"/>
 			</include>
 		</control>
-	</include>   
+	</include>
 </includes>

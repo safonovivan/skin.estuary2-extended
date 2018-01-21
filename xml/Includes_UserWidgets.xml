@@ -158,13 +158,13 @@
 		<onclick>Skin.SetString(AddonSet$PARAM[adonnstype].$PARAM[id1].Label,$INFO[system.addontitle(Skin.String(UsrSelectAddon))])</onclick>
 		<onclick>Skin.SetString(AddonSet$PARAM[adonnstype].$PARAM[id1].Name,$INFO[Skin.String(UsrSelectAddon)])</onclick>
 		<onclick>Skin.SetString(AddonSet$PARAM[adonnstype].$PARAM[id1].Icon,$INFO[system.addonicon(Skin.String(UsrSelectAddon))])</onclick>
-	</include>    
+	</include>
 	<!-- ContentAddonsWidgets -->
 	<include name="HomeCustomAddonsItems">
 		<item id="1">
 			<label>$INFO[Skin.String(AddonSet$PARAM[id2].0.Label)]</label>
 			<onclick>RunAddon($INFO[Skin.String(AddonSet$PARAM[id2].0.Name)])</onclick>
-			<icon>$INFO[Skin.String(AddonSet$PARAM[id2].0.Icon)]</icon>                
+			<icon>$INFO[Skin.String(AddonSet$PARAM[id2].0.Icon)]</icon>
 			<thumb>$INFO[Skin.String(AddonSet$PARAM[id2].0.Icon)]</thumb>
 			<property name="AddonVersion">$INFO[system.addonversion(Skin.String(AddonSet$PARAM[id2].0.Name))]</property>
 			<property name="AddonFanart">special://home/addons/$INFO[Skin.String(AddonSet$PARAM[id2].0.Name)]/fanart.jpg</property>
@@ -172,7 +172,7 @@
 		</item>
 		<item id="2">
 			<label>$INFO[Skin.String(AddonSet$PARAM[id2].1.Label)]</label>
-			<onclick>RunAddon($INFO[Skin.String(AddonSet$PARAM[id2].1.Name)])</onclick>                
+			<onclick>RunAddon($INFO[Skin.String(AddonSet$PARAM[id2].1.Name)])</onclick>
 			<icon>$INFO[Skin.String(AddonSet$PARAM[id2].1.Icon)]</icon>
 			<thumb>$INFO[Skin.String(AddonSet$PARAM[id2].1.Icon)]</thumb>
 			<property name="AddonVersion">$INFO[system.addonversion(Skin.String(AddonSet$PARAM[id2].1.Name))]</property>
@@ -280,7 +280,7 @@
 			<include>DefaultSettingButton</include>
 			<label>$PARAM[title]</label>
 			<onclick>Skin.ToggleSetting($PARAM[flags])</onclick>
-			<selected>Skin.HasSetting($PARAM[flags])</selected>           
+			<selected>Skin.HasSetting($PARAM[flags])</selected>
 			<visible>$PARAM[visible]</visible>
 		</control>
 		<!-- WidgetsChannels01 -->

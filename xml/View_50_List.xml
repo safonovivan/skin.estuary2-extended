@@ -273,7 +273,7 @@
 						<font>font27</font>
 						<textcolor>80FFFFFF</textcolor>
 						<label>$LOCALIZE[19055]</label>
-						<visible>!ListItem.IsParentFolder</visible>
+						<visible>!StringCompare(ListItem.Label,..)</visible>
 						<visible>!IntegerGreaterThan(Container(42000).NumItems,0) + !IntegerGreaterThan(Container(43000).NumItems,0)</visible>
 						<visible>!Container.Content() | !IsEmpty(ListItem.Plot)</visible>
 					</control>

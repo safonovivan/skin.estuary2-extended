@@ -33,7 +33,7 @@
 			<!-- HomeSubMenu -->
 			<include>HomeSubMenu</include>
 			<!-- HomeMainMenu -->
-			<include>HomeMainMenu</include>			
+			<include>HomeMainMenu</include>
 			<!-- BottomBar -->
 			<include>BottomBar</include>
 			<!-- TopBar -->
@@ -71,7 +71,7 @@
 					<label>$VAR[InfoBarStatsVar]</label>
 					<font>font12</font>
 					<visible>!Player.HasMedia + !Window.IsVisible(extendedprogressdialog) + [!Window.IsActive(volumebar) | Player.Muted]</visible>
-					<visible>Skin.HasSetting(enable_home_stats)</visible>				
+					<visible>Skin.HasSetting(enable_home_stats)</visible>
 				</control>
 			</control>
 			<!-- RSS -->
