@@ -2,70 +2,70 @@
 <includes>
 
 	<!-- *** Types Widget *** -->
-    
-    <!-- Pictures Type -->    
+	
+	<!-- Pictures Type -->    
 	<include name="Widget-Pictures">
 		<include name="Widget-Square">
 			<param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="widget_target" value="$PARAM[widget_target]"/>
-            <param name="content_path" value="$PARAM[content_path]"/>
-            <param name="list_id" value="$PARAM[list_id]"/>			
-            <param name="fallback_image" value="DefaultAddon.png"/>			
+			<param name="widget_target" value="$PARAM[widget_target]"/>
+			<param name="content_path" value="$PARAM[content_path]"/>
+			<param name="list_id" value="$PARAM[list_id]"/>			
+			<param name="fallback_image" value="DefaultAddon.png"/>			
 		</include>
 	</include>
-    <!-- Videos Type -->
+	<!-- Videos Type -->
 	<include name="Widget-Videos">
 		<include name="Widget-Square">
 			<param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="widget_target" value="$PARAM[widget_target]"/>
-            <param name="content_path" value="$PARAM[content_path]"/>
-            <param name="list_id" value="$PARAM[list_id]"/>
-            <param name="fallback_image" value="DefaultAddon.png"/>	
+			<param name="widget_target" value="$PARAM[widget_target]"/>
+			<param name="content_path" value="$PARAM[content_path]"/>
+			<param name="list_id" value="$PARAM[list_id]"/>
+			<param name="fallback_image" value="DefaultAddon.png"/>	
 		</include>
 	</include>
-    <!-- Musics Type -->
+	<!-- Musics Type -->
 	<include name="Widget-Musics">
 		<include name="Widget-Square">
 			<param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="widget_target" value="$PARAM[widget_target]"/>
-            <param name="content_path" value="$PARAM[content_path]"/>
-            <param name="list_id" value="$PARAM[list_id]"/>
-            <param name="fallback_image" value="DefaultAddon.png"/>
+			<param name="widget_target" value="$PARAM[widget_target]"/>
+			<param name="content_path" value="$PARAM[content_path]"/>
+			<param name="list_id" value="$PARAM[list_id]"/>
+			<param name="fallback_image" value="DefaultAddon.png"/>
 		</include>
 	</include>
-    <!-- Programs Type -->
+	<!-- Programs Type -->
 	<include name="Widget-Programs">
 		<include name="Widget-Square">
 			<param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="widget_target" value="$PARAM[widget_target]"/>
-            <param name="content_path" value="$PARAM[content_path]"/>
-            <param name="list_id" value="$PARAM[list_id]"/>
-            <param name="fallback_image" value="DefaultAddon.png"/>
+			<param name="widget_target" value="$PARAM[widget_target]"/>
+			<param name="content_path" value="$PARAM[content_path]"/>
+			<param name="list_id" value="$PARAM[list_id]"/>
+			<param name="fallback_image" value="DefaultAddon.png"/>
 		</include>
 	</include>
-    <!-- Addons Type -->
+	<!-- Addons Type -->
 	<include name="Widget-Addons">
 		<include name="Widget-Square">
 			<param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="widget_target" value="$PARAM[widget_target]"/>
-            <param name="content_path" value="$PARAM[content_path]"/>
-            <param name="list_id" value="$PARAM[list_id]"/>
+			<param name="widget_target" value="$PARAM[widget_target]"/>
+			<param name="content_path" value="$PARAM[content_path]"/>
+			<param name="list_id" value="$PARAM[list_id]"/>
 			<param name="sortby" value="lastused"/>
 			<param name="sortorder" value="descending"/>
-            <param name="fallback_image" value="DefaultAddon.png"/>
+			<param name="fallback_image" value="DefaultAddon.png"/>
 		</include>
 	</include>
-    <!-- Custom Addons Type -->
+	<!-- Custom Addons Type -->
 	<include name="Widget-AddonsCustom">
 		<include name="Widget-Square">
 			<param name="custom" value="true"/>
 			<param name="widget_header" value="$PARAM[widget_header]"/>
 			<param name="widget_target" value="$PARAM[widget_target]"/>
-            <param name="list_id" value="$PARAM[list_id]"/>
+			<param name="list_id" value="$PARAM[list_id]"/>
 			<param name="fallback_image" value="DefaultAddon.png"/>            
 		</include>
 	</include>
-    <!-- TV Timers Type -->
+	<!-- TV Timers Type -->
 	<include name="Widget-TVTimers">
 		<control type="grouplist" id="$PARAM[list_id]">
 			<height>390</height>
@@ -97,7 +97,7 @@
 			</control>
 		</control>	
 	</include>
-    <!-- Radio Timers Type -->
+	<!-- Radio Timers Type -->
 	<include name="Widget-RadioTimers">
 		<control type="grouplist" id="$PARAM[list_id]">
 			<height>390</height>
@@ -129,281 +129,281 @@
 			</control>
 		</control>
 	</include>
-    <!-- PVR Channels Type -->
+	<!-- PVR Channels Type -->
 	<include name="Widget-PVRChannels">
 		<include name="Widget-Channels">
 			<param name="visible" value="System.HasPVRAddon"/>
 			<param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="widget_target" value="$PARAM[widget_target]"/>
-            <param name="content_path" value="$PARAM[content_path]"/>
-            <param name="list_id" value="$PARAM[list_id]"/>
+			<param name="widget_target" value="$PARAM[widget_target]"/>
+			<param name="content_path" value="$PARAM[content_path]"/>
+			<param name="list_id" value="$PARAM[list_id]"/>
 			<param name="sortby" value="lastplayed"/>
 			<param name="sortorder" value="descending"/>
 		</include>
 	</include>
-    <!-- Custom PVR Channels Type -->
+	<!-- Custom PVR Channels Type -->
 	<include name="Widget-PVRChannelsCustom">
 		<include name="Widget-Channels">
 			<param name="custom" value="true"/>
 			<param name="visible" value="System.HasPVRAddon"/>
 			<param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="widget_target" value="$PARAM[widget_target]"/>
-            <param name="list_id" value="$PARAM[list_id]"/>
+			<param name="widget_target" value="$PARAM[widget_target]"/>
+			<param name="list_id" value="$PARAM[list_id]"/>
 			<param name="label2" value="$INFO[ListItem.Property(Title)]"/>           
 		</include>
 	</include>
-    <!-- PVR Recordings Type -->
+	<!-- PVR Recordings Type -->
 	<include name="Widget-PVRRecordings">
 		<include name="Widget-Channels">
 			<param name="visible" value="System.HasPVRAddon"/>
 			<param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="widget_target" value="$PARAM[widget_target]"/>
-            <param name="content_path" value="$PARAM[content_path]"/>
-            <param name="list_id" value="$PARAM[list_id]"/>
+			<param name="widget_target" value="$PARAM[widget_target]"/>
+			<param name="content_path" value="$PARAM[content_path]"/>
+			<param name="list_id" value="$PARAM[list_id]"/>
 			<param name="label" value="$INFO[ListItem.ChannelName]"/>
 			<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>           
-            <param name="sortby" value="date"/>
+			<param name="sortby" value="date"/>
 			<param name="sortorder" value="descending"/>
 		</include>
 	</include>
-    <!-- Movies Type -->
+	<!-- Movies Type -->
 	<include name="Widget-Movies">
 		<include name="Widget-Posters">
-            <param name="homebackground" value="false"/>
+			<param name="homebackground" value="false"/>
 			<param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="widget_target" value="$PARAM[widget_target]"/>
-            <param name="content_path" value="$PARAM[content_path]"/>
-            <param name="list_id" value="$PARAM[list_id]"/>
-            <param name="sortby" value="$PARAM[sortby]"/>
-            <param name="sortorder" value="$PARAM[sortorder]"/>
-            <param name="fallback_image" value="DefaultMovies.png" />
+			<param name="widget_target" value="$PARAM[widget_target]"/>
+			<param name="content_path" value="$PARAM[content_path]"/>
+			<param name="list_id" value="$PARAM[list_id]"/>
+			<param name="sortby" value="$PARAM[sortby]"/>
+			<param name="sortorder" value="$PARAM[sortorder]"/>
+			<param name="fallback_image" value="DefaultMovies.png" />
 		</include>
 	</include>
-    <!-- TVShows Type -->
+	<!-- TVShows Type -->
 	<include name="Widget-TVShows">
 		<include name="Widget-Posters">
 			<param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="widget_target" value="$PARAM[widget_target]"/>
-            <param name="content_path" value="$PARAM[content_path]"/>
-            <param name="list_id" value="$PARAM[list_id]"/>
-            <param name="sortby" value="$PARAM[sortby]"/>
-            <param name="sortorder" value="$PARAM[sortorder]"/>
-            <param name="fallback_image" value="DefaultTVShows.png" />
+			<param name="widget_target" value="$PARAM[widget_target]"/>
+			<param name="content_path" value="$PARAM[content_path]"/>
+			<param name="list_id" value="$PARAM[list_id]"/>
+			<param name="sortby" value="$PARAM[sortby]"/>
+			<param name="sortorder" value="$PARAM[sortorder]"/>
+			<param name="fallback_image" value="DefaultTVShows.png" />
 		</include>
 	</include>
-    <!-- Episodes Type -->
+	<!-- Episodes Type -->
 	<include name="Widget-Episodes">
 		<include name="Widget-Thumbs">
-            <param name="homebackground" value="false"/>
+			<param name="homebackground" value="false"/>
 			<param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="widget_target" value="$PARAM[widget_target]"/>
-            <param name="content_path" value="$PARAM[content_path]"/>
-            <param name="list_id" value="$PARAM[list_id]"/>
+			<param name="widget_target" value="$PARAM[widget_target]"/>
+			<param name="content_path" value="$PARAM[content_path]"/>
+			<param name="list_id" value="$PARAM[list_id]"/>
 			<param name="fallback_image" value="DefaultTVShows.png" />            
 		</include>
 	</include>
-    <!-- Music Videos Type -->	
+	<!-- Music Videos Type -->	
 	<include name="Widget-MusicVideos">
 		<include name="Widget-Thumbs">
 			<param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="widget_target" value="$PARAM[widget_target]"/>
-            <param name="content_path" value="$PARAM[content_path]"/>
-            <param name="list_id" value="$PARAM[list_id]"/>
+			<param name="widget_target" value="$PARAM[widget_target]"/>
+			<param name="content_path" value="$PARAM[content_path]"/>
+			<param name="list_id" value="$PARAM[list_id]"/>
 			<param name="main_label">$INFO[ListItem.Label]</param>
 			<param name="sub_label">$INFO[ListItem.Artist]</param>
 			<param name="thumb_label">$INFO[ListItem.Duration,, $LOCALIZE[31132]]</param>
 			<param name="fallback_image" value="DefaultMusicVideos.png" />
 		</include>
 	</include>
-    <!-- Albums Type -->
+	<!-- Albums Type -->
 	<include name="Widget-Albums">
 		<include name="Widget-Square">
 			<param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="widget_target" value="$PARAM[widget_target]"/>
-            <param name="content_path" value="$PARAM[content_path]"/>
-            <param name="list_id" value="$PARAM[list_id]"/>
-            <param name="sortby" value="$PARAM[sortby]"/>
-            <param name="sortorder" value="$PARAM[sortorder]"/>
-            <param name="fallback_image" value="DefaultMusicAlbums.png"/>            
+			<param name="widget_target" value="$PARAM[widget_target]"/>
+			<param name="content_path" value="$PARAM[content_path]"/>
+			<param name="list_id" value="$PARAM[list_id]"/>
+			<param name="sortby" value="$PARAM[sortby]"/>
+			<param name="sortorder" value="$PARAM[sortorder]"/>
+			<param name="fallback_image" value="DefaultMusicAlbums.png"/>            
 		</include>
 	</include>
-    <!-- Artists Type -->
+	<!-- Artists Type -->
 	<include name="Widget-Artists">
 		<include name="Widget-Square">
 			<param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="widget_target" value="$PARAM[widget_target]"/>
-            <param name="content_path" value="$PARAM[content_path]"/>
-            <param name="list_id" value="$PARAM[list_id]"/>
-            <param name="sortby" value="$PARAM[sortby]"/>
-            <param name="sortorder" value="$PARAM[sortorder]"/>
-            <param name="fallback_image" value="DefaultMusicArtists.png"/>
+			<param name="widget_target" value="$PARAM[widget_target]"/>
+			<param name="content_path" value="$PARAM[content_path]"/>
+			<param name="list_id" value="$PARAM[list_id]"/>
+			<param name="sortby" value="$PARAM[sortby]"/>
+			<param name="sortorder" value="$PARAM[sortorder]"/>
+			<param name="fallback_image" value="DefaultMusicArtists.png"/>
 		</include>
 	</include>
-    <!-- Songs Type -->
+	<!-- Songs Type -->
 	<include name="Widget-Songs">
 		<include name="Widget-Square">
-            <param name="homebackground" value="false"/>
+			<param name="homebackground" value="false"/>
 			<param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="widget_target" value="$PARAM[widget_target]"/>
-            <param name="content_path" value="$PARAM[content_path]"/>
-            <param name="list_id" value="$PARAM[list_id]"/>
-            <param name="sortby" value="$PARAM[sortby]"/>
-            <param name="sortorder" value="$PARAM[sortorder]"/>
-            <param name="fallback_image" value="DefaultMusicSongs.png"/>
+			<param name="widget_target" value="$PARAM[widget_target]"/>
+			<param name="content_path" value="$PARAM[content_path]"/>
+			<param name="list_id" value="$PARAM[list_id]"/>
+			<param name="sortby" value="$PARAM[sortby]"/>
+			<param name="sortorder" value="$PARAM[sortorder]"/>
+			<param name="fallback_image" value="DefaultMusicSongs.png"/>
 		</include>
 	</include>
-    <!-- Mixed Type -->
+	<!-- Mixed Type -->
 	<include name="Widget-Mixed">
 		<include name="Widget-Square">
 			<param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="widget_target" value="$PARAM[widget_target]"/>
-            <param name="content_path" value="$PARAM[content_path]"/>
-            <param name="list_id" value="$PARAM[list_id]"/>
-            <param name="sortby" value="$PARAM[sortby]"/>
-            <param name="sortorder" value="$PARAM[sortorder]"/>
-            <param name="fallback_image" value="DefaultMusicAlbums.png"/>
+			<param name="widget_target" value="$PARAM[widget_target]"/>
+			<param name="content_path" value="$PARAM[content_path]"/>
+			<param name="list_id" value="$PARAM[list_id]"/>
+			<param name="sortby" value="$PARAM[sortby]"/>
+			<param name="sortorder" value="$PARAM[sortorder]"/>
+			<param name="fallback_image" value="DefaultMusicAlbums.png"/>
 		</include>
 	</include>
-    <!-- Favourites List Type -->
+	<!-- Favourites List Type -->
 	<include name="Widget-FavouritesList">
 		<include name="Widget-Square">
 			<param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="widget_target" value="$PARAM[widget_target]"/>
-            <param name="content_path" value="$PARAM[content_path]"/>
-            <param name="list_id" value="$PARAM[list_id]"/>
+			<param name="widget_target" value="$PARAM[widget_target]"/>
+			<param name="content_path" value="$PARAM[content_path]"/>
+			<param name="list_id" value="$PARAM[list_id]"/>
 			<param name="fallback_image" value="DefaultFavourites.png"/>
 			<param name="favourites" value="true"/>
 		</include>
 	</include>
-    <!-- Favourites Full Type -->
+	<!-- Favourites Full Type -->
 	<include name="Widget-FavouritesFull">
 		<include name="Widget-Square-Favourites">
-            <param name="list_id" value="$PARAM[list_id]"/>
+			<param name="list_id" value="$PARAM[list_id]"/>
 		</include>
 	</include>
-    <!-- Playlists Type -->
+	<!-- Playlists Type -->
 	<include name="Widget-Playlists">
 		<include name="Widget-Categories">
-            <param name="scale" value="true"/>
+			<param name="scale" value="true"/>
 			<param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="widget_target" value="$PARAM[widget_target]"/>
-            <param name="content_path" value="$PARAM[content_path]"/>
-            <param name="list_id" value="$PARAM[list_id]"/>
-            <param name="icon_height" value="100"/>
+			<param name="widget_target" value="$PARAM[widget_target]"/>
+			<param name="content_path" value="$PARAM[content_path]"/>
+			<param name="list_id" value="$PARAM[list_id]"/>
+			<param name="icon_height" value="100"/>
 			<param name="fallback_image" value="DefaultPlaylist.png"/>			
 		</include>
 	</include>
-    <!-- Source Type -->
+	<!-- Source Type -->
 	<include name="Widget-Source">
 		<include name="Widget-Categories">
-            <param name="scale" value="true"/>
+			<param name="scale" value="true"/>
 			<param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="widget_target" value="$PARAM[widget_target]"/>
-            <param name="content_path" value="$PARAM[content_path]"/>            
-            <param name="list_id" value="$PARAM[list_id]"/>
+			<param name="widget_target" value="$PARAM[widget_target]"/>
+			<param name="content_path" value="$PARAM[content_path]"/>            
+			<param name="list_id" value="$PARAM[list_id]"/>
 			<param name="icon_height" value="100"/>
 		</include>
 	</include>
-    <!-- Movie Genres Type -->	
+	<!-- Movie Genres Type -->	
 	<include name="Widget-MovieGenres">
 		<include name="Widget-Categories">
-            <param name="scale" value="true"/>
+			<param name="scale" value="true"/>
 			<param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="widget_target" value="$PARAM[widget_target]"/>
-            <param name="content_path" value="$PARAM[content_path]"/>
-            <param name="list_id" value="$PARAM[list_id]"/>
+			<param name="widget_target" value="$PARAM[widget_target]"/>
+			<param name="content_path" value="$PARAM[content_path]"/>
+			<param name="list_id" value="$PARAM[list_id]"/>
 			<param name="icon" value="$VAR[WidgetMovieGenreIconVar]"/>           
 			<param name="icon_height" value="100"/>
 			<param name="fallback_image" value="DefaultGenre.png"/>
 		</include>
 	</include>
-    <!-- Music Genres Type -->
+	<!-- Music Genres Type -->
 	<include name="Widget-MusicGenres">
 		<include name="Widget-Categories">
-            <param name="scale" value="true"/>
+			<param name="scale" value="true"/>
 			<param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="widget_target" value="$PARAM[widget_target]"/>
-            <param name="content_path" value="$PARAM[content_path]"/>
-            <param name="list_id" value="$PARAM[list_id]"/>
+			<param name="widget_target" value="$PARAM[widget_target]"/>
+			<param name="content_path" value="$PARAM[content_path]"/>
+			<param name="list_id" value="$PARAM[list_id]"/>
 			<param name="icon" value="$VAR[WidgetMusicGenreIconVar]"/>            
 			<param name="icon_height" value="100"/>
-            <param name="fallback_image" value="DefaultMusicGenres.png"/>
+			<param name="fallback_image" value="DefaultMusicGenres.png"/>
 		</include>
 	</include>
-    <!-- Studios Type -->
+	<!-- Studios Type -->
 	<include name="Widget-Studios">
 		<include name="Widget-Categories">
-            <param name="scale" value="true"/>
+			<param name="scale" value="true"/>
 			<param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="widget_target" value="$PARAM[widget_target]"/>
-            <param name="content_path" value="$PARAM[content_path]"/>
-            <param name="list_id" value="$PARAM[list_id]"/>
+			<param name="widget_target" value="$PARAM[widget_target]"/>
+			<param name="content_path" value="$PARAM[content_path]"/>
+			<param name="list_id" value="$PARAM[list_id]"/>
 			<param name="icon" value="$VAR[WidgetStudioIconVar]"/>
-            <param name="icon_height" value="100"/>
+			<param name="icon_height" value="100"/>
 			<param name="fallback_image" value="DefaultStudios.png"/>
 		</include>
 	</include>
-    <!-- Country Type -->
+	<!-- Country Type -->
 	<include name="Widget-Country">
 		<include name="Widget-Categories">
-            <param name="scale" value="true"/>
+			<param name="scale" value="true"/>
 			<param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="widget_target" value="$PARAM[widget_target]"/>
-            <param name="content_path" value="$PARAM[content_path]"/>
-            <param name="list_id" value="$PARAM[list_id]"/>
+			<param name="widget_target" value="$PARAM[widget_target]"/>
+			<param name="content_path" value="$PARAM[content_path]"/>
+			<param name="list_id" value="$PARAM[list_id]"/>
 			<param name="icon" value="$VAR[WidgetCountryIconVar]"/>
-            <param name="icon_height" value="100"/>
+			<param name="icon_height" value="100"/>
 			<param name="fallback_image" value="DefaultCountry.png"/>
 		</include>
 	</include>
-    <!-- Other Type -->
+	<!-- Other Type -->
 	<include name="Widget-Other">
 		<include name="Widget-Square">
 			<param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="widget_target" value="$PARAM[widget_target]"/>
-            <param name="content_path" value="$PARAM[content_path]"/>            
-            <param name="list_id" value="$PARAM[list_id]"/>
-            <param name="sortby" value="$PARAM[sortby]"/>
-            <param name="sortorder" value="$PARAM[sortorder]"/>
+			<param name="widget_target" value="$PARAM[widget_target]"/>
+			<param name="content_path" value="$PARAM[content_path]"/>            
+			<param name="list_id" value="$PARAM[list_id]"/>
+			<param name="sortby" value="$PARAM[sortby]"/>
+			<param name="sortorder" value="$PARAM[sortorder]"/>
 			<param name="fallback_image" value="DefaultFolder.png"/>
 		</include>
 	</include>    
-    <!-- SubMenu Type -->
+	<!-- SubMenu Type -->
 	<include name="Widget-SubMenu">
 		<include name="Widget-Categories">        
-            <param name="homebackground" value="false"/>        
-            <param name="custom" value="$PARAM[custom]"/>
-            <param name="visible" value="$PARAM[visible]"/>
-            <param name="item_limit" value="20"/>
+			<param name="homebackground" value="false"/>        
+			<param name="custom" value="$PARAM[custom]"/>
+			<param name="visible" value="$PARAM[visible]"/>
+			<param name="item_limit" value="20"/>
 			<param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="content_path" value="$PARAM[content_path]"/> 
-            <param name="widget_target" value="$PARAM[widget_target]"/>            
-            <param name="list_id" value="$PARAM[list_id]"/>
-            <param name="type" value="$PARAM[type]"/>
+			<param name="content_path" value="$PARAM[content_path]"/> 
+			<param name="widget_target" value="$PARAM[widget_target]"/>            
+			<param name="list_id" value="$PARAM[list_id]"/>
+			<param name="type" value="$PARAM[type]"/>
 		</include>	
 	</include>    
 	<!-- Weather Daily -->
 	<include name="Widget-WeatherDaily">
 		<include name="Widget-Weather">
-            <param name="content_include" value="DailyItems" />
-            <param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="visible" value="$PARAM[visible]" />
+			<param name="content_include" value="DailyItems" />
+			<param name="widget_header" value="$PARAM[widget_header]"/>
+			<param name="visible" value="$PARAM[visible]" />
 			<param name="list_id" value="$PARAM[list_id]" />
-        </include>
+		</include>
 	</include>
 	<!-- Weather Hourly -->
 	<include name="Widget-WeatherHourly">
 		<include name="Widget-Weather">
-            <param name="content_include" value="HourlyItems" />
-            <param name="widget_header" value="$PARAM[widget_header]"/>
-            <param name="visible" value="$PARAM[visible]" />
+			<param name="content_include" value="HourlyItems" />
+			<param name="widget_header" value="$PARAM[widget_header]"/>
+			<param name="visible" value="$PARAM[visible]" />
 			<param name="list_id" value="$PARAM[list_id]" />
-        </include>
+		</include>
 	</include>	
 
 	<!-- *** Common Widget *** -->	
 
-    <!-- Widget Group Common -->    
+	<!-- Widget Group Common -->    
 	<include name="WidgetGroup-Common">
 		<orientation>vertical</orientation>
 		<height>100%</height>
@@ -413,13 +413,13 @@
 		<ondown>200001</ondown>
 		<usecontrolcoords>true</usecontrolcoords>
 	</include>
-    <!-- Widget Common -->
+	<!-- Widget Common -->
 	<include name="Widget-Common">
 		<scrolltime tween="cubic" easing="out">500</scrolltime>
 		<orientation>horizontal</orientation>
 		<onleft>9000</onleft>
 		<onright>noop</onright>
-        <onunfocus>ClearProperty(weatherfanartcode,home)</onunfocus>
+		<onunfocus>ClearProperty(weatherfanartcode,home)</onunfocus>
 		<onunfocus>ClearProperty(mediaartfanart,home)</onunfocus>
 		<onunfocus>SetProperty(listposition,$INFO[Container($PARAM[list_id]).Position],home)</onunfocus>
 		<onfocus>Control.Move($PARAM[list_id],-$INFO[Container($PARAM[list_id]).Position])</onfocus>
@@ -430,7 +430,7 @@
 		<onback>PageUp</onback>
 		<preloaditems>2</preloaditems>
 	</include>
-    <!-- Busy List Spinner -->
+	<!-- Busy List Spinner -->
 	<include name="BusyListSpinner">
 		<param name="posy">160</param>
 		<param name="visible">true</param>
@@ -458,7 +458,7 @@
 			</control>
 		</definition>
 	</include>
-    <!-- Category Label -->
+	<!-- Category Label -->
 	<include name="CategoryLabel">
 		<param name="visible">true</param>
 		<definition>
@@ -474,19 +474,19 @@
 			</control>
 		</definition>
 	</include>
-    <!-- Widget Dynamic Content -->
+	<!-- Widget Dynamic Content -->
 	<include name="Widget-Content">
 		<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="$PARAM[item_limit]">$PARAM[content_path]</content>
 	</include>
-    <!-- Widget Static Content -->
+	<!-- Widget Static Content -->
 	<include name="Widget-ContentCustom">
 		<content>
-            <include name="$PARAM[content_path]">
-                <param name="type" value="$PARAM[type]"/>
-            </include>
+			<include name="$PARAM[content_path]">
+				<param name="type" value="$PARAM[type]"/>
+			</include>
 		</content>
 	</include>
-    <!-- Widget PVR Common  -->    
+	<!-- Widget PVR Common  -->    
 	<include name="Widget-PVR">
 		<control type="image">
 			<top>80</top>
@@ -523,20 +523,20 @@
 			<shadowcolor>black</shadowcolor>
 		</control>
 	</include>
-    
+	
 	<!-- *** General Widget *** -->
-    
-    <!-- Categories -->
+	
+	<!-- Categories -->
 	<include name="Widget-Categories">
 		<param name="visible">true</param>    
 		<param name="custom">false</param>
-        <param name="homebackground">true</param>
-        <param name="type">no</param>        
+		<param name="homebackground">true</param>
+		<param name="type">no</param>        
 		<param name="item_limit">$VAR[WidgetLimitItemsVar]</param>
-        <param name="scale">false</param>
+		<param name="scale">false</param>
 		<param name="icon">$INFO[ListItem.Icon]</param>
 		<param name="icon_height">120</param>
-        <param name="fallback_image">DefaultFolder.png</param>
+		<param name="fallback_image">DefaultFolder.png</param>
 		<param name="sortby"></param>
 		<param name="sortorder"></param>
 		<definition>
@@ -597,7 +597,7 @@
 							<shadowcolor>text_shadow</shadowcolor>
 							<align>center</align>
 							<aligny>center</aligny>
-                            <visible>!$PARAM[scale]</visible>
+							<visible>!$PARAM[scale]</visible>
 						</control>
 						<control type="textbox">
 							<left>42</left>
@@ -609,7 +609,7 @@
 							<shadowcolor>text_shadow</shadowcolor>
 							<align>center</align>
 							<aligny>center</aligny>
-                            <visible>$PARAM[scale]</visible>
+							<visible>$PARAM[scale]</visible>
 						</control>
 					</control>
 				</itemlayout>
@@ -625,8 +625,8 @@
 						</animation>
 						<control type="button">
 							<onfocus>SetProperty(mediaartfanart,$INFO[Container($PARAM[list_id]).ListItem.Art(fanart)],home)</onfocus>
-                            <onfocus condition="$PARAM[homebackground]">SetProperty(fanarthometype,$VAR[HomeMenuTypeVar],home)</onfocus>
-                            <onfocus condition="$PARAM[homebackground]">SetProperty(homebackground,$VAR[HomeMenuBackgroundVar],home)</onfocus>
+							<onfocus condition="$PARAM[homebackground]">SetProperty(fanarthometype,$VAR[HomeMenuTypeVar],home)</onfocus>
+							<onfocus condition="$PARAM[homebackground]">SetProperty(homebackground,$VAR[HomeMenuBackgroundVar],home)</onfocus>
 							<texturenofocus></texturenofocus>
 							<texturefocus></texturefocus>
 						</control>
@@ -672,7 +672,7 @@
 							<shadowcolor>text_shadow</shadowcolor>
 							<align>center</align>
 							<aligny>center</aligny>
-                            <visible>!$PARAM[scale]</visible>
+							<visible>!$PARAM[scale]</visible>
 						</control>
 						<control type="textbox">
 							<left>42</left>
@@ -684,11 +684,11 @@
 							<shadowcolor>text_shadow</shadowcolor>
 							<align>center</align>
 							<aligny>center</aligny>
-                            <visible>$PARAM[scale]</visible>
+							<visible>$PARAM[scale]</visible>
 						</control>
 					</control>
 				</focusedlayout>
-                <include condition="!$PARAM[custom]" name="Widget-Content">
+				<include condition="!$PARAM[custom]" name="Widget-Content">
 					<param name="sortby" value="$PARAM[sortby]"/>
 					<param name="sortorder" value="$PARAM[sortorder]"/>
 					<param name="widget_target" value="$PARAM[widget_target]"/>
@@ -697,17 +697,17 @@
 				</include>
 				<include condition="$PARAM[custom]" name="Widget-ContentCustom">
 					<param name="content_path" value="$PARAM[content_path]"/>
-                    <param name="type" value="$PARAM[type]"/>
+					<param name="type" value="$PARAM[type]"/>
 				</include>
 			</control>
 		</definition>
 	</include>
-    <!-- Posters -->
+	<!-- Posters -->
 	<include name="Widget-Posters">
 		<param name="visible">true</param>    
 		<param name="custom">false</param>
-        <param name="homebackground">true</param>
-        <param name="type">no</param>
+		<param name="homebackground">true</param>
+		<param name="type">no</param>
 		<param name="item_limit">$VAR[WidgetLimitItemsVar]</param>
 		<param name="fallback_image">DefaultFolder.png</param>
 		<param name="sortby"></param>
@@ -754,8 +754,8 @@
 						</animation>
 						<control type="button">
 							<onfocus>SetProperty(mediaartfanart,$INFO[Container($PARAM[list_id]).ListItem.Art(fanart)],home)</onfocus>
-                            <onfocus condition="$PARAM[homebackground]">SetProperty(fanarthometype,$VAR[HomeMenuTypeVar],home)</onfocus>
-                            <onfocus condition="$PARAM[homebackground]">SetProperty(homebackground,$VAR[HomeMenuBackgroundVar],home)</onfocus>
+							<onfocus condition="$PARAM[homebackground]">SetProperty(fanarthometype,$VAR[HomeMenuTypeVar],home)</onfocus>
+							<onfocus condition="$PARAM[homebackground]">SetProperty(homebackground,$VAR[HomeMenuBackgroundVar],home)</onfocus>
 							<texturenofocus></texturenofocus>
 							<texturefocus></texturefocus>
 						</control>
@@ -765,7 +765,7 @@
 						</include>
 					</control>
 				</focusedlayout>
-                <include condition="!$PARAM[custom]" name="Widget-Content">
+				<include condition="!$PARAM[custom]" name="Widget-Content">
 					<param name="sortby" value="$PARAM[sortby]"/>
 					<param name="sortorder" value="$PARAM[sortorder]"/>
 					<param name="widget_target" value="$PARAM[widget_target]"/>
@@ -774,22 +774,22 @@
 				</include>
 				<include condition="$PARAM[custom]" name="Widget-ContentCustom">
 					<param name="content_path" value="$PARAM[content_path]"/>
-                    <param name="type" value="$PARAM[type]"/>
+					<param name="type" value="$PARAM[type]"/>
 				</include>
 			</control>
 		</definition>
 	</include>
-    <!-- Thumbs -->
+	<!-- Thumbs -->
 	<include name="Widget-Thumbs">
 		<param name="visible">true</param>    
 		<param name="custom">false</param>
-        <param name="homebackground">true</param>
-        <param name="type">no</param>
+		<param name="homebackground">true</param>
+		<param name="type">no</param>
 		<param name="item_limit">$VAR[WidgetLimitItemsVar]</param>        
 		<param name="main_label">$INFO[ListItem.Title]</param>
 		<param name="sub_label">$INFO[ListItem.TVShowTitle]</param>
 		<param name="thumb_label">$INFO[ListItem.Season,,x]$INFO[ListItem.Episode]</param>
-        <param name="fallback_image">DefaultFolder.png</param>
+		<param name="fallback_image">DefaultFolder.png</param>
 		<param name="sortby"></param>
 		<param name="sortorder"></param>
 		<definition>
@@ -837,8 +837,8 @@
 						</animation>
 						<control type="button">
 							<onfocus>SetProperty(mediaartfanart,$INFO[Container($PARAM[list_id]).ListItem.Art(fanart)],home)</onfocus>
-                            <onfocus condition="$PARAM[homebackground]">SetProperty(fanarthometype,$VAR[HomeMenuTypeVar],home)</onfocus>
-                            <onfocus condition="$PARAM[homebackground]">SetProperty(homebackground,$VAR[HomeMenuBackgroundVar],home)</onfocus>
+							<onfocus condition="$PARAM[homebackground]">SetProperty(fanarthometype,$VAR[HomeMenuTypeVar],home)</onfocus>
+							<onfocus condition="$PARAM[homebackground]">SetProperty(homebackground,$VAR[HomeMenuBackgroundVar],home)</onfocus>
 							<texturenofocus></texturenofocus>
 							<texturefocus></texturefocus>
 						</control>
@@ -851,7 +851,7 @@
 						</include>
 					</control>
 				</focusedlayout>
-                <include condition="!$PARAM[custom]" name="Widget-Content">
+				<include condition="!$PARAM[custom]" name="Widget-Content">
 					<param name="sortby" value="$PARAM[sortby]"/>
 					<param name="sortorder" value="$PARAM[sortorder]"/>
 					<param name="widget_target" value="$PARAM[widget_target]"/>
@@ -860,18 +860,18 @@
 				</include>
 				<include condition="$PARAM[custom]" name="Widget-ContentCustom">
 					<param name="content_path" value="$PARAM[content_path]"/>
-                    <param name="type" value="$PARAM[type]"/>
+					<param name="type" value="$PARAM[type]"/>
 				</include>
 			</control>
 		</definition>
 	</include>    
-    <!-- Square -->
+	<!-- Square -->
 	<include name="Widget-Square">
 		<param name="visible">true</param>
 		<param name="custom">false</param>
-        <param name="homebackground">true</param>
+		<param name="homebackground">true</param>
 		<param name="favourites">false</param>
-        <param name="type">no</param>
+		<param name="type">no</param>
 		<param name="item_limit">$VAR[WidgetLimitItemsVar]</param>
 		<param name="sub_label">$INFO[ListItem.Label]</param>
 		<param name="fallback_image">DefaultFolder.png</param>
@@ -894,9 +894,9 @@
 				<include name="Widget-Common">
 					<param name="list_id" value="$PARAM[list_id]"/>
 				</include>
-                <!-- on jarvis it's brokes addons
+				<!-- on jarvis it's brokes addons
 				<onclick condition="$PARAM[favourites]">$INFO[ListItem.FileNameAndPath]</onclick>
-                -->
+				-->
 				<visible>$PARAM[visible]</visible>
 				<visible>IntegerGreaterThan(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
 				<itemlayout width="310" height="500">
@@ -924,8 +924,8 @@
 						<control type="button">
 							<onfocus condition="!$PARAM[custom]">SetProperty(mediaartfanart,$INFO[Container($PARAM[list_id]).ListItem.Art(fanart)],home)</onfocus>
 							<onfocus condition="$PARAM[custom]">SetProperty(mediaartfanart,$INFO[Container($PARAM[list_id]).ListItem.Property(AddonFanart)],home)</onfocus>
-                            <onfocus condition="$PARAM[homebackground]">SetProperty(fanarthometype,$VAR[HomeMenuTypeVar],home)</onfocus>
-                            <onfocus condition="$PARAM[homebackground]">SetProperty(homebackground,$VAR[HomeMenuBackgroundVar],home)</onfocus>
+							<onfocus condition="$PARAM[homebackground]">SetProperty(fanarthometype,$VAR[HomeMenuTypeVar],home)</onfocus>
+							<onfocus condition="$PARAM[homebackground]">SetProperty(homebackground,$VAR[HomeMenuBackgroundVar],home)</onfocus>
 							<texturenofocus></texturenofocus>
 							<texturefocus></texturefocus>
 						</control>
@@ -947,15 +947,15 @@
 				</include>
 				<include condition="$PARAM[custom]" name="Widget-ContentCustom">
 					<param name="content_path" value="CustomAddons$PARAM[widget_target]"/>
-                    <param name="type" value="$PARAM[type]"/>
+					<param name="type" value="$PARAM[type]"/>
 				</include>
 			</control>
 		</definition>
 	</include>
-    <!-- Square-Favourites -->
+	<!-- Square-Favourites -->
 	<include name="Widget-Square-Favourites">
 		<param name="visible">true</param>
-        <param name="homebackground">true</param>
+		<param name="homebackground">true</param>
 		<param name="sub_label">$INFO[ListItem.Label]</param>
 		<param name="fallback_image">DefaultFavourites.png</param>
 		<definition>
@@ -964,14 +964,14 @@
 				<top>120</top>
 				<right>0</right>
 				<height>1000</height>
-                <onleft>9000</onleft>
-                <onright>9000</onright>
-                <onup>$PARAM[list_id]</onup>
-                <ondown>$PARAM[list_id]</ondown>
-                <preloaditems>2</preloaditems>
-                <scrolltime tween="cubic" easing="out">500</scrolltime>
-                <orientation>vertical</orientation>                
-                <onclick>$INFO[ListItem.FileNameAndPath]</onclick>
+				<onleft>9000</onleft>
+				<onright>9000</onright>
+				<onup>$PARAM[list_id]</onup>
+				<ondown>$PARAM[list_id]</ondown>
+				<preloaditems>2</preloaditems>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<orientation>vertical</orientation>                
+				<onclick>$INFO[ListItem.FileNameAndPath]</onclick>
 				<visible>$PARAM[visible]</visible>
 				<visible>IntegerGreaterThan(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
 				<itemlayout width="330" height="396">
@@ -994,9 +994,9 @@
 						<animation type="Unfocus">
 							<effect type="zoom" start="112" end="100" time="200" tween="sine" easing="inout" center="240,120" />
 						</animation>
-                        <control type="button">
-                            <onfocus condition="$PARAM[homebackground]">SetProperty(fanarthometype,$VAR[HomeMenuTypeVar],home)</onfocus>
-                            <onfocus condition="$PARAM[homebackground]">SetProperty(homebackground,$VAR[HomeMenuBackgroundVar],home)</onfocus>
+						<control type="button">
+							<onfocus condition="$PARAM[homebackground]">SetProperty(fanarthometype,$VAR[HomeMenuTypeVar],home)</onfocus>
+							<onfocus condition="$PARAM[homebackground]">SetProperty(homebackground,$VAR[HomeMenuBackgroundVar],home)</onfocus>
 							<texturenofocus></texturenofocus>
 							<texturefocus></texturefocus>
 						</control>
@@ -1007,16 +1007,16 @@
 						</include>
 					</control>
 				</focusedlayout>
-                <content>favourites://</content>
+				<content>favourites://</content>
 			</control>
 		</definition>
 	</include>
-    <!-- Channels -->
+	<!-- Channels -->
 	<include name="Widget-Channels">
 		<param name="visible">true</param>
 		<param name="custom">false</param>
-        <param name="homebackground">true</param>
-        <param name="type">no</param>        
+		<param name="homebackground">true</param>
+		<param name="type">no</param>        
 		<param name="item_limit">$VAR[WidgetLimitItemsVar]</param>
 		<param name="icon">$INFO[ListItem.Icon]</param>
 		<param name="label">$INFO[ListItem.Label]</param>
@@ -1101,9 +1101,9 @@
 						<animation type="Unfocus">
 							<effect type="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="240,100" />
 						</animation>
-                        <control type="button">
-                            <onfocus condition="$PARAM[homebackground]">SetProperty(fanarthometype,$VAR[HomeMenuTypeVar],home)</onfocus>
-                            <onfocus condition="$PARAM[homebackground]">SetProperty(homebackground,$VAR[HomeMenuBackgroundVar],home)</onfocus>
+						<control type="button">
+							<onfocus condition="$PARAM[homebackground]">SetProperty(fanarthometype,$VAR[HomeMenuTypeVar],home)</onfocus>
+							<onfocus condition="$PARAM[homebackground]">SetProperty(homebackground,$VAR[HomeMenuBackgroundVar],home)</onfocus>
 							<texturenofocus></texturenofocus>
 							<texturefocus></texturefocus>
 						</control>
@@ -1171,12 +1171,12 @@
 				</include>
 				<include condition="$PARAM[custom]" name="Widget-ContentCustom">
 					<param name="content_path" value="CustomChannels$PARAM[widget_target]"/>
-                    <param name="type" value="$PARAM[type]"/>
+					<param name="type" value="$PARAM[type]"/>
 				</include>
 			</control>
 		</definition>
 	</include>
-    <!-- Image -->
+	<!-- Image -->
 	<include name="Widget-Image">
 		<param name="visible">true</param>
 		<param name="visible_1">true</param>
@@ -1239,7 +1239,7 @@
 
 	<!-- *** Weather Widget *** -->
 	
-    <!-- Weather Main -->
+	<!-- Weather Main -->
 	<include name="Widget-Weather">
 		<param name="width">266</param>
 		<definition>
@@ -1269,14 +1269,14 @@
 							<bordertexture border="21">overlays/shadow.png</bordertexture>
 							<bordersize>20</bordersize>
 						</control>
-                        <include name="WeatherIcons">
-                            <param name="left" value="60" />
-                            <param name="top" value="108" />
-                            <param name="width" value="130" />
-                            <param name="height" value="130" />
-                            <param name="image_1" value="$INFO[ListItem.Icon]" />
-                            <param name="image_multi" value="$INFO[ListItem.Icon]" />
-                        </include>
+						<include name="WeatherIcons">
+							<param name="left" value="60" />
+							<param name="top" value="108" />
+							<param name="width" value="130" />
+							<param name="height" value="130" />
+							<param name="image_1" value="$INFO[ListItem.Icon]" />
+							<param name="image_multi" value="$INFO[ListItem.Icon]" />
+						</include>
 						<control type="label">
 							<left>15</left>
 							<top>45</top>
@@ -1312,11 +1312,11 @@
 						<animation type="Unfocus">
 							<effect type="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="180,140" />
 						</animation>
-                        <control type="button">
-                            <onfocus>SetProperty(weatherfanartcode,$INFO[Container($PARAM[list_id]).ListItem.Property(FanartCode)],home)</onfocus>
-                            <texturenofocus></texturenofocus>
-                            <texturefocus></texturefocus>
-                        </control>
+						<control type="button">
+							<onfocus>SetProperty(weatherfanartcode,$INFO[Container($PARAM[list_id]).ListItem.Property(FanartCode)],home)</onfocus>
+							<texturenofocus></texturenofocus>
+							<texturefocus></texturefocus>
+						</control>
 						<control type="image">
 							<left>0</left>
 							<top>20</top>
@@ -1335,14 +1335,14 @@
 							<bordersize>20</bordersize>
 							<include>Animation_FocusTextureFade</include>
 						</control>
-                        <include name="WeatherIcons">
-                            <param name="left" value="60" />
-                            <param name="top" value="108" />
-                            <param name="width" value="130" />
-                            <param name="height" value="130" />
-                            <param name="image_1" value="$INFO[ListItem.Icon]" />
-                            <param name="image_multi" value="$INFO[ListItem.Icon]" />
-                        </include>
+						<include name="WeatherIcons">
+							<param name="left" value="60" />
+							<param name="top" value="108" />
+							<param name="width" value="130" />
+							<param name="height" value="130" />
+							<param name="image_1" value="$INFO[ListItem.Icon]" />
+							<param name="image_multi" value="$INFO[ListItem.Icon]" />
+						</include>
 						<control type="label">
 							<left>15</left>
 							<top>45</top>
@@ -1372,7 +1372,7 @@
 			</control>
 		</definition>
 	</include>
-    <!-- Weather Content Hourly -->
+	<!-- Weather Content Hourly -->
 	<include name="HourlyItems">
 		<content>
 			<include name="WeatherNAItem">
@@ -1410,7 +1410,7 @@
 			</include>
 		</content>
 	</include>
-    <!-- Weather Content Daily -->
+	<!-- Weather Content Daily -->
 	<include name="DailyItems">
 		<content>
 			<include name="WeatherNAItem">
@@ -1460,7 +1460,7 @@
 			</include>
 		</content>
 	</include>
-    <!-- Weather None Item -->
+	<!-- Weather None Item -->
 	<include name="WeatherNAItem">
 		<item>
 			<icon>resource://resource.images.weathericons.default/na.png</icon>
@@ -1481,7 +1481,7 @@
 			<visible>!IsEmpty(Skin.String(WeatherIcons.path)) + Skin.HasSetting(WeatherIcons.multi)</visible>
 		</item>
 	</include>
-    <!-- Weather Hourly Item -->
+	<!-- Weather Hourly Item -->
 	<include name="WeatherHourlyItem">
 		<item>
 			<label>$INFO[Window(weather).Property(Hourly.$PARAM[item_index].Time)]</label>
@@ -1494,7 +1494,7 @@
 			<thumb>resource://resource.images.weathericons.default/$INFO[Window(weather).Property(Hourly.$PARAM[item_index].FanartCode),,.png]</thumb>
 			<onclick>noop</onclick>
 			<visible>!IsEmpty(Window(weather).Property(Hourly.$PARAM[item_index].Outlook))</visible>
-            <visible>IsEmpty(Skin.String(WeatherIcons.path))</visible>
+			<visible>IsEmpty(Skin.String(WeatherIcons.path))</visible>
 		</item>
 		<item>
 			<label>$INFO[Window(weather).Property(Hourly.$PARAM[item_index].Time)]</label>
@@ -1507,7 +1507,7 @@
 			<thumb>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Hourly.$PARAM[item_index].FanartCode),,.png]</thumb>
 			<onclick>noop</onclick>
 			<visible>!IsEmpty(Window(weather).Property(Hourly.$PARAM[item_index].Outlook))</visible>
-            <visible>!IsEmpty(Skin.String(WeatherIcons.path)) + !Skin.HasSetting(WeatherIcons.multi)</visible>
+			<visible>!IsEmpty(Skin.String(WeatherIcons.path)) + !Skin.HasSetting(WeatherIcons.multi)</visible>
 		</item>
 		<item>
 			<label>$INFO[Window(weather).Property(Hourly.$PARAM[item_index].Time)]</label>
@@ -1520,10 +1520,10 @@
 			<thumb>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Hourly.$PARAM[item_index].FanartCode),,/]</thumb>
 			<onclick>noop</onclick>
 			<visible>!IsEmpty(Window(weather).Property(Hourly.$PARAM[item_index].Outlook))</visible>
-            <visible>!IsEmpty(Skin.String(WeatherIcons.path)) + Skin.HasSetting(WeatherIcons.multi)</visible>
+			<visible>!IsEmpty(Skin.String(WeatherIcons.path)) + Skin.HasSetting(WeatherIcons.multi)</visible>
 		</item>
 	</include>
-    <!-- Weather Daily Item -->
+	<!-- Weather Daily Item -->
 	<include name="WeatherDailyItem">
 		<item>
 			<label>$INFO[Window(weather).Property(Daily.$PARAM[item_index].ShortDay)]</label>
@@ -1537,7 +1537,7 @@
 			<thumb>resource://resource.images.weathericons.default/$INFO[Window(weather).Property(Daily.$PARAM[item_index].FanartCode),,.png]</thumb>
 			<onclick>noop</onclick>
 			<visible>!IsEmpty(Window(weather).Property(Daily.$PARAM[item_index].Outlook))</visible>
-            <visible>IsEmpty(Skin.String(WeatherIcons.path))</visible>
+			<visible>IsEmpty(Skin.String(WeatherIcons.path))</visible>
 		</item>
 		<item>
 			<label>$INFO[Window(weather).Property(Daily.$PARAM[item_index].ShortDay)]</label>
@@ -1551,7 +1551,7 @@
 			<thumb>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Daily.$PARAM[item_index].FanartCode),,.png]</thumb>
 			<onclick>noop</onclick>
 			<visible>!IsEmpty(Window(weather).Property(Daily.$PARAM[item_index].Outlook))</visible>
-            <visible>!IsEmpty(Skin.String(WeatherIcons.path)) + !Skin.HasSetting(WeatherIcons.multi)</visible>
+			<visible>!IsEmpty(Skin.String(WeatherIcons.path)) + !Skin.HasSetting(WeatherIcons.multi)</visible>
 		</item>
 		<item>
 			<label>$INFO[Window(weather).Property(Daily.$PARAM[item_index].ShortDay)]</label>
@@ -1565,10 +1565,10 @@
 			<thumb>$INFO[Skin.String(WeatherIcons.path)]$INFO[Window(weather).Property(Daily.$PARAM[item_index].FanartCode),,/]</thumb>
 			<onclick>noop</onclick>
 			<visible>!IsEmpty(Window(weather).Property(Daily.$PARAM[item_index].Outlook))</visible>
-            <visible>!IsEmpty(Skin.String(WeatherIcons.path)) + Skin.HasSetting(WeatherIcons.multi)</visible>
+			<visible>!IsEmpty(Skin.String(WeatherIcons.path)) + Skin.HasSetting(WeatherIcons.multi)</visible>
 		</item>
 	</include>
-    <!-- Weather Map Item -->
+	<!-- Weather Map Item -->
 	<include name="WeatherMapItem">
 		<control type="group" id="700$PARAM[item_id]">
 			<height>1110</height>

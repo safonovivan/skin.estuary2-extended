@@ -43,7 +43,7 @@
 				<control type="label">
 					<top>60</top>
 					<label>$VAR[OSDSubLabelVar]</label>
-                    <textcolor>$VAR[MainColorVar]</textcolor>
+					<textcolor>$VAR[MainColorVar]</textcolor>
 					<shadowcolor>text_shadow</shadowcolor>
 					<height>100</height>
 					<left>0</left>
@@ -62,7 +62,7 @@
 					<width>600</width>
 					<align>right</align>
 					<label>$INFO[System.Time]</label>
-                    <visible>!Skin.HasSetting(hide_time)</visible>
+					<visible>!Skin.HasSetting(hide_time)</visible>
 				</control>
 				<control type="grouplist">
 					<right>24</right>

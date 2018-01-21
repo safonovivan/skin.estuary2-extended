@@ -2,12 +2,12 @@
 <window>
 	<defaultcontrol always="true">10</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
-    <onload condition="IsEmpty(Window(home).Property(homebackground)) | ![StringCompare(window(home).Property(fanarthometype),livetv) | StringCompare(window(home).Property(fanarthometype),radio)]">SetProperty(fanarthometype,livetv,home)</onload>
-    <onload condition="IsEmpty(Window(home).Property(homebackground)) | ![StringCompare(window(home).Property(fanarthometype),livetv) | StringCompare(window(home).Property(fanarthometype),radio)]">SetProperty(homebackground,$VAR[BackgroundLiveTVVar],home)</onload>
+	<onload condition="IsEmpty(Window(home).Property(homebackground)) | ![StringCompare(window(home).Property(fanarthometype),livetv) | StringCompare(window(home).Property(fanarthometype),radio)]">SetProperty(fanarthometype,livetv,home)</onload>
+	<onload condition="IsEmpty(Window(home).Property(homebackground)) | ![StringCompare(window(home).Property(fanarthometype),livetv) | StringCompare(window(home).Property(fanarthometype),radio)]">SetProperty(homebackground,$VAR[BackgroundLiveTVVar],home)</onload>
 	<views>10</views>
 	<menucontrol>9000</menucontrol>
 	<controls>
-        <!-- Background -->
+		<!-- Background -->
 		<include>DefaultBackground</include>
 		<control type="group" id="50">
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(script-script.extendedinfo-VideoList.xml)">Conditional</animation>

@@ -2,10 +2,10 @@
 <window>
 	<defaultcontrol always="true">50</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
-    <onload>SetProperty(fanarthometype,music,home)</onload>
-    <onload>SetProperty(homebackground,$VAR[BackgroundVideosVar],home)</onload>
+	<onload>SetProperty(fanarthometype,music,home)</onload>
+	<onload>SetProperty(homebackground,$VAR[BackgroundVideosVar],home)</onload>
 	<views>50</views>
 	<controls>
-        <include>MyPlaylists</include>
+		<include>MyPlaylists</include>
 	</controls>
 </window>

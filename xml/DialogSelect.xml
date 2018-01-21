@@ -149,7 +149,7 @@
 				<include name="DefaultDialogButton">
 					<param name="id" value="99" />
 					<param name="label" value="$LOCALIZE[222]" />
-                    <param name="onclick" value="PreviousMenu"/>
+					<param name="onclick" value="PreviousMenu"/>
 				</include>
 			</control>
 		</control>

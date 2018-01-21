@@ -2,12 +2,12 @@
 <window>
 	<defaultcontrol always="true">52</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
-    <onload>SetProperty(fanarthometype,addons,home)</onload>
-    <onload>SetProperty(homebackground,$VAR[BackgroundAddonsVar],home)</onload>
+	<onload>SetProperty(fanarthometype,addons,home)</onload>
+	<onload>SetProperty(homebackground,$VAR[BackgroundAddonsVar],home)</onload>
 	<views>50,52,55,500</views>
 	<menucontrol>9000</menucontrol>
 	<controls>
-        <!-- Background -->
+		<!-- Background -->
 		<include>DefaultBackground</include>
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(script-script.extendedinfo-VideoList.xml)">Conditional</animation>
