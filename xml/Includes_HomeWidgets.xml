@@ -670,7 +670,7 @@
 		<control type="group" id="21000">
 			<visible>StringCompare(Container(9000).ListItem.Property(defaultID),dvd)</visible>
 			<include name="Visible_Right_Delayed">
-				<param name="id" value="disc"/>
+				<param name="id" value="dvd"/>
 			</include>
 			<include name="Widget-Image">
 				<param name="text_label" value="$INFO[System.DVDLabel]" />
