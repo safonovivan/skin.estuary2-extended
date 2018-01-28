@@ -665,7 +665,7 @@
 			</control>
 		</control>
 	</include>
-	<!-- Disc 21000 -->
+	<!-- DVD 21000 -->
 	<include name="DiscHomeWidgets">
 		<control type="group" id="21000">
 			<visible>StringCompare(Container(9000).ListItem.Property(defaultID),dvd)</visible>
