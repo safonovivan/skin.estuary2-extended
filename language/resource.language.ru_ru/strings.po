@@ -1,4 +1,4 @@
-# Kodi Media Center language file
+﻿# Kodi Media Center language file
 # Addon Name: Estuary v2 Extended
 # Addon id: skin.estuary2-extended
 # Addon Provider: phil65, Ichabod Fletchman, YLLOW_DRAGON
@@ -785,3 +785,5 @@ msgstr "Воспроизводимое видео в качестве фона"
 msgctxt "#44119"
 msgid "Show background \"Now playing\" visualisation"
 msgstr "Музыкальная визуализация в качестве фона"
+
+# EXTENDED ADDED VALUE SAFONOV_IVAN
