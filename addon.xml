@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
-	id="skin.estuary2.j-extended" 
-	version="1.9.16.090.01" 
-	name="Estuary v2 Extended [Jarvis]" 
-	provider-name="phil65, Ichabod Fletchman, YLLOW_DRAGON, vl.maksime">
+	id="skin.estuaryv2.j-safonov" 
+	version="1.0.001" 
+	name="Estuary v2 Extended mod Safonov" 
+	provider-name="phil65, Ichabod Fletchman, YLLOW_DRAGON, vl.maksime, safonov_ivan">
 <!-- krypton
 	id="skin.estuary2-extended"
 	version="1.9.16.090"

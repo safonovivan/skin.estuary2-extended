@@ -496,4 +496,46 @@
 			<param name="id2" value="Radio" />
 		</include>
 	</include>
-</includes>
+	<!-- mod Safonov_ivan: combi_userwidget -->
+	<include name="CustomAddonsAll1">
+		<include name="HomeCustomAddonsItems">
+			<param name="id2" value="AllPrograms1" />
+		</include>
+	</include>
+	<include name="CustomAddonsAll2">
+		<include name="HomeCustomAddonsItems">
+			<param name="id2" value="AllPrograms2" />
+		</include>
+	</include>
+	<include name="CustomAddonsAll3">
+		<include name="HomeCustomAddonsItems">
+			<param name="id2" value="AllPrograms3" />
+		</include>
+	</include>
+	<include name="CustomAddonsAll4">
+		<include name="HomeCustomAddonsItems">
+			<param name="id2" value="AllPrograms4" />
+		</include>
+	</include>
+	<include name="CustomAddonsAll5">
+		<include name="HomeCustomAddonsItems">
+			<param name="id2" value="AllPrograms5" />
+		</include>
+	</include>
+	<include name="CustomAddonsAll6">
+		<include name="HomeCustomAddonsItems">
+			<param name="id2" value="AllPrograms6" />
+		</include>
+	</include>
+	<include name="CustomAddonsAll7">
+		<include name="HomeCustomAddonsItems">
+			<param name="id2" value="AllPrograms7" />
+		</include>
+	</include>   
+	<include name="CustomAddonsAll8">
+		<include name="HomeCustomAddonsItems">
+			<param name="id2" value="AllPrograms8" />
+		</include>
+	</include>	
+
+	</includes>

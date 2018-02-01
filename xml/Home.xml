@@ -76,6 +76,8 @@
 			</control>
 			<!-- RSS -->
 			<control type="rss">
+				<include condition="!Skin.HasSetting(FullScreenWidgetMenu)">NotHideMainMenuWithWidgets</include>
+				<animation effect="slide" end="462,0" time="250" tween="quadratic" easing="out" condition="[Control.HasFocus(9000) | ControlGroup(710).HasFocus | ControlGroup(720).HasFocus] + Skin.HasSetting(FullScreenWidgetMenu) + Skin.HasSetting(systembutton)">Conditional</animation>
 				<animation effect="slide" end="0,90" time="300" tween="sine" easing="inout" condition="Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(script-script.extendedinfo-VideoList.xml)">conditional</animation>
 				<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
 				<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>

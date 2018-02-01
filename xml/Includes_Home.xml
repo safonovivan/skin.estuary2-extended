@@ -462,6 +462,84 @@
 	<include name="CategoryLabel">
 		<param name="visible">true</param>
 		<definition>
+			<control type="group" id="$PARAM[list_id]2">
+				<left>55</left>
+				<top>80</top>
+				<width>900</width>
+				<height>90</height>
+				<visible>$PARAM[visible]</visible>
+				<visible>IntegerGreaterThan(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				<control type="image">
+					<left>2</left>
+					<top>13</top>
+					<width>11</width>
+					<height>11</height>
+					<texture colordiffuse="$VAR[SkinColorVar]">frame/puce.png</texture>
+				</control>
+				<control type="label">
+					<left>22</left>
+					<top>0</top>
+					<right>2</right>
+					<height>90</height>
+					<label>$PARAM[label]</label>
+					<font>font25_title</font>
+					<shadowcolor>text_shadow</shadowcolor>
+				</control>
+				<control type="label">
+					<left>22</left>
+					<top>0</top>
+					<right>2</right>
+					<height>90</height>
+					<label>$PARAM[label] |$INFO[Container($PARAM[list_id]).Listitem.Label, [B],[/B]]</label>
+					<font>font25_title</font>
+					<shadowcolor>text_shadow</shadowcolor>
+					<visible>Control.HasFocus($PARAM[list_id]) + Skin.HasSetting(LabelFocusWidget)</visible>
+				</control>
+			</control>
+		</definition>
+	</include>
+	<include name="CategoryLabel-Weather">
+		<param name="visible">true</param>
+		<definition>
+			<control type="group" id="$PARAM[list_id]2">
+				<left>55</left>
+				<top>80</top>
+				<width>900</width>
+				<height>90</height>
+				<visible>$PARAM[visible]</visible>
+				<visible>IntegerGreaterThan(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				<control type="image">
+					<left>2</left>
+					<top>13</top>
+					<width>11</width>
+					<height>11</height>
+					<texture colordiffuse="$VAR[SkinColorVar]">frame/puce.png</texture>
+				</control>
+				<control type="label">
+					<left>22</left>
+					<top>0</top>
+					<right>2</right>
+					<height>90</height>
+					<label>$PARAM[label]</label>
+					<font>font25_title</font>
+					<shadowcolor>text_shadow</shadowcolor>
+				</control>
+				<control type="label">
+					<left>22</left>
+					<top>0</top>
+					<right>2</right>
+					<height>90</height>
+					<label>$PARAM[label] |$INFO[Container($PARAM[list_id]).Listitem.Label, [COLOR white][B],[/B][/COLOR]] $INFO[Container($PARAM[list_id]).Listitem.Label2, [COLOR white][B],[/B][/COLOR]]</label>
+					<font>font25_title</font>
+					<shadowcolor>text_shadow</shadowcolor>
+					<visible>Control.HasFocus($PARAM[list_id]) + Skin.HasSetting(LabelFocusWidget)</visible>
+				</control>
+			</control>
+		</definition>
+	</include>
+	<include name="CategoryLabel-original">
+		<param name="visible">true</param>
+		<definition>
 			<control type="label" id="$PARAM[list_id]2">
 				<left>55</left>
 				<top>80</top>
@@ -568,6 +646,7 @@
 							<texture>dialogs/dialog-bg-nobo.png</texture>
 							<bordertexture border="21">overlays/shadow.png</bordertexture>
 							<bordersize>20</bordersize>
+							<visible>!Skin.HasSetting(Categoriebackgroundoff)</visible>
 						</control>
 						<control type="image">
 							<centertop>74</centertop>
@@ -597,7 +676,7 @@
 							<shadowcolor>text_shadow</shadowcolor>
 							<align>center</align>
 							<aligny>center</aligny>
-							<visible>!$PARAM[scale]</visible>
+                            <visible>!$PARAM[scale]</visible>
 						</control>
 						<control type="textbox">
 							<left>42</left>
@@ -609,7 +688,7 @@
 							<shadowcolor>text_shadow</shadowcolor>
 							<align>center</align>
 							<aligny>center</aligny>
-							<visible>$PARAM[scale]</visible>
+                            <visible>$PARAM[scale]</visible>
 						</control>
 					</control>
 				</itemlayout>
@@ -636,6 +715,7 @@
 							<texture>dialogs/dialog-bg-nobo.png</texture>
 							<bordertexture border="21">overlays/shadow.png</bordertexture>
 							<bordersize>20</bordersize>
+							<visible>!Skin.HasSetting(Categoriebackgroundoff)</visible>
 						</control>
 						<control type="image">
 							<width>316</width>
@@ -643,6 +723,25 @@
 							<texture colordiffuse="$VAR[MainColorVar]">colors/grey.png</texture>
 							<bordersize>20</bordersize>
 							<include>Animation_FocusTextureFade</include>
+							<visible>!Skin.HasSetting(Categoriebackgroundoff)</visible>
+						</control>
+						<control type="image">
+							<centertop>74</centertop>
+							<left>62</left>
+							<width>200</width>
+							<height>$PARAM[icon_height]</height>
+							<texture colordiffuse="$VAR[MainColorVar]" fallback="$PARAM[fallback_image]">$PARAM[icon]</texture>
+							<aspectratio>keep</aspectratio>
+							<visible>!$PARAM[scale] + Skin.HasSetting(Categoriebackgroundoff)</visible>
+						</control>
+						<control type="image">
+							<top>25</top>
+							<left>62</left>
+							<width>200</width>
+							<height>$PARAM[icon_height]</height>
+							<texture colordiffuse="$VAR[MainColorVar]" fallback="$PARAM[fallback_image]">$PARAM[icon]</texture>
+							<aspectratio>keep</aspectratio>
+							<visible>$PARAM[scale] + Skin.HasSetting(Categoriebackgroundoff)</visible>
 						</control>
 						<control type="image">
 							<centertop>74</centertop>
@@ -651,7 +750,7 @@
 							<height>$PARAM[icon_height]</height>
 							<texture fallback="$PARAM[fallback_image]">$PARAM[icon]</texture>
 							<aspectratio>keep</aspectratio>
-							<visible>!$PARAM[scale]</visible>
+							<visible>!$PARAM[scale] + !Skin.HasSetting(Categoriebackgroundoff)</visible>
 						</control>
 						<control type="image">
 							<top>25</top>
@@ -660,7 +759,7 @@
 							<height>$PARAM[icon_height]</height>
 							<texture fallback="$PARAM[fallback_image]">$PARAM[icon]</texture>
 							<aspectratio>keep</aspectratio>
-							<visible>$PARAM[scale]</visible>
+							<visible>$PARAM[scale] + !Skin.HasSetting(Categoriebackgroundoff)</visible>
 						</control>
 						<control type="textbox">
 							<left>42</left>
@@ -672,7 +771,20 @@
 							<shadowcolor>text_shadow</shadowcolor>
 							<align>center</align>
 							<aligny>center</aligny>
-							<visible>!$PARAM[scale]</visible>
+                            <visible>!$PARAM[scale] + !Skin.HasSetting(Categoriebackgroundoff)</visible>
+						</control>
+						<control type="textbox">
+							<left>42</left>
+							<top>106</top>
+							<width>240</width>
+							<height>70</height>
+							<label>$INFO[ListItem.Label]</label>
+							<font>font25_narrow</font>
+							<textcolor>$VAR[MainColorVar]</textcolor>
+							<shadowcolor>text_shadow</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+                            <visible>!$PARAM[scale] + Skin.HasSetting(Categoriebackgroundoff)</visible>
 						</control>
 						<control type="textbox">
 							<left>42</left>
@@ -684,7 +796,20 @@
 							<shadowcolor>text_shadow</shadowcolor>
 							<align>center</align>
 							<aligny>center</aligny>
-							<visible>$PARAM[scale]</visible>
+                            <visible>$PARAM[scale] + !Skin.HasSetting(Categoriebackgroundoff)</visible>
+						</control>
+						<control type="textbox">
+							<left>42</left>
+							<top>114</top>
+							<width>240</width>
+							<height>70</height>
+							<label>$INFO[ListItem.Label]</label>
+							<font>font25_narrow</font>
+							<textcolor>$VAR[MainColorVar]</textcolor>
+							<shadowcolor>text_shadow</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+                            <visible>$PARAM[scale] + Skin.HasSetting(Categoriebackgroundoff)</visible>
 						</control>
 					</control>
 				</focusedlayout>
@@ -1243,7 +1368,7 @@
 	<include name="Widget-Weather">
 		<param name="width">266</param>
 		<definition>
-			<include name="CategoryLabel">
+			<include name="CategoryLabel-Weather">
 				<param name="label">$PARAM[widget_header]</param>
 				<param name="list_id" value="$PARAM[list_id]"/>
 				<param name="visible" value="$PARAM[visible]"/>
@@ -1268,6 +1393,7 @@
 							<texture>dialogs/dialog-bg-nobo.png</texture>
 							<bordertexture border="21">overlays/shadow.png</bordertexture>
 							<bordersize>20</bordersize>
+							<visible>!Skin.HasSetting(Weatherbackgroundoff)</visible>
 						</control>
 						<include name="WeatherIcons">
 							<param name="left" value="60" />
@@ -1325,6 +1451,7 @@
 							<texture>dialogs/dialog-bg-nobo.png</texture>
 							<bordertexture border="21">overlays/shadow.png</bordertexture>
 							<bordersize>20</bordersize>
+							<visible>!Skin.HasSetting(Weatherbackgroundoff)</visible>
 						</control>
 						<control type="image">
 							<left>0</left>
@@ -1334,6 +1461,7 @@
 							<texture colordiffuse="$VAR[MainColorVar]">colors/grey.png</texture>
 							<bordersize>20</bordersize>
 							<include>Animation_FocusTextureFade</include>
+							<visible>!Skin.HasSetting(Weatherbackgroundoff)</visible>
 						</control>
 						<include name="WeatherIcons">
 							<param name="left" value="60" />
@@ -1626,5 +1754,18 @@
 			<label>$INFO[Window(weather).Property(Map.$PARAM[item_id].Heading)]</label>
 			<visible>Weather.IsFetched + !IsEmpty(Window(weather).Property(Map.$PARAM[item_id].Area)) + !IsEmpty(Window(weather).Property(Map.IsFetched))</visible>
 		</control>
+	</include>
+	<!-- *** Settings Safonov *** -->
+	<include name="NotHideMainMenuWithWidgets">
+		<left>462</left>
+	</include>
+	<include name="HideMainMenuWithWidgets">
+		<left>-40</left>
+	</include>
+	<include name="twopanel">
+		<bottom>110</bottom>
+	</include>
+	<include name="onepanel">
+		<bottom>-10</bottom>
 	</include>
 </includes>

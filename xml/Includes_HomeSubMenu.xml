@@ -2,7 +2,9 @@
 <includes>
 	<include name="HomeSubMenu">
 		<control type="group" id="2000">
-			<left>462</left>
+			<include condition="Skin.HasSetting(FullScreenWidgetMenu)">HideMainMenuWithWidgets</include>
+			<include condition="!Skin.HasSetting(FullScreenWidgetMenu)">NotHideMainMenuWithWidgets</include>
+			<animation effect="slide" end="502,0" time="200" tween="quadratic" easing="out" condition="[Control.HasFocus(9000) | ControlGroup(710).HasFocus | ControlGroup(720).HasFocus] + Skin.HasSetting(FullScreenWidgetMenu)">Conditional</animation>
 			<animation type="Conditional" condition="Control.IsVisible(200000)" reversible="false">
 				<effect type="slide" end="0,20" time="60" tween="sine" />
 				<effect type="slide" end="0,-20" time="180" tween="sine" delay="80" />

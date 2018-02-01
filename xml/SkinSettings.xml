@@ -69,6 +69,11 @@
 						<visible>Skin.HasSetting(enable_custom_list_addons) | Skin.HasSetting(enable_custom_list_channels)</visible>
 						<onclick>noop</onclick>
 					</item>
+					<item id="8">
+						<label>$LOCALIZE[45009]</label>
+                        <visible>Skin.HasSetting(setting_safonov)</visible>
+						<onclick>noop</onclick>
+					</item>
 					<item id="5">
 						<label>$LOCALIZE[19190]</label>
 						<onclick>noop</onclick>
@@ -137,6 +142,13 @@
 					<label>$LOCALIZE[31160]</label>
 					<onclick>Skin.ToggleSetting(hide_mediaflags)</onclick>
 					<selected>!Skin.HasSetting(hide_mediaflags)</selected>
+				</control>
+				<control type="radiobutton" id="1061">
+					<description>enable_settings_safonov</description>
+					<label>$LOCALIZE[45009]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(setting_safonov)</onclick>
+					<selected>Skin.HasSetting(setting_safonov)</selected>
 				</control>
 				<control type="label" id="107">
 					<description>Addons Label</description>
@@ -562,6 +574,81 @@
 					<param name="type" value="1" />
 					<param name="visible" value="PVR.HasRadioChannels + Skin.HasSetting(enable_custom_list_channels)" />
 				</include>
+                <control type="image" id="2302">
+                    <description>Separator Image</description>
+                    <height>3</height>
+                    <texture colordiffuse="AAAAAAAA" border="3">dialogs/separator-grey.png</texture>
+                </control>
+				<control type="label" id="1601">
+                    <description>All addons</description>
+                    <include>DefaultSettingLabel</include>
+                    <label>45000_имя_секции</label>
+					<visible>Skin.HasSetting(enable_custom_list_addons)</visible>
+                </control>
+                <include name="HomeMainCustomWidgetsAddonsSettings">
+                    <param name="id1" value="25" />
+                    <param name="title" value="45001_виджет_1" />
+                    <param name="flags" value="enable_custom_list_all_add1" />
+                    <param name="setadonnstype" value="AllPrograms1" />
+                    <param name="type" value="xbmc.addon.executable, xbmc.addon.audio, xbmc.addon.video" />
+					<param name="visible" value="Skin.HasSetting(enable_custom_list_addons)" />
+                </include>
+                <include name="HomeMainCustomWidgetsAddonsSettings">
+                    <param name="id1" value="26" />
+                    <param name="title" value="45002_виджет_2" />
+                    <param name="flags" value="enable_custom_list_all_add2" />
+                    <param name="setadonnstype" value="AllPrograms2" />
+                    <param name="type" value="xbmc.addon.executable, xbmc.addon.audio, xbmc.addon.video" />
+					<param name="visible" value="Skin.HasSetting(enable_custom_list_addons) + Skin.HasSetting(enable_custom_list_all_add1)" />
+                </include>
+                <include name="HomeMainCustomWidgetsAddonsSettings">
+                    <param name="id1" value="27" />
+                    <param name="title" value="45003_виджет_3" />
+                    <param name="flags" value="enable_custom_list_all_add3" />
+                    <param name="setadonnstype" value="AllPrograms3" />
+                    <param name="type" value="xbmc.addon.executable, xbmc.addon.audio, xbmc.addon.video" />
+					<param name="visible" value="Skin.HasSetting(enable_custom_list_addons) + Skin.HasSetting(enable_custom_list_all_add2)" />
+                </include>
+                <include name="HomeMainCustomWidgetsAddonsSettings">
+                    <param name="id1" value="28" />
+                    <param name="title" value="45004_виджет_4" />
+                    <param name="flags" value="enable_custom_list_all_add4" />
+                    <param name="setadonnstype" value="AllPrograms4" />
+                    <param name="type" value="xbmc.addon.executable, xbmc.addon.audio, xbmc.addon.video" />
+					<param name="visible" value="Skin.HasSetting(enable_custom_list_addons) + Skin.HasSetting(enable_custom_list_all_add3)" />
+                </include>
+                <include name="HomeMainCustomWidgetsAddonsSettings">
+                    <param name="id1" value="29" />
+                    <param name="title" value="45005_виджет_5" />
+                    <param name="flags" value="enable_custom_list_all_add5" />
+                    <param name="setadonnstype" value="AllPrograms5" />
+                    <param name="type" value="xbmc.addon.executable, xbmc.addon.audio, xbmc.addon.video" />
+					<param name="visible" value="Skin.HasSetting(enable_custom_list_addons) + Skin.HasSetting(enable_custom_list_all_add4)" />
+                </include>
+                <include name="HomeMainCustomWidgetsAddonsSettings">
+                    <param name="id1" value="30" />
+                    <param name="title" value="45006_виджет_6" />
+                    <param name="flags" value="enable_custom_list_all_add6" />
+                    <param name="setadonnstype" value="AllPrograms6" />
+                    <param name="type" value="xbmc.addon.executable, xbmc.addon.audio, xbmc.addon.video" />
+					<param name="visible" value="Skin.HasSetting(enable_custom_list_addons) + Skin.HasSetting(enable_custom_list_all_add5)" />
+                </include>
+                <include name="HomeMainCustomWidgetsAddonsSettings">
+                    <param name="id1" value="31" />
+                    <param name="title" value="45007_виджет_7" />
+                    <param name="flags" value="enable_custom_list_all_add7" />
+                    <param name="setadonnstype" value="AllPrograms7" />
+                    <param name="type" value="xbmc.addon.executable, xbmc.addon.audio, xbmc.addon.video" />
+					<param name="visible" value="Skin.HasSetting(enable_custom_list_addons) + Skin.HasSetting(enable_custom_list_all_add6)" />
+                </include>
+                <include name="HomeMainCustomWidgetsAddonsSettings">
+                    <param name="id1" value="32" />
+                    <param name="title" value="45008_виджет_8" />
+                    <param name="flags" value="enable_custom_list_all_add8" />
+                    <param name="setadonnstype" value="AllPrograms8" />
+                    <param name="type" value="xbmc.addon.executable, xbmc.addon.audio, xbmc.addon.video" />
+					<param name="visible" value="Skin.HasSetting(enable_custom_list_addons) + Skin.HasSetting(enable_custom_list_all_add7)" />
+                </include>
 				<control type="image" id="2300">
 					<description>Separator Image</description>
 					<height>3</height>
@@ -876,6 +963,59 @@
 					<onclick>ActivateWindow(1110)</onclick>
 				</control>
 			</control>
+			<!-- MOD safonov_ivan -->
+			<control type="grouplist" id="800">
+				<left>0</left>
+				<top>160</top>
+				<right>0</right>
+				<bottom>140</bottom>
+				<onleft>9000</onleft>
+                <onright>80</onright>
+                <pagecontrol>80</pagecontrol>
+				<onup>800</onup>
+				<ondown>800</ondown>
+				<visible>Container(9000).HasFocus(8)</visible>
+				<control type="radiobutton" id="801">
+					<description>Fullscreen widgetmenu</description>
+					<label>$LOCALIZE[45010]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(FullScreenWidgetMenu)</onclick>
+					<selected>Skin.HasSetting(FullScreenWidgetMenu)</selected>
+					<enable>Skin.HasSetting(setting_safonov)</enable>
+				</control>                
+				<control type="radiobutton" id="802">
+					<description>System Button</description>
+					<label>$LOCALIZE[45011]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(systembutton)</onclick>
+					<selected>Skin.HasSetting(systembutton)</selected>
+					<enable>Skin.HasSetting(setting_safonov)</enable>
+				</control>                
+				<control type="radiobutton" id="803">
+					<description>Weather icons background</description>
+					<label>$LOCALIZE[45012]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(Weatherbackgroundoff)</onclick>
+					<selected>Skin.HasSetting(Weatherbackgroundoff)</selected>
+					<enable>Skin.HasSetting(setting_safonov)</enable>
+				</control>    
+				<control type="radiobutton" id="804">
+					<description>Categorie icons background</description>
+					<label>$LOCALIZE[45013]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(Categoriebackgroundoff)</onclick>
+					<selected>Skin.HasSetting(Categoriebackgroundoff)</selected>
+					<enable>Skin.HasSetting(setting_safonov)</enable>
+				</control>                
+				<control type="radiobutton" id="805">
+					<description>Label focus widget</description>
+					<label>$LOCALIZE[45014]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(LabelFocusWidget)</onclick>
+					<selected>Skin.HasSetting(LabelFocusWidget)</selected>
+					<enable>Skin.HasSetting(setting_safonov)</enable>
+				</control>                
+			</control>
 			<control type="image">
 				<description>Dialog Header Image</description>
 				<left>0</left>
@@ -988,6 +1128,22 @@
 			<animation effect="fade" start="0" end="100" delay="300" time="320">WindowOpen</animation>
 			<animation effect="fade" start="100" end="0" time="150">WindowClose</animation>
 			<visible>Control.IsVisible(600)</visible>
+		</control>
+		<control type="scrollbar" id="80">
+			<right>0</right>
+			<top>163</top>
+			<width>12</width>
+			<bottom>137</bottom>
+			<orientation>vertical</orientation>
+			<texturesliderbackground />
+			<animation effect="slide" end="6,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(80)">conditional</animation>
+			<onleft>800</onleft>
+			<onright>800</onright>
+			<animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			<animation effect="fade" start="0" end="100" delay="300" time="320">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="150">WindowClose</animation>
+			<visible>Control.IsVisible(800)</visible>
 		</control>
 		<control type="textbox" id="6">
 			<include>OpenClose_Right</include>
