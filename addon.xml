@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
-	id="skin.estuaryv2.j-safonov" 
+	id="skin.estuaryv2-safonov" 
 	version="1.0.001" 
 	name="Estuary v2 Extended mod Safonov" 
 	provider-name="phil65, Ichabod Fletchman, YLLOW_DRAGON, vl.maksime, safonov_ivan">
-<!-- krypton
-	id="skin.estuary2-extended"
-	version="1.9.16.090"
-	name="Estuary v2 Extended"
-	provider-name="phil65, Ichabod Fletchman, YLLOW_DRAGON">
--->
 	<requires>
-<!-- krypton
-		<import addon="xbmc.gui" version="5.12.0"/>
-		<import addon="script.pvr.favourites" version="2.0.0"/>
--->
 		<import addon="xbmc.gui" version="5.10.0"/>
 		<import addon="script.pvr.favourites" version="1.6.0"/>
 		<import addon="script.image.resource.select" version="1.1.0"/>
@@ -159,7 +149,7 @@
 		<platform>all</platform>
 		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
 		<forum>http://forum.kodi.tv/</forum>
-		<email>nkvoronov@gmail.com</email>
-		<source>https://github.com/nkvoronov/skin.estuary2-extended.git</source>
+		<email>safonov11111985@gmail.com</email>
+		<source>https://github.com/safonovivan/repository.safonov_ivan.git</source>
 	</extension>
 </addon>
