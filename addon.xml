@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
-	id="skin.estuaryv2-safonov" 
-	version="1.0.001" 
+	id="skin.estuaryv2Jarvis-safonov" 
+	version="1.0.002" 
 	name="Estuary v2 Extended mod Safonov" 
 	provider-name="phil65, Ichabod Fletchman, YLLOW_DRAGON, vl.maksime, safonov_ivan">
 	<requires>
