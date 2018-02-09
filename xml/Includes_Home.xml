@@ -537,21 +537,6 @@
 			</control>
 		</definition>
 	</include>
-	<include name="CategoryLabel-original">
-		<param name="visible">true</param>
-		<definition>
-			<control type="label" id="$PARAM[list_id]2">
-				<left>55</left>
-				<top>80</top>
-				<width>900</width>
-				<height>90</height>
-				<label>$PARAM[label]</label>
-				<shadowcolor>text_shadow</shadowcolor>
-				<visible>$PARAM[visible]</visible>
-				<visible>IntegerGreaterThan(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
-			</control>
-		</definition>
-	</include>
 	<!-- Widget Dynamic Content -->
 	<include name="Widget-Content">
 		<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="$PARAM[item_limit]">$PARAM[content_path]</content>
